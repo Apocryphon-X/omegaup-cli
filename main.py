@@ -1,4 +1,4 @@
-import omegaup_api.user
+import api.user # OmegaUp API Endpoints
 from utils.data import *
 
 def make_login(acc_user, acc_pass):
@@ -6,7 +6,7 @@ def make_login(acc_user, acc_pass):
         "password" : acc_pass,
         "usernameOrEmail" : acc_user
     }
-    return requests.post(url = omegaup_api.user.login, data = login_data)
+    return requests.post(url = api.user.login, data = login_data)
 
 def main():
     up_user = input(question_status + "Ingresa tu usuario o email: ")
