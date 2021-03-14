@@ -1,2 +1,2 @@
 # OmegaUp CLI
-- Trabaja de forma mas rapida en OmegaUp sin dejar el terminal!
+- Administra concursos de OmegaUp, realiza envios y mas cosas sin necesidad de dejar la terminal!
