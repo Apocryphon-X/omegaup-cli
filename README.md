@@ -1,2 +1,2 @@
 # OmegaUp CLI
-- Herramienta diseñada para los usuarios de OmegaUp. Permite utilizar parte de la plataforma sin necesidad de abandonar el terminal!
+Herramienta destinada a los usuarios de OmegaUp. Permite utilizar la plataforma sin necesidad de abandonar el terminal!
