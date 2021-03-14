@@ -24,6 +24,7 @@ def submit_code(contest_alias, problem_alias, submit_language, source_path):
         return main_session.post(url = api.run.create, data = submit_data)
 
 def main():
+
     up_user = input(question_status + "Ingresa tu usuario o email: ")
     up_pass = stdiomask.getpass(question_status + "Ingresa tu contraseña: ", mask = "*")
 
@@ -41,3 +42,4 @@ if __name__ == "__main__":
     try: main()
     except KeyboardInterrupt:
         print("\n" + remove_status + "Hasta luego!")
+
