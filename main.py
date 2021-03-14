@@ -3,14 +3,33 @@ import omegaup
 
 from utils.data import *
 
-main_session = requests.Session()
+def show_help():
+    print(" ")
+    print("Trabaja de manera mas rapida en OmegaUp, sin salir del terminal!")
+    print(" ")
+    print("USO: up <comando> <subcomando> [banderas]")
+    print(" ")
+    print("COMANDOS CENTRALES ")
+    print(" ├─ envio ........ Realiza y administra envios")
+    print(" ├─ usuario ...... Administra tu usuario")
+    print(" ├─ concurso ..... Administra concursos")
+    print(" ├─ dudas ........ Envia clarificaciones")
+    print(" ├─ problema ..... Administra y crea problemas")
+    print(" └─ curso ........ Administra cursos")
+    print(" ")
 
 def main():
 
-    up_user = input(question_status + "Ingresa tu usuario o email: ")
-    up_pass = stdiomask.getpass(question_status + "Ingresa tu contraseña: ", mask = "*")
+    main_session = requests.Session()
 
-    login_response = omegaup.User(main_session).login(up_user, up_pass)
+    if(len(sys.argv) == 1):
+        show_help()
+        exit()
+
+    coder_user = input(question_status + "Ingresa tu usuario o email: ")
+    coder_pass = stdiomask.getpass(question_status + "Ingresa tu contraseña: ", mask = "*")
+
+    login_response = omegaup.User(main_session).login(coder_user, coder_pass)
     json_response = login_response.json()
 
     if "status" in json_response:
@@ -19,9 +38,9 @@ def main():
             print(ok_status + "Inicio de sesión exitoso!")
 
             # Temporal Test Code
-            print("Testing Run/Create API...")
+            print("Probando Run/Create API...")
             print(omegaup.Run(main_session).create("CLI-test1", "aplusb",
-                "tests/source.cpp", "cpp11-gcc").json())
+                  "tests/source.cpp", "cpp11-gcc").json())
         else:
             print(error_status + json_response["error"])
 
