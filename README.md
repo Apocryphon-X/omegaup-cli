@@ -1,2 +1,2 @@
 # OmegaUp CLI
-- Administra concursos de OmegaUp, realiza envios y mas cosas sin necesidad de dejar la terminal!
+- Herramienta diseñada para los usuarios de OmegaUp. Permite utilizar parte de la plataforma sin necesidad de abandonar el terminal!
