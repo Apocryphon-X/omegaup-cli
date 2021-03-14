@@ -1,0 +1,6 @@
+{
+    "contest_alias" : "string",
+    "problem_alias" : "string",
+    "source" : "string",
+    "language" : "mixed"
+}
