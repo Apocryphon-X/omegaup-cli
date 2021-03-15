@@ -5,6 +5,9 @@ Interfaz para OmegaUp desde la linea de comandos. Administra concursos, realiza 
 
 # Instalación:
 
-git clone https://github.com/Apocryphon-X/omegaup-cli.git # Clona el repositorio
-cd omegaup-cli                                            # Accede al directorio
-sudo pip3 install .                                       
+```bash
+git clone https://github.com/Apocryphon-X/omegaup-cli    # Clona el repositorio
+cd omegaup-cli                                           # Accede al directorio
+chmod +x install.sh                                      # Otorga permisos de ejecución
+./install.sh                                             # Instala la OmegaUp CLI
+```
