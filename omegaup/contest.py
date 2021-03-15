@@ -1,1 +1,1 @@
-from omegaup.core import *
+from .utils import *

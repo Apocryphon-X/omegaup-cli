@@ -1,4 +1,4 @@
-from omegaup.core import *
+from .utils import *
 
 class Run:
     endpoint = ENTRYPOINT + "/api/run"
@@ -7,7 +7,7 @@ class Run:
 
     # Creates a new run.
     def create(self, contest_alias, problem_alias, source_path, language):
-        run_data = get_dict(JSON_PATH + "api/run/create")
+        run_data = get_dict(JSON_PATH + "api-run-create")
 
         run_data["contest_alias"] = contest_alias
         run_data["problem_alias"] = problem_alias

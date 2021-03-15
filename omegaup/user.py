@@ -1,5 +1,6 @@
 
-from omegaup.core import *
+from .utils import *
+from . import models
 
 class User:
     endpoint = ENTRYPOINT + "/api/user"
@@ -8,7 +9,7 @@ class User:
 
     # Log into account.
     def login(self, username_or_email, password):
-        login_data = get_dict(JSON_PATH + "/api/user/login")
+        login_data = get_dict("api-user-login")
 
         login_data["password"] = password
         login_data["usernameOrEmail"] = username_or_email
