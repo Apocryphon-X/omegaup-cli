@@ -1,8 +1,11 @@
 # OmegaUp CLI
-![WarningSymbol](resources/images/warningIconSmall.png) - Omegaup CLI esta en fase Alpha, actualmente el codigo esta incompleto.
-
 Interfaz para OmegaUp desde la linea de comandos. Administra concursos, realiza envios y mucho mas sin tener que abandonar el terminal!
 
+<p align="center">
+  <img src="resources/images/warningSymbol.png" alt="Warning"></img>
+  
+  <p align="center"> Omegaup CLI esta en fase Alpha. Actualmente el codigo esta incompleto. </p>
+</p>
 # Instalación
 
 ```bash
