@@ -8,7 +8,7 @@ fi
 # Instalacion de OmegaUp CLI, y creacion de un alias.
 pip3 install --user . && echo "alias ucl=/home/$USER/.local/bin/ucl" >> ~/.bash_aliases
 
-# En caso de ser usuario de "fish", se importa el alias creado.
+# En caso de utilizar "fish", se importa el alias creado.
 if command -v fish &> /dev/null
 then
     if [ ! -f ~/.config/fish/config.fish ]; then
