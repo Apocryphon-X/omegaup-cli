@@ -27,7 +27,8 @@ setup(
     url="https://github.com/Apocryphon-X/omegaup-cli",
     install_requires=[
         "requests",
-        "termcolor"
+        "termcolor",
+        "stdiomask"
     ],
     #package_data={
    #     "omegaup": ["models/*"]
