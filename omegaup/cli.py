@@ -12,7 +12,7 @@ def show_help():
     print("USO: up <comando> <subcomando> [banderas]")
     print(" ")
     print("COMANDOS CENTRALES ")
-    print(" ├─ envio ........ Realiza y administra envios (WIP)")
+    print(" ├─ envio ........ Realiza y administra envios (En curso)")
     print(" ├─ usuario ...... Administra tu usuario (Pendiente)")
     print(" ├─ concurso ..... Administra concursos (Pendiente)")
     print(" ├─ dudas ........ Envia clarificaciones (Pendiente)")
