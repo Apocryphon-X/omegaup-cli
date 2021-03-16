@@ -12,7 +12,12 @@ chmod +x install.sh                                      # Otorga permisos de ej
 ```
 # Inspiraciones
 
-- Codeforces CLI - *"A simple command line tool for Codeforces coders."*
-- ProtonVPN Linux CLI - *"Linux command-line client for ProtonVPN. Written in Python."*
-- Github CLI - *"GitHub’s official command line tool."*
-- OmegaUp API - *"Open source platform to learn and improve Computer Science skills."*
+- [OmegaUp API][1] - *"Open source platform to learn and improve Computer Science skills."*
+- [Codeforces CLI][2] - *"A simple command line tool for Codeforces coders."*
+- [ProtonVPN Linux CLI][3] - *"Linux command-line client for ProtonVPN. Written in Python."*
+- [Github CLI][4] - *"GitHub’s official command line tool."*
+
+[1]: https://omegaup.org/
+[2]: https://github.com/ahmed-dinar/codeforces-cli
+[3]: https://github.com/ProtonVPN/linux-cli
+[4]: https://github.com/cli/cli
