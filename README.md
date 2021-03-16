@@ -18,7 +18,9 @@ chmod +x install.sh                                      # Otorga permisos de ej
 ```
 # Características
 
-- [ ] Realizar y seguir envios. 
+Listado de cracterísticas principales por desarrollar en la CLI.
+
+- [ ] Realizar y seguir envios en vivo.
 - [ ] Organizar cursos. 
 - [ ] Administrar concursos. 
 - [ ] Administrar y crear problemas.
