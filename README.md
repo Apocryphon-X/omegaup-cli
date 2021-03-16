@@ -1,4 +1,10 @@
 # OmegaUp CLI - [![py_version](https://img.shields.io/badge/Python-%E2%89%A5%203.7-blue.svg?style=flat-square&logo=python&logoColor=ffffff)](https://www.python.org/downloads/)
+![Estado](https://img.shields.io/badge/Envios-en%20proceso-yellow.svg?style=flat-square)
+![Estado](https://img.shields.io/badge/Perfil-en%20proceso-yellow.svg?style=flat-square)
+![Estado](https://img.shields.io/badge/Cursos-pendiente-red.svg?style=flat-square)
+![Estado](https://img.shields.io/badge/Concursos-pendiente-red.svg?style=flat-square)
+![Estado](https://img.shields.io/badge/Problemas-pendiente-red.svg?style=flat-square)
+
 Interfaz para OmegaUp desde la linea de comandos. Administra concursos, realiza envios y mucho mas sin tener que abandonar el terminal!
 
 # Instalación
@@ -11,12 +17,13 @@ chmod +x install.sh                                      # Otorga permisos de ej
 ./install.sh                                             # Instalación de la OmegaUp CLI
 ```
 # Características
-- [ ] Realizar y seguir envios.
-- [ ] Organizar cursos.
-- [ ] Administrar concursos.
+
+- [ ] Realizar y seguir envios. 
+- [ ] Organizar cursos. 
+- [ ] Administrar concursos. 
 - [ ] Administrar y crear problemas.
-- [ ] Envio de clarificaciones.
-- [ ] Administrar perfil.
+- [ ] Envio de clarificaciones. 
+- [ ] Administrar perfil. 
 
 # Inspiraciones
 
