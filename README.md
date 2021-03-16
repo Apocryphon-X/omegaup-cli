@@ -10,6 +10,14 @@ cd omegaup-cli                                           # Accede al directorio
 chmod +x install.sh                                      # Otorga permisos de ejecución
 ./install.sh                                             # Instalación de la OmegaUp CLI
 ```
+# Características
+- [ ] Realizar y seguir envios.
+- [ ] Organizar cursos.
+- [ ] Administrar concursos.
+- [ ] Administrar y crear problemas.
+- [ ] Envio de clarificaciones.
+- [ ] Administrar perfil.
+
 # Inspiraciones
 
 - [OmegaUp API][1] - *"Open source platform to learn and improve Computer Science skills."*
