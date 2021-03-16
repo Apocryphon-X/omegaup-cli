@@ -30,9 +30,9 @@ setup(
         "termcolor",
         "stdiomask"
     ],
-    #package_data={
-   #     "omegaup": ["models/*"]
-   # },
+  # package_data={
+  #     "omegaup": ["models/*"]
+  # },
     include_package_data = True,
     python_requires=">=3.7",
     classifiers=[
