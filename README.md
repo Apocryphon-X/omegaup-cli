@@ -5,7 +5,7 @@
 ![Estado](https://img.shields.io/badge/Concursos-pendiente-red.svg?style=flat-square)
 ![Estado](https://img.shields.io/badge/Problemas-pendiente-red.svg?style=flat-square)
 
-Interfaz para OmegaUp desde la linea de comandos. Administra concursos, realiza envios y mucho mas sin tener que abandonar el terminal!
+Interfaz para utilizar OmegaUp desde la linea de comandos. Administra concursos, realiza envios y mucho mas sin tener que abandonar el terminal!
 
 # Instalación
 
