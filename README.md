@@ -32,14 +32,14 @@ Listado de cracterísticas principales por desarrollar en la CLI.
 
 # Inspiraciones
 
-- [OmegaUp API¹][1] - *"Open source platform to learn and improve Computer Science skills."*
+- [OmegaUp API¹][1] - *"OmegaUp: Open source platform to learn and improve Computer Science skills."*
 - [Codeforces CLI¹][2] - *"A simple command line tool for Codeforces coders."*
 - [ProtonVPN Linux CLI¹][3] - *"Linux command-line client for ProtonVPN. Written in Python."*
 - [Github CLI¹][4] - *"GitHub’s official command line tool."*
 
 ¹ : "OmegaUp CLI" is **not** officially affiliated with this organization or project.
 
-[1]: https://omegaup.org/
+[1]: https://github.com/omegaup/omegaup/blob/master/frontend/server/src/Controllers/README.md
 [2]: https://github.com/ahmed-dinar/codeforces-cli
 [3]: https://github.com/ProtonVPN/linux-cli
 [4]: https://github.com/cli/cli
