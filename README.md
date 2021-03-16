@@ -10,3 +10,9 @@ cd omegaup-cli                                           # Accede al directorio
 chmod +x install.sh                                      # Otorga permisos de ejecución
 ./install.sh                                             # Instalación de la OmegaUp CLI
 ```
+# Inspiraciones
+
+- Codeforces CLI - *"A simple command line tool for Codeforces coders."*
+- ProtonVPN Linux CLI - *"Linux command-line client for ProtonVPN. Written in Python."*
+- Github CLI - *"GitHub’s official command line tool."*
+- OmegaUp API - *"Open source platform to learn and improve Computer Science skills."*
