@@ -37,7 +37,7 @@ Listado de cracterísticas principales por desarrollar en la CLI.
 - [ProtonVPN Linux CLI¹][3] - *"Linux command-line client for ProtonVPN. Written in Python."*
 - [Github CLI¹][4] - *"GitHub’s official command line tool."*
 
-¹ : "OmegaUp CLI" is not officially affiliated with this organization or project.
+¹ : "OmegaUp CLI" is **not** officially affiliated with this organization or project.
 
 [1]: https://omegaup.org/
 [2]: https://github.com/ahmed-dinar/codeforces-cli
