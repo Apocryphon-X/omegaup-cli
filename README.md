@@ -12,7 +12,7 @@ Interfaz para utilizar OmegaUp desde la linea de comandos. Administra concursos,
 
 # Instalación
 
-Omegaup CLI esta en fase Alpha, por lo que el codigo actual esta **incompleto.**
+Omegaup CLI esta en fase Alpha, por lo que el codigo actual esta **INCOMPLETO.**
 ```bash
 git clone https://github.com/Apocryphon-X/omegaup-cli    # Clona el repositorio
 cd omegaup-cli                                           # Accede al directorio
