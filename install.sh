@@ -5,10 +5,10 @@ if [ ! -f ~/.bash_aliases ]; then
     touch ~/.bash_aliases
 fi
 
-# Intalacion de la OmegaUp CLI y creacion de un alias
+# Instalacion de OmegaUp CLI, y creacion de un alias.
 pip3 install --user . && echo "alias ucl=/home/$USER/.local/bin/ucl" >> ~/.bash_aliases
 
-# Importación de los alias a la shell de fish (en caso de ser usuario)
+# En caso de ser usuario de "fish", se importa el alias creado.
 if command -v fish &> /dev/null
 then
     if [ ! -f ~/.config/fish/config.fish ]; then
@@ -17,5 +17,4 @@ then
     echo ". ~/.bash_aliases" >> ~/.config/fish/config.fish
 fi
 
-clear
-echo "[!] Para reflejar los cambios, reinicia tu terminal!"
+clear && echo "[!] Si no se reflejan los cambios, reinicia tu terminal!"
