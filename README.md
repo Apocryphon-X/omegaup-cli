@@ -10,8 +10,4 @@ chmod +x install.sh                                      # Otorga permisos de ej
 ./install.sh                                             # Instalación de la OmegaUp CLI
 ```
 
-<p align="center">
-  <img src="resources/images/warningSymbol.png" alt="Warning"></img>
-  
-  <p align="center"> Omegaup CLI esta en fase Alpha.</p>
-</p>
+<p align="center"> Omegaup CLI esta en fase Alpha, por lo que el codigo actual esta incompleto. </p>
