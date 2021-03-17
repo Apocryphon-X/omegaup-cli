@@ -25,5 +25,5 @@ def get_dict(res_name):
         return json.load(target_file)
 
 def get_help(help_name):
-    with importlib.resources.open_text(HELP_MODULE, help_name + ".txt") as target_file:
-        return target_file
+    return importlib.resources.read_text(HELP_MODULE, 
+        help_name + ".txt")

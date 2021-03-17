@@ -8,6 +8,7 @@ from .run import *
 # Add new "help" directory in order to avoid hardcoding?
 def show_guide(target_menu):
     if target_menu == "main" : print(get_help("main-help"))
+    if target_menu == "run" : print(get_help("run-help"))
 
 def make_login(target_session):
     coder_user = input(question_status + "Ingresa tu usuario o email: ")
@@ -55,7 +56,7 @@ def main():
             show_guide("run")
         else:
             cli_arg = sys.argv[submit_idx + 1]
-            if cli_arg == "crear":
+            if cli_arg == "subir":
                 make_submit(main_session)
 
 

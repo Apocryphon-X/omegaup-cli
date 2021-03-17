@@ -1,0 +1,10 @@
+
+Trabaja con envios de OmegaUp.
+
+USO: ucl envio <comando> [banderas]
+
+COMANDOS CENTRALES:
+ └─ subir ............ Sube tu codigo a OmegaUp para que sea evaluado
+
+EJEMPLO:
+    $ ucl envio subir
