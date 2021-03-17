@@ -6,16 +6,19 @@ class Run:
         self.session = target_session
 
     # Creates a new run.
-    def create(self, contest_alias, problem_alias, source_path, language):
+    def create(self, source_path, problem_alias, language = "cpp11-gcc", contest_alias = None):
         run_data = get_dict("api-run-create")
 
         run_data["contest_alias"] = contest_alias
         run_data["problem_alias"] = problem_alias
         run_data["language"] = language
 
-        with open(source_path, "r") as target_file:
-            run_data["source"] = target_file.read()
+        try:
+            with open(source_path, "r") as target_file:
+                run_data["source"] = target_file.read()
+        except FileNotFoundError:
+            return False, None
 
-        return self.session.post(url = self.endpoint + "/create",
+        return True, self.session.post(url = self.endpoint + "/create",
              params = run_data)
 

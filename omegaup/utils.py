@@ -5,7 +5,8 @@ import stdiomask
 import sys
 import importlib.resources
 
-from . import models as TARGET_MODULE
+from . import models as JSON_MODULE
+from . import menus as HELP_MODULE
 
 ENTRYPOINT = "https://omegaup.com"
 
@@ -20,5 +21,9 @@ ok_status = termcolor.colored("[✓] ", "green")
 
 
 def get_dict(res_name):
-    with importlib.resources.open_text(TARGET_MODULE, res_name + ".json") as target_file:
+    with importlib.resources.open_text(JSON_MODULE, res_name + ".json") as target_file:
         return json.load(target_file)
+
+def get_help(help_name):
+    with importlib.resources.open_text(HELP_MODULE, help_name + ".txt") as target_file:
+        return target_file

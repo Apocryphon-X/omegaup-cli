@@ -1,0 +1,12 @@
+
+Trabaja de manera mas rapida en OmegaUp, sin salir del terminal!
+
+USO: up <comando> <subcomando> [banderas]
+
+COMANDOS CENTRALES
+ ├─ envio ........ Realiza y administra envios ... (En curso)
+ ├─ usuario ...... Administra tu usuario ......... (Pendiente)
+ ├─ concurso ..... Administra concursos .......... (Pendiente)
+ ├─ dudas ........ Envia clarificaciones ......... (Pendiente)
+ ├─ problema ..... Administra y crea problemas ... (Pendiente)
+ └─ curso ........ Administra cursos ............. (Pendiente)

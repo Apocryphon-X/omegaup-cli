@@ -10,7 +10,7 @@ Features:
 - Manage Problems
 - And more!
 """
-version = "0.0.4a1"
+version = "0.0.5a"
 
 setup(
     name="omegaup_cli",

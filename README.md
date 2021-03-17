@@ -19,6 +19,7 @@ cd omegaup-cli                                           # Accede al directorio
 chmod +x install.sh                                      # Otorga permisos de ejecución
 ./install.sh                                             # Instalación de la OmegaUp CLI
 ```
+
 # Características
 
 Listado de cracterísticas principales por desarrollar en la CLI.
