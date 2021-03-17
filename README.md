@@ -15,7 +15,7 @@ Interfaz para utilizar OmegaUp desde la linea de comandos. Administra concursos,
   <img src="https://user-images.githubusercontent.com/40130428/111420019-13d4a080-86b0-11eb-8e68-251ee13f1ff5.gif">
 </p>
 
-<p align="center"> <b> Probado en:</b> Ubuntu WSL </p>
+<p align="center"> <b> Probado en:</b> Ubuntu WSL 1 </p>
 
 # Instalación [![release](https://img.shields.io/github/v/release/Apocryphon-X/omegaup-cli?include_prereleases&label=Release&logo=github&style=flat-square)](https://github.com/Apocryphon-X/omegaup-cli/releases/tag/v0.0.5a)
 
