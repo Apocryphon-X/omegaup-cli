@@ -1,4 +1,5 @@
-# OmegaUp CLI - [![py_version](https://img.shields.io/badge/Python-%E2%89%A5%203.7-blue.svg?style=flat-square&logo=python&logoColor=ffffff)](https://www.python.org/downloads/) 
+# OmegaUp CLI - [![py_version](https://img.shields.io/badge/Python-%E2%89%A5%203.7-blue.svg?style=flat-square&logo=python&logoColor=ffffff)](https://www.python.org/downloads/) [![release](https://img.shields.io/github/v/release/Apocryphon-X/omegaup-cli?include_prereleases&label=Release&logo=github&style=flat-square")](https://github.com/Apocryphon-X/omegaup-cli/releases/tag/v0.0.5a)
+
 <!-- ![Commits per month](https://img.shields.io/github/commit-activity/y/Apocryphon-X/omegaup-cli?label=Commit%20Activity&logo=GitHub&style=flat-square)
 -->
 
@@ -10,7 +11,13 @@
 
 Interfaz para utilizar OmegaUp desde la linea de comandos. Administra concursos, realiza envios y mucho mas sin tener que abandonar el terminal! Ocupa el comando `ucl` para llamar a la CLI de OmegaUp desde cualquier parte. Ejecutar la CLI sin parametros, llamara al menu de ayuda e información.
 
-**Probado en:** Ubuntu WSL.
+<p align="center"> 
+  <img src="https://user-images.githubusercontent.com/40130428/111417422-737c7d00-86ab-11eb-91f1-b82a7bad2eae.png">
+</p>
+
+<p align="center"> <b> Probado en:</b> Ubuntu WSL </p>
+
+
 
 # Instalación
 
