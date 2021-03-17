@@ -4,7 +4,7 @@
 -->
 
 ![Estado](https://img.shields.io/badge/Envios-en%20proceso-yellow.svg?style=flat-square)
-![Estado](https://img.shields.io/badge/Perfil-en%20proceso-yellow.svg?style=flat-square)
+![Estado](https://img.shields.io/badge/Perfil-pendiente-red.svg?style=flat-square)
 ![Estado](https://img.shields.io/badge/Cursos-pendiente-red.svg?style=flat-square)
 ![Estado](https://img.shields.io/badge/Concursos-pendiente-red.svg?style=flat-square)
 ![Estado](https://img.shields.io/badge/Problemas-pendiente-red.svg?style=flat-square)
@@ -12,12 +12,10 @@
 Interfaz para utilizar OmegaUp desde la linea de comandos. Administra concursos, realiza envios y mucho mas sin tener que abandonar el terminal! Ocupa el comando `ucl` para llamar a la CLI de OmegaUp desde cualquier parte. Ejecutar la CLI sin parametros, llamara al menu de ayuda e información.
 
 <p align="center"> 
-  <img src="https://user-images.githubusercontent.com/40130428/111417422-737c7d00-86ab-11eb-91f1-b82a7bad2eae.png">
+  <img src="https://user-images.githubusercontent.com/40130428/111420019-13d4a080-86b0-11eb-8e68-251ee13f1ff5.gif">
 </p>
 
 <p align="center"> <b> Probado en:</b> Ubuntu WSL </p>
-
-
 
 # Instalación
 
