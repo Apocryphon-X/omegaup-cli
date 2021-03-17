@@ -1,5 +1,6 @@
-# OmegaUp CLI - [![py_version](https://img.shields.io/badge/Python-%E2%89%A5%203.7-blue.svg?style=flat-square&logo=python&logoColor=ffffff)](https://www.python.org/downloads/) ![Commits per month](https://img.shields.io/github/commit-activity/y/Apocryphon-X/omegaup-cli?label=Commit%20Activity&logo=GitHub&style=flat-square)
-
+# OmegaUp CLI - [![py_version](https://img.shields.io/badge/Python-%E2%89%A5%203.7-blue.svg?style=flat-square&logo=python&logoColor=ffffff)](https://www.python.org/downloads/) 
+<!-- ![Commits per month](https://img.shields.io/github/commit-activity/y/Apocryphon-X/omegaup-cli?label=Commit%20Activity&logo=GitHub&style=flat-square)
+-->
 ![Estado](https://img.shields.io/badge/Envios-en%20proceso-yellow.svg?style=flat-square)
 ![Estado](https://img.shields.io/badge/Perfil-en%20proceso-yellow.svg?style=flat-square)
 ![Estado](https://img.shields.io/badge/Cursos-pendiente-red.svg?style=flat-square)
