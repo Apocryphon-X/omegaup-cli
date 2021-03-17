@@ -35,6 +35,7 @@ Listado de cracterísticas principales por desarrollar en la CLI.
 - [ ] Administrar perfil. 
 
 ¹ : De momento solo se pueden hacer envios en C++, a problemas por separado.
+    Ejecuta el comando `ucl envio subir`.
 
 # Inspiraciones
 
