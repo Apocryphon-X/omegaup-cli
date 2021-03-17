@@ -8,7 +8,7 @@
 ![Estado](https://img.shields.io/badge/Concursos-pendiente-red.svg?style=flat-square)
 ![Estado](https://img.shields.io/badge/Problemas-pendiente-red.svg?style=flat-square)
 
-Interfaz para utilizar OmegaUp desde la linea de comandos. Administra concursos, realiza envios y mucho mas sin tener que abandonar el terminal! Ocupa el comando `ucl` para llamar la CLI de OmegaUp desde cualquier parte.
+Interfaz para utilizar OmegaUp desde la linea de comandos. Administra concursos, realiza envios y mucho mas sin tener que abandonar el terminal! Ocupa el comando `ucl` para llamar a la CLI de OmegaUp desde cualquier parte. Ejecutar la CLI sin parametros, llamara al menu de ayuda e información.
 
 **Probado en:** Ubuntu WSL.
 
@@ -26,7 +26,7 @@ chmod +x install.sh                                      # Otorga permisos de ej
 
 Listado de cracterísticas principales por desarrollar en la CLI.
 
-- [x] Realizar envios.¹ 
+- [x] Realizar envios.¹
 - [ ] Seguir veredicto de envios en vivo.
 - [ ] Organizar cursos. 
 - [ ] Administrar concursos. 
@@ -35,7 +35,6 @@ Listado de cracterísticas principales por desarrollar en la CLI.
 - [ ] Administrar perfil. 
 
 ¹ : De momento solo se pueden hacer envios en C++, a problemas por separado.
-    Ejecuta el comando `ucl envio subir`.
 
 # Inspiraciones
 
