@@ -1,4 +1,4 @@
-# OmegaUp CLI - [![py_version](https://img.shields.io/badge/Python-%E2%89%A5%203.7-blue.svg?style=flat-square&logo=python&logoColor=ffffff)](https://www.python.org/downloads/) [![release](https://img.shields.io/github/v/release/Apocryphon-X/omegaup-cli?include_prereleases&label=Release&logo=github&style=flat-square")](https://github.com/Apocryphon-X/omegaup-cli/releases/tag/v0.0.5a)
+# OmegaUp CLI - [![py_version](https://img.shields.io/badge/Python-%E2%89%A5%203.7-blue.svg?style=flat-square&logo=python&logoColor=ffffff)](https://www.python.org/downloads/) 
 
 <!-- ![Commits per month](https://img.shields.io/github/commit-activity/y/Apocryphon-X/omegaup-cli?label=Commit%20Activity&logo=GitHub&style=flat-square)
 -->
@@ -17,7 +17,7 @@ Interfaz para utilizar OmegaUp desde la linea de comandos. Administra concursos,
 
 <p align="center"> <b> Probado en:</b> Ubuntu WSL </p>
 
-# Instalación
+# Instalación [![release](https://img.shields.io/github/v/release/Apocryphon-X/omegaup-cli?include_prereleases&label=Release&logo=github&style=flat-square")](https://github.com/Apocryphon-X/omegaup-cli/releases/tag/v0.0.5a)
 
 Omegaup CLI esta en fase Alpha, por lo que el codigo actual esta **INCOMPLETO.**
 ```bash
