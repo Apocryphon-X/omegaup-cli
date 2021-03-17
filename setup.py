@@ -22,7 +22,7 @@ setup(
     description="CLI for OmegaUp users",
     long_description=long_descr,
     author="Dante Mendoza Leyva (Apocryphon-X)",
-    author_email="40130428+Apocryphon-X@users.noreply.github.com",
+    author_email="apocryphon.x.contact@gmail.com",
     license="MIT",
     url="https://github.com/Apocryphon-X/omegaup-cli",
     install_requires=[
