@@ -31,12 +31,12 @@ def make_submit(target_session):
 
     submit_path = input(question_status + "Archivo a enviar: ")
     problem_alias = input(question_status + "Alias de el problema: ")
-    
+
     success, run_response = Run(target_session).create(submit_path, problem_alias)
 
     if type(run_response) != type(None):
         json_response = run_response.json()
-    
+
     if not success:
         print(error_status + "Archivo no encontrado, verifica si la ruta es correcta.")
     else:
