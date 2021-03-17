@@ -39,7 +39,7 @@ Listado de cracterísticas principales por desarrollar en la CLI.
 - [ ] Envio de clarificaciones. 
 - [ ] Administrar perfil. 
 
-¹ : De momento solo se pueden hacer envios en C++, a problemas por separado.
+¹ : De momento solo se pueden hacer envios en C++11 (gcc), a problemas por separado.
 
 # Inspiraciones
 
