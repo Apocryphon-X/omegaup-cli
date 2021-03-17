@@ -11,5 +11,5 @@ COMANDOS CENTRALES
  ├─ problema ..... Administra y crea problemas ... (Pendiente)
  └─ curso ........ Administra cursos ............. (Pendiente)
 
-** 1 : Actualmente solo se pueden hacer envios en C++
+** 1 : Actualmente solo se pueden hacer envios en C++11 (gcc),
        a problemas por individual.
