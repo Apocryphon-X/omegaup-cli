@@ -42,7 +42,7 @@ def make_submit(target_session):
         print(error_status + "Archivo no encontrado, verifica si la ruta es correcta.")
     else:
         print(ok_status + "Envio realizado con exito.")
-        print(run_response.json()) # Debugging
+        # print(run_response.json()) # Debugging
 
 def main():
 
