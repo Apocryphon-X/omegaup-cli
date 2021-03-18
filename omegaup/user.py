@@ -1,6 +1,7 @@
 
-from .utils import *
 from . import models
+from .utils import *
+
 
 class User:
     endpoint = ENTRYPOINT + "/api/user"

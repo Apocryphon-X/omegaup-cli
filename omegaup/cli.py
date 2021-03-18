@@ -1,9 +1,10 @@
 
 # Little implementation of the OmegaUp API
 
-from .utils import *
-from .user import *
 from .run import *
+from .user import *
+from .utils import *
+
 
 # Add new "help" directory in order to avoid hardcoding?
 def show_guide(target_menu):

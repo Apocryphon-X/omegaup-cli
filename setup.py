@@ -1,6 +1,6 @@
 """setup.py: setuptools control."""
 
-from setuptools import setup, find_packages
+from setuptools import setup
 
 long_descr = """
 A Simple CLI for OmegaUp.
