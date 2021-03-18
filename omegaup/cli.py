@@ -20,10 +20,10 @@ def make_login(target_session):
 
     if "status" in json_response:
         if json_response["status"] == "ok":
-            print(ok_status + "Inicio de sesión exitoso!")
+            print(ok_status + "Inicio de sesión exitoso!\n")
             return True
 
-        print(error_status + json_response["error"])
+        print(error_status + json_response["error"] + "\n")
         return False
     return False
 
@@ -31,7 +31,7 @@ def make_submit(target_session):
     if not make_login(target_session):
         return
 
-    submit_path = input(question_status + "Archivo a enviar: ")
+    submit_path = input(add_status + "Archivo a enviar: ")
     problem_alias = input(question_status + "Alias de el problema: ")
 
     success, run_response = Run(target_session).create(submit_path, problem_alias)
