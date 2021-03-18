@@ -1,6 +1,6 @@
 """setup.py: setuptools control."""
 
-from setuptools import setup, find_packages
+from setuptools import setup
 
 long_descr = """
 A Simple CLI for OmegaUp.
@@ -28,7 +28,8 @@ setup(
     install_requires=[
         "requests",
         "termcolor",
-        "stdiomask"
+        "stdiomask",
+        "blessed"
     ],
   # package_data={
   #     "omegaup": ["models/*"]

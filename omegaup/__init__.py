@@ -1,2 +1,1 @@
-from . import models
-from . import menus
+from . import menus, models

@@ -1,11 +1,12 @@
 
 # Little implementation of the OmegaUp API
 
-from .utils import *
-from .user import *
 from .run import *
+from .user import *
+from .utils import *
 
-# Add new "help" directory in order to avoid hardcoding?
+
+# Added new "help" directory in order to avoid hardcoding
 def show_guide(target_menu):
     if target_menu == "main" : print(get_help("main-help"))
     if target_menu == "run" : print(get_help("run-help"))
@@ -19,10 +20,10 @@ def make_login(target_session):
 
     if "status" in json_response:
         if json_response["status"] == "ok":
-            print(ok_status + "Inicio de sesión exitoso!")
+            print(ok_status + "Inicio de sesión exitoso!\n")
             return True
 
-        print(error_status + json_response["error"])
+        print(error_status + json_response["error"] + "\n")
         return False
     return False
 
@@ -30,19 +31,21 @@ def make_submit(target_session):
     if not make_login(target_session):
         return
 
-    submit_path = input(question_status + "Archivo a enviar: ")
+    submit_path = input(add_status + "Archivo a enviar: ")
     problem_alias = input(question_status + "Alias de el problema: ")
 
     success, run_response = Run(target_session).create(submit_path, problem_alias)
 
     if type(run_response) != type(None):
-        json_response = run_response.json()
+        # This will be useful for keeping track of submits
+        json_response = run_response.json() 
 
     if not success:
         print(error_status + "Archivo no encontrado, verifica si la ruta es correcta.")
     else:
         print(ok_status + "Envio realizado con exito.")
-        # print(run_response.json()) # Debugging
+        # Debugging output
+        # print(run_response.json())
 
 def main():
 
