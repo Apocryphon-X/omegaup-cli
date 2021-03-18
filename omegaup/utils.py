@@ -15,11 +15,11 @@ ENTRYPOINT = "https://omegaup.com"
 # https://blessed.readthedocs.io/en/latest/colors.html
 
 # Status Prefixes:
-add_status = blessed.Terminal().olivedrab1("[+] ")
-remove_status = blessed.Terminal().orangered("[-] ")
-question_status = blessed.Terminal().deepskyblue("[?] ")
-error_status = blessed.Terminal().crimson("[✗] ")
-ok_status = blessed.Terminal().lawngreen("[✓] ")
+add_status      =  blessed.Terminal().olivedrab1("[+] ")
+remove_status   =  blessed.Terminal().orangered("[-] ")
+question_status =  blessed.Terminal().deepskyblue("[?] ")
+error_status    =  blessed.Terminal().crimson("[✗] ")
+ok_status       =  blessed.Terminal().lawngreen("[✓] ")
 
 def get_dict(res_name):
     with importlib.resources.open_text(JSON_MODULE, res_name + ".json") as target_file:
