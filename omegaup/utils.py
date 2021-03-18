@@ -18,7 +18,7 @@ ENTRYPOINT = "https://omegaup.com"
 add_status = blessed.Terminal().olivedrab1("[+] ")
 remove_status = blessed.Terminal().orangered("[-] ")
 question_status = blessed.Terminal().deepskyblue("[?] ")
-error_status = blessed.Terminal().crimson("[!] ")
+error_status = blessed.Terminal().crimson("[✗] ")
 ok_status = blessed.Terminal().lawngreen("[✓] ")
 
 def get_dict(res_name):
