@@ -28,7 +28,8 @@ setup(
     install_requires=[
         "requests",
         "termcolor",
-        "stdiomask"
+        "stdiomask",
+        "blessed"
     ],
   # package_data={
   #     "omegaup": ["models/*"]
