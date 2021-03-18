@@ -1,6 +1,6 @@
-import blessed
+from blessed import Terminal
 
-print(red("hello"))
-print(green("hello"))
-print(blue("hello"))
-print(yellow("hello"))
+print(Terminal().red("hello"))
+print(Terminal().green("hello"))
+print(Terminal().blue("hello"))
+print(Terminal().yellow("hello"))
