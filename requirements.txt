@@ -1,4 +1,4 @@
 # Call with pip3 install -r requirements.txt
 requests
 stdiomask
-blessed
+blessed>=1.18.0
