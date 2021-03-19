@@ -74,6 +74,10 @@ def follow_submit(target_session, run_guid):
             blessed.Terminal().clear_eol, 
             end = "", flush = True)
 
+        time.sleep(1)
+
+    print("")
+
     if json_response["status"] == "ready":
         if json_response["verdict"] == "AC" : print(ac_verdict) 
         if json_response["verdict"] == "WA" : print(wa_verdict)
