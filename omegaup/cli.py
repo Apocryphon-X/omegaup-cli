@@ -64,11 +64,12 @@ def follow_submit(target_session, run_guid):
         run_status_response = Run(target_session).status(run_guid)
         json_response = run_status_response.json()
         
-        print(info_status + "Actualizando", end = "")
+        print(info_status + "Actualizando", end = "", flush = True)
         for _ in range(3):
-            print(".", end = "")
+            print(".", end = "", flush = True)
             time.sleep(0.5)
-        print(" ")
+
+        print("\r" + blessed.Terminal().clear_eol, end = "", flush = True)
 
     if json_response["status"] == "ready":
         if json_response["verdict"] == "AC" : print(ac_verdict) 
