@@ -41,7 +41,7 @@ Listado de cracterísticas **principales** por desarrollar en la OmegaUp CLI.
 ---
 
 - ¹ : De momento solo se pueden hacer envios en C++11 (gcc), a problemas por separado.
-- ² : Actualmente, la CLI solo muestra el veredicto del envio recien subido. (Sin mostrar datos adicionales)
+- ² : Actualmente la CLI solo muestra el veredicto del envio recien subido, sin mostrar datos adicionales.
 
 # Inspiraciones
 
