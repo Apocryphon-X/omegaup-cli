@@ -31,13 +31,13 @@ chmod +x install.sh                                      # Otorga permisos de ej
 
 Listado de cracterísticas principales por desarrollar en la CLI.
 
-- [x] Realizar envios.¹
-- [x] Mostrar veredicto de el envio.²
-- [ ] Organizar cursos. 
-- [ ] Administrar concursos. 
-- [ ] Administrar y crear problemas.
-- [ ] Envio de clarificaciones. 
-- [ ] Administrar perfil. 
+
+- [ ] Administrar concursos y obtener scoreboards.
+- [x] Realizar envios a OmegaUp.¹
+- [ ] Envio y listado de clarificaciones en problemarios.
+- [x] Mostrar veredicto de envios.²
+- [ ] Organizar cursos y gestionar usuarios.
+- [ ] Administrar, crear o modificar problemas.
 
 ---
 
