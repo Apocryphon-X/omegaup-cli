@@ -49,6 +49,7 @@ Listado de cracterísticas **principales** por desarrollar en la OmegaUp CLI.
 - [Codeforces CLI¹][2] - *"A simple command line tool for Codeforces coders."*
 - [ProtonVPN Linux CLI¹][3] - *"Linux command-line client for ProtonVPN. Written in Python."*
 - [Github CLI¹][4] - *"GitHub’s official command line tool."*
+- [CF-Tool¹][5] - *"Codeforces Tool is a command-line interface tool for Codeforces."*
 
 ¹ : "OmegaUp CLI" is **not** officially affiliated with this organization or project.
 
@@ -56,3 +57,4 @@ Listado de cracterísticas **principales** por desarrollar en la OmegaUp CLI.
 [2]: https://github.com/ahmed-dinar/codeforces-cli
 [3]: https://github.com/ProtonVPN/linux-cli
 [4]: https://github.com/cli/cli
+[5]: https://github.com/xalanq/cf-tool
