@@ -56,6 +56,7 @@ def follow_submit(target_session, run_guid):
     
     # Debugging Output
     # print(json.dumps(json_response, indent = 4, sort_keys = True))
+
     run_status_response = Run(target_session).status(run_guid)
     json_response = run_status_response.json()
     print(info_status + "Evaluación en curso. (Esperando veredicto)")
@@ -103,7 +104,8 @@ def main():
             if cli_arg == "subir":
                 submit_success, submit_guid = make_submit(main_session)
                 if submit_success:
-                    follow_submit(main_session, submit_guid)
+                    with blessed.Terminal().hidden_cursor():
+                        follow_submit(main_session, submit_guid)
 
 
 if __name__ == "__main__":
