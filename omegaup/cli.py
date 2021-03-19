@@ -60,11 +60,12 @@ def follow_submit(target_session, run_guid):
     json_response = run_status_response.json()
     print(info_status + "Evaluación en curso. (Esperando veredicto)")
 
+    
+    print(info_status + "Actualizando", end = "", flush = True)
     while json_response["status"] == "waiting":
         run_status_response = Run(target_session).status(run_guid)
         json_response = run_status_response.json()
         
-        print(info_status + "Actualizando", end = "", flush = True)
         for _ in range(3):
             print(".", end = "", flush = True)
             time.sleep(1)
