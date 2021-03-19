@@ -69,6 +69,7 @@ def follow_submit(target_session, run_guid):
             print(".", end = "")
             time.sleep(0.5)
 
+        time.sleep(1)
         print("\r" + blessed.Terminal().clear_eol)
     
     if json_response["status"] == "ready":
