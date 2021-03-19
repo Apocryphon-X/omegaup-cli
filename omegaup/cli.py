@@ -76,7 +76,7 @@ def follow_submit(target_session, run_guid):
 
         time.sleep(1)
 
-    print("")
+    print("\r", end = "")
 
     if json_response["status"] == "ready":
         if json_response["verdict"] == "AC" : print(ac_verdict) 
