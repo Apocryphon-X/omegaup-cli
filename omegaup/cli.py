@@ -34,18 +34,27 @@ def make_submit(target_session):
     submit_path = input(add_status + "Archivo a enviar: ")
     problem_alias = input(question_status + "Alias de el problema: ")
 
-    success, run_response = Run(target_session).create(submit_path, problem_alias)
+    getting_file_success, run_response = Run(target_session).create(submit_path, problem_alias)
 
     if type(run_response) != type(None):
         # This will be useful for keeping track of submits
         json_response = run_response.json() 
 
-    if not success:
+    if not getting_file_success:
         print(error_status + "Archivo no encontrado, verifica si la ruta es correcta.")
+        return False, None
     else:
-        print(ok_status + "Envio realizado con exito.")
-        # Debugging output
-        # print(run_response.json())
+        if "status" in json_response:
+            if json_response["status"] == "ok":
+                print(ok_status + "Envio realizado con exito.")
+                return True, json_response["guid"]
+            
+            print(error_status + json_response["error"])
+            return False, None
+        return False, None
+        
+def follow_submit(target_session, run_guid):
+    print(Run(target_session).details(run_guid).json())
 
 def main():
 
@@ -60,7 +69,8 @@ def main():
         else:
             cli_arg = sys.argv[submit_idx + 1]
             if cli_arg == "subir":
-                make_submit(main_session)
+                submit_guid = make_submit(main_session)
+                follow_submit(main_session, submit_guid)
 
 
 if __name__ == "__main__":
