@@ -33,7 +33,6 @@ Listado de cracterísticas principales por desarrollar en la CLI.
 
 - [x] Realizar envios.¹
 - [x] Mostrar veredicto de el envio.²
-
 - [ ] Organizar cursos. 
 - [ ] Administrar concursos. 
 - [ ] Administrar y crear problemas.
