@@ -67,7 +67,7 @@ def follow_submit(target_session, run_guid):
         print(info_status + "Actualizando", end = "", flush = True)
         for _ in range(3):
             print(".", end = "", flush = True)
-            time.sleep(0.5)
+            time.sleep(0.8)
 
         print("\r" + blessed.Terminal().clear_eol, end = "", flush = True)
 
