@@ -29,8 +29,7 @@ chmod +x install.sh                                      # Otorga permisos de ej
 
 # Características
 
-Listado de cracterísticas principales por desarrollar en la CLI.
-
+Listado de cracterísticas **principales** por desarrollar en la OmegaUp CLI. 
 
 - [ ] Administrar concursos y obtener scoreboards.
 - [x] Realizar envios a OmegaUp.¹
