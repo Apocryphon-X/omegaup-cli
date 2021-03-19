@@ -48,13 +48,16 @@ def make_submit(target_session):
             if json_response["status"] == "ok":
                 print(ok_status + "Envio realizado con exito.")
                 return True, json_response["guid"]
-            
+
             print(error_status + json_response["error"])
             return False, None
         return False, None
         
 def follow_submit(target_session, run_guid):
-    print(Run(target_session).details(run_guid).json())
+    run_status_response = Run(target_session).status(run_guid)
+    json_response = run_status_response.json()
+
+    print(json.dump(json_response, indent = 4, sort_keys = True))
 
 def main():
 

@@ -22,11 +22,17 @@ class Run:
         return True, self.session.post(url = self.endpoint + "/create",
             params = run_data)
 
-    # What is "run_alias"? Is it the run guid?
-    def details(self, run_alias):
+    def details(self, run_guid):
         run_data = get_dict("api-run-details")
 
-        run_data["run_alias"] = run_alias
+        run_data["run_alias"] = run_guid
         return self.session.post(url = self.endpoint + "/details", 
+            params = run_data)
+    
+    def status(self, run_guid):
+        run_data = get_dict("api-run-status")
+
+        run_data["run_alias"] = run_guid
+        return self.session.post(url = self.endpoint + "/status",
             params = run_data)
 
