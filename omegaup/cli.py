@@ -64,7 +64,7 @@ def follow_submit(target_session, run_guid):
         run_status_response = Run(target_session).status(run_guid)
         json_response = run_status_response.json()
         
-        print(info_status + "Actualizando")
+        print(info_status + "Actualizando", end = "")
         for _ in range(3):
             print(".", end = "")
             time.sleep(0.2)
