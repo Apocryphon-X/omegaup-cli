@@ -1,10 +1,9 @@
 
-# Little implementation of the OmegaUp API
-
+# Little implementation of 
+# the OmegaUp API
 from .run import *
 from .user import *
 from .utils import *
-
 
 # Added new "help" directory in order to avoid hardcoding
 def show_guide(target_menu):
@@ -54,10 +53,35 @@ def make_submit(target_session):
         return False, None
         
 def follow_submit(target_session, run_guid):
+    
+    # Debugging Output
+    # print(json.dumps(json_response, indent = 4, sort_keys = True))
     run_status_response = Run(target_session).status(run_guid)
     json_response = run_status_response.json()
+    print(info_status + "Evaluación en curso. (Esperando veredicto)")
 
-    print(json.dumps(json_response, indent = 4, sort_keys = True))
+    while json_response["status"] == "waiting":
+        run_status_response = Run(target_session).status(run_guid)
+        json_response = run_status_response.json()
+        
+        print(info_status + "Actualizando")
+        for _ in range(3):
+            print(".", end = "")
+            time.sleep(0.2)
+
+        print(blessed.Terminal().clear_eol)
+    
+    if json_response["status"] == "ready":
+        if json_response["verdict"] == "AC" : print(ac_verdict) 
+        if json_response["verdict"] == "WA" : print(wa_verdict)
+        if json_response["verdict"] == "CE" : print(ce_verdict)
+        if json_response["verdict"] == "JE" : print(je_verdict)
+        if json_response["verdict"] == "PA" : print(pa_verdict) 
+
+        if json_response["verdict"] == "RTE" : print(rte_verdict) 
+        if json_response["verdict"] == "MLE" : print(mle_verdict) 
+        if json_response["verdict"] == "OLE" : print(ole_verdict) 
+        if json_response["verdict"] == "TLE" : print(tle_verdict)
 
 def main():
 
