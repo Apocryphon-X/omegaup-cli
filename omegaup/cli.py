@@ -67,7 +67,7 @@ def follow_submit(target_session, run_guid):
         print(info_status + "Actualizando", end = "", flush = True)
         for _ in range(3):
             print(".", end = "", flush = True)
-            time.sleep(0.8)
+            time.sleep(1)
 
         print("\r" + blessed.Terminal().clear_eol, end = "", flush = True)
 
@@ -96,8 +96,9 @@ def main():
         else:
             cli_arg = sys.argv[submit_idx + 1]
             if cli_arg == "subir":
-                submit_guid = make_submit(main_session)
-                follow_submit(main_session, submit_guid)
+                submit_success, submit_guid = make_submit(main_session)
+                if submit_success:
+                    follow_submit(main_session, submit_guid)
 
 
 if __name__ == "__main__":
