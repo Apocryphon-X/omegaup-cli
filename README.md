@@ -32,7 +32,8 @@ chmod +x install.sh                                      # Otorga permisos de ej
 Listado de cracterísticas principales por desarrollar en la CLI.
 
 - [x] Realizar envios.¹
-- [x] Mostrar veredicto de envios recien subidos, en vivo.²
+- [x] Mostrar veredicto de el envio.²
+
 - [ ] Organizar cursos. 
 - [ ] Administrar concursos. 
 - [ ] Administrar y crear problemas.
