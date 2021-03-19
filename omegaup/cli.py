@@ -57,7 +57,7 @@ def follow_submit(target_session, run_guid):
     run_status_response = Run(target_session).status(run_guid)
     json_response = run_status_response.json()
 
-    print(json.dump(json_response, indent = 4, sort_keys = True))
+    print(json.dumps(json_response, indent = 4, sort_keys = True))
 
 def main():
 
