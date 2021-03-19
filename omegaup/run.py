@@ -20,5 +20,19 @@ class Run:
             return False, None
 
         return True, self.session.post(url = self.endpoint + "/create",
-             params = run_data)
+            params = run_data)
+
+    def details(self, run_guid):
+        run_data = get_dict("api-run-details")
+
+        run_data["run_alias"] = run_guid
+        return self.session.post(url = self.endpoint + "/details", 
+            params = run_data)
+    
+    def status(self, run_guid):
+        run_data = get_dict("api-run-status")
+
+        run_data["run_alias"] = run_guid
+        return self.session.post(url = self.endpoint + "/status",
+            params = run_data)
 
