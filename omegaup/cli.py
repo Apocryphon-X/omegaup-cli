@@ -74,8 +74,6 @@ def follow_submit(target_session, run_guid):
             blessed.Terminal().clear_eol, 
             end = "", flush = True)
 
-        time.sleep(1)
-
     print("\r", end = "")
 
     if json_response["status"] == "ready":
