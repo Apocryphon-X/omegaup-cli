@@ -90,7 +90,7 @@ def follow_submit(target_session, run_guid):
         if json_response["verdict"] == "OLE" : print(ole_verdict) 
         if json_response["verdict"] == "TLE" : print(tle_verdict)
 
-def setup_lab(target_session, problem_alias):
+def setup_env(target_session, problem_alias):
     # if not make_login(target_session):
         # return
 
@@ -104,26 +104,32 @@ def setup_lab(target_session, problem_alias):
     problem_markdown = json_details["statement"]["markdown"].splitlines()
     sample_inputs, sample_outputs = extract_cases(problem_markdown)
     
-    print(sample_inputs)
-    print(sample_outputs)
+    problem_id = json_details["problem_id"]
 
-    os.mkdir(problem_alias)
-    os.mkdir(problem_alias + "/sample_cases")
-    
+    try:
+        os.mkdir(problem_id)
+        os.mkdir(problem_id + "/sample_cases")
+    except FileExistsError:
+        print(error_status + "Entorno ya existente.")
+        return
+
     idx = 0
     for input_case in sample_inputs:
-        new_case_path = problem_alias + "/sample_cases/case_" + str(idx) + ".in"
+        new_case_path = problem_id + "/sample_cases/case_" + str(idx) + ".in"
         with open(new_case_path, "w") as new_case:
             for line in input_case:
                 new_case.write(line + "\n")
         idx += 1
     idx = 0
     for output_case in sample_outputs:
-        new_case_path = problem_alias + "/sample_cases/case_" + str(idx) + ".out"
+        new_case_path = problem_id + "/sample_cases/case_" + str(idx) + ".out"
         with open(new_case_path, "w") as new_case:
             for line in output_case:
                 new_case.write(line + "\n")
         idx += 1
+    
+    print(add_status + "Entorno generado exitosamente ", end = "")
+    print("en el directorio: " + str(problem_id) + "/")
 
 def main():
 
@@ -143,7 +149,7 @@ def main():
                     with cli_terminal.hidden_cursor():
                         follow_submit(main_session, submit_guid)
     elif "test" in sys.argv: 
-        setup_lab(main_session, "aplusb")
+        setup_env(main_session, "aplusb")
 
 
 if __name__ == "__main__":
