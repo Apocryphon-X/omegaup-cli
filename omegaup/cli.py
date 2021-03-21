@@ -1,5 +1,5 @@
 
-# Little implementation of 
+# Little implementation of
 # the OmegaUp API
 from .run import *
 from .user import *
