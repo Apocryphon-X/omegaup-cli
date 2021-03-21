@@ -91,8 +91,8 @@ def follow_submit(target_session, run_guid):
         if json_response["verdict"] == "TLE" : print(tle_verdict)
 
 def setup_lab(target_session, problem_alias):
-    if not make_login(target_session):
-        return
+    # if not make_login(target_session):
+        # return
 
     problem_details = Problem(target_session).details(problem_alias)
     json_details = problem_details.json()
@@ -105,6 +105,8 @@ def setup_lab(target_session, problem_alias):
     sample_inputs, sample_outputs = extract_cases(problem_markdown)
     print(sample_inputs)
     print(sample_outputs)
+
+    os.mkdir("testing_directory")
 
 def main():
 

@@ -45,6 +45,11 @@ def get_help(help_name):
     return importlib.resources.read_text(HELP_MODULE, 
         help_name + ".txt")
 
+
+# Some problems doesnt have "settings" -> "cases" list,
+# despite having examples in "statement" -> "markdown"
+
+# I.e: "aplusb" problem
 def extract_cases(markdown):
     
     input_cases = []
