@@ -140,15 +140,17 @@ def setup_env(target_session, problem_alias):
     print(ok_status + "Entorno generado ", end = "")
     print("en el directorio: \"" + str(problem_id) + "/\"")
 
-def env_test(file_name):
-    
+def test_env():
+
     env_path = os.getcwd()
     dir_content = os.listdir(env_path)
 
     if not ".ucl_metadata" in dir_content:
         print(error_status + "No se detecto ningun entorno en el directorio actual.")
         return
-    
+
+    target_file = input(question_status + "Archivo a probar: ") 
+
     _, file_extension = os.path.splitext(file_name)
 
     if file_extension == ".cpp": subprocess.run(["g++", "-std=c++11", file_name, "-o", "result.out"])
@@ -190,8 +192,7 @@ def main():
                 target_alias = input(question_status + "Alias de el problema: ")
                 setup_env(main_session, target_alias)
             if env_arg == "probar":
-                target_file = input(question_status + "Archivo a probar: ") 
-                env_test(target_file)
+                test_env()
                     
 
 
