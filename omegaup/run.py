@@ -2,8 +2,8 @@ from .utils import *
 
 class Run:
     endpoint = ENTRYPOINT + "/api/run"
-    def  __init__(self, target_session):
-        self.session = target_session
+    def __init__(self, target_session):
+        self.session = target_session  
 
     # Creates a new run.
     def create(self, source_path, problem_alias, language = "cpp11-gcc", contest_alias = None):

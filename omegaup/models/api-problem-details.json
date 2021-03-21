@@ -1,0 +1,9 @@
+{
+    "problem_alias" : "string",
+    "contest_alias" : "string",
+    "lang" : "string",
+    "prevent_problemset_open" : "bool|null",
+    "problemset_id" : "?",
+    "show_solvers" : "bool|null",
+    "statement_type" : "string|null"
+}   

@@ -1,9 +1,11 @@
 
 # Little implementation of
 # the OmegaUp API
+from .problem import *
 from .run import *
 from .user import *
 from .utils import *
+
 
 # Added new "help" directory in order to avoid hardcoding
 def show_guide(target_menu):
@@ -71,8 +73,7 @@ def follow_submit(target_session, run_guid):
             print(".", end = "", flush = True)
             time.sleep(1)
 
-        print(blessed.Terminal().move_left(3) + 
-            blessed.Terminal().clear_eol, 
+        print(cli_terminal.move_left(3) + cli_terminal.clear_eol, 
             end = "", flush = True)
 
     print("\r", end = "")
@@ -89,6 +90,15 @@ def follow_submit(target_session, run_guid):
         if json_response["verdict"] == "OLE" : print(ole_verdict) 
         if json_response["verdict"] == "TLE" : print(tle_verdict)
 
+def setup_lab(target_session, problem_alias):
+    if not make_login(target_session):
+        return
+
+    problem_details = Problem(target_session).details(problem_alias)
+    json_details = problem_details.json()
+
+    print(json.dumps(json_details, indent = 4, sort_keys = True))
+
 def main():
 
     main_session = requests.Session()
@@ -104,8 +114,10 @@ def main():
             if cli_arg == "subir":
                 submit_success, submit_guid = make_submit(main_session)
                 if submit_success:
-                    with blessed.Terminal().hidden_cursor():
+                    with cli_terminal.hidden_cursor():
                         follow_submit(main_session, submit_guid)
+    elif "test" in sys.argv: 
+        setup_lab(main_session, "aplusb")
 
 
 if __name__ == "__main__":
