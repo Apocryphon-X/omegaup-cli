@@ -124,8 +124,6 @@ def setup_lab(target_session, problem_alias):
             for line in output_case:
                 new_case.write(line + "\n")
         idx += 1
-    
-
 
 def main():
 
@@ -145,7 +143,7 @@ def main():
                     with cli_terminal.hidden_cursor():
                         follow_submit(main_session, submit_guid)
     elif "test" in sys.argv: 
-        setup_lab(main_session, "Los-locos-que-hacen-tick-tocks")
+        setup_lab(main_session, "aplusb")
 
 
 if __name__ == "__main__":
