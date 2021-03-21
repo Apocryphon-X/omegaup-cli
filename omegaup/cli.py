@@ -97,7 +97,7 @@ def setup_env(target_session, problem_alias):
     json_details = problem_details.json()
 
     # print(json.dumps(json_details, indent = 4, sort_keys = True))
-
+    print(ok_status + "Conexión exitosa!")
     problem_markdown = json_details["statement"]["markdown"].splitlines()
     sample_inputs, sample_outputs = extract_cases(problem_markdown)
 
@@ -130,7 +130,7 @@ def setup_env(target_session, problem_alias):
         for line in problem_markdown:
             markdown_file.write(line + "\n")
     
-    print(ok_status + "Entorno generado exitosamente ", end = "")
+    print(ok_status + "Entorno generado ", end = "")
     print("en el directorio: \"" + str(problem_id) + "/\"")
 
 def main():
