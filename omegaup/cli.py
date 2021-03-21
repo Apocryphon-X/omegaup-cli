@@ -96,7 +96,7 @@ def setup_env(target_session, problem_alias):
     problem_details = Problem(target_session).details(problem_alias)
     json_details = problem_details.json()
 
-    print(json.dumps(json_details, indent = 4, sort_keys = True))
+    # print(json.dumps(json_details, indent = 4, sort_keys = True))
 
     problem_markdown = json_details["statement"]["markdown"].splitlines()
     sample_inputs, sample_outputs = extract_cases(problem_markdown)
