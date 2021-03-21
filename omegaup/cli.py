@@ -30,7 +30,7 @@ def make_login(target_session):
 
 def make_submit(target_session):
     if not make_login(target_session):
-        return
+        return False, None
 
     problem_alias = None
 
