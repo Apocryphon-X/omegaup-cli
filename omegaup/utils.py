@@ -19,10 +19,10 @@ cli_terminal = blessed.Terminal()
 # https://blessed.readthedocs.io/en/latest/colors.html
 
 # Status Prefixes:
-add_status      =  cli_terminal.olivedrab1("[+] ")
+add_status      =  cli_terminal.darkturquoise("[+] ")
 remove_status   =  cli_terminal.orangered("[-] ")
 question_status =  cli_terminal.deepskyblue("[?] ")
-info_status     =  cli_terminal.gold("[i] ")
+info_status     =  cli_terminal.darkorchid1("[i] ")
 error_status    =  cli_terminal.crimson("[✗] ")
 ok_status       =  cli_terminal.lawngreen("[✓] ")
 
