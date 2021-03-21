@@ -91,42 +91,44 @@ def follow_submit(target_session, run_guid):
         if json_response["verdict"] == "TLE" : print(tle_verdict)
 
 def setup_env(target_session, problem_alias):
-    # if not make_login(target_session):
-        # return
-
+    
+    print(info_status + "Conectando con OmegaUp... (Esperando respuesta)")
     problem_details = Problem(target_session).details(problem_alias)
     json_details = problem_details.json()
 
     print(json.dumps(json_details, indent = 4, sort_keys = True))
 
-    print(add_status + "Printing test cases:")
-
     problem_markdown = json_details["statement"]["markdown"].splitlines()
     sample_inputs, sample_outputs = extract_cases(problem_markdown)
-    
+
     problem_id = str(json_details["problem_id"])
 
     try:
         os.mkdir(problem_id)
-        os.mkdir(problem_id + "/sample_cases")
+        os.mkdir(problem_id + "/casos_de_prueba")
     except FileExistsError:
-        print(error_status + "Entorno ya existente.")
+        print(error_status + "Ya existe un entorno para este problema.")
         return
 
     idx = 0
     for input_case in sample_inputs:
-        new_case_path = problem_id + "/sample_cases/case_" + str(idx) + ".in"
+        new_case_path = problem_id + "/casos_de_prueba/caso_" + str(idx) + ".in"
         with open(new_case_path, "w") as new_case:
             for line in input_case:
                 new_case.write(line + "\n")
         idx += 1
+
     idx = 0
     for output_case in sample_outputs:
-        new_case_path = problem_id + "/sample_cases/case_" + str(idx) + ".out"
+        new_case_path = problem_id + "/casos_de_prueba/caso_" + str(idx) + ".out"
         with open(new_case_path, "w") as new_case:
             for line in output_case:
                 new_case.write(line + "\n")
         idx += 1
+
+    with open(problem_id + "/Redacción.md", "w") as markdown_file:
+        for line in problem_markdown:
+            markdown_file.write(line + "\n")
     
     print(add_status + "Entorno generado exitosamente ", end = "")
     print("en el directorio: \"" + str(problem_id) + "/\"")
