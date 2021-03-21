@@ -142,16 +142,17 @@ def setup_env(target_session, problem_alias):
 
 def env_test(file_name):
     
-    _, file_extension = os.path.splitext(file_name)
-
-    if file_extension == ".cpp": subprocess.run(["g++", "-std=c++11", file_name, "-o", "result.out"])
-    
     env_path = os.getcwd()
     dir_content = os.listdir(env_path)
 
     if not ".ucl_metadata" in dir_content:
         print(error_status + "No se detecto ningun entorno en el directorio actual.")
         return
+    
+    _, file_extension = os.path.splitext(file_name)
+
+    if file_extension == ".cpp": subprocess.run(["g++", "-std=c++11", file_name, "-o", "result.out"])
+    
 
 
 def main():
