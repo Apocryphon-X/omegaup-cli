@@ -149,7 +149,7 @@ def test_env():
         print(error_status + "No se detecto ningun entorno en el directorio actual.")
         return
 
-    target_file = input(question_status + "Archivo a probar: ") 
+    file_name = input(question_status + "Archivo a probar: ") 
 
     _, file_extension = os.path.splitext(file_name)
 
