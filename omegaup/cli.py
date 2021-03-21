@@ -39,7 +39,7 @@ def make_submit(target_session):
         with open(".ucl_metadata", "r") as environment_data:
             print(info_status + "Entorno detectado, importando metadatos del problema...")
             meta_data = json.load(environment_data)
-            problem_alias = meta_data["title"]
+            problem_alias = meta_data["alias"]
     except FileNotFoundError:
         problem_alias = input(question_status + "Alias de el problema: ")
 
