@@ -180,9 +180,9 @@ def test_env():
                     exe_code.wait()
                 with open("./casos-ucl/" + case_name + "-result.out", "r") as result_output:
                     if output_data.read() != result_output.read():
-                        print(error_status + "Caso \"" + str(case_idx) + "\" no aprobado.")
+                        print(error_status + "Caso de prueba #" + str(case_idx) + " no aprobado.")
                     else:
-                        print(ok_status + "Caso \"" + str(case_idx) + "\" aprobado.")
+                        print(ok_status + "Caso de prueba #" + str(case_idx) + " aprobado.")
 
 
         
