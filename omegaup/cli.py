@@ -175,12 +175,14 @@ def main():
                 target_alias = input(question_status + "Alias de el problema: ")
                 setup_env(main_session, target_alias)
             if env_arg == "probar":
+                # Refactor this into a function:
                 file_name = input(question_status + "Archivo a probar: ") 
                 _, file_extension = os.path.splitext(file_name)
 
                 if file_extension == ".cpp":
                     subprocess.run(["g++", "-std=c++11", file_name, "-o", "result.out"])
                     
+
 
 
 if __name__ == "__main__":
