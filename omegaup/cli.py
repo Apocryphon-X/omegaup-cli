@@ -103,6 +103,7 @@ def setup_env(target_session, problem_alias):
 
     problem_id = str(json_details["problem_id"])
 
+    # Checking if environment already exists
     try:
         os.mkdir(problem_id)
         os.mkdir(problem_id + "/casos_de_prueba")
@@ -110,6 +111,7 @@ def setup_env(target_session, problem_alias):
         print(error_status + "Ya existe un entorno para este problema.")
         return
 
+    # Adding test cases to the environment
     idx = 0
     for input_case in sample_inputs:
         new_case_path = problem_id + "/casos_de_prueba/caso_" + str(idx) + ".in"
@@ -126,10 +128,15 @@ def setup_env(target_session, problem_alias):
                 new_case.write(line + "\n")
         idx += 1
 
+    # Adding Problem redaction
     with open(problem_id + "/Redacción.md", "w") as markdown_file:
         for line in problem_markdown:
             markdown_file.write(line + "\n")
     
+    # Dumping meta data of the problem
+    with open(problem_id + "/.ucl_metadata", "w") as meta_data_file:
+        json.dump(json_details, meta_data_file)
+
     print(ok_status + "Entorno generado ", end = "")
     print("en el directorio: \"" + str(problem_id) + "/\"")
 
