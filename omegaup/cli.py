@@ -104,7 +104,7 @@ def setup_env(target_session, problem_alias):
     problem_markdown = json_details["statement"]["markdown"].splitlines()
     sample_inputs, sample_outputs = extract_cases(problem_markdown)
     
-    problem_id = json_details["problem_id"]
+    problem_id = str(json_details["problem_id"])
 
     try:
         os.mkdir(problem_id)
