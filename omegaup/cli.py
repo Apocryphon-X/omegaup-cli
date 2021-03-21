@@ -124,7 +124,7 @@ def main():
                     with cli_terminal.hidden_cursor():
                         follow_submit(main_session, submit_guid)
     elif "test" in sys.argv: 
-        setup_lab(main_session, "comi-a-b")
+        setup_lab(main_session, "Los-locos-que-hacen-tick-tocks")
 
 
 if __name__ == "__main__":
