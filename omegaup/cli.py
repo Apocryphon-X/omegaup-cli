@@ -112,7 +112,7 @@ def setup_lab(target_session, problem_alias):
     
     idx = 0
     for input_case in sample_inputs:
-        with open("case_" + str(idx), "w") as new_case:
+        with open("sample_cases/case_" + str(idx), "w") as new_case:
             for line in input_case:
                 new_case.write(line)
         idx += 1
