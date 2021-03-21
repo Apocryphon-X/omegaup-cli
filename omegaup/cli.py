@@ -154,6 +154,8 @@ def main():
             show_guide("run")
         else:
             run_arg = sys.argv[submit_idx + 1]
+
+            # Subcommands statement
             if run_arg == "subir":
                 submit_success, submit_guid = make_submit(main_session)
                 if submit_success:
@@ -167,9 +169,19 @@ def main():
             print(error_status + "Falta un argumento.")
         else:
             env_arg = sys.argv[env_idx + 1]
+
+            # Subcommands statement
             if env_arg == "crear":
                 target_alias = input(question_status + "Alias de el problema: ")
                 setup_env(main_session, target_alias)
+            if env_arg == "probar":
+                file_name = input(question_status + "Archivo a probar: ") 
+                _, file_extension = os.path.splitext(file_name)
+
+                if file_extension == ".cpp":
+                    subprocess.run(["g++", "-std=c++11", file_name, "-o", "result.out"])
+                    
+
 
 if __name__ == "__main__":
     try: main()
