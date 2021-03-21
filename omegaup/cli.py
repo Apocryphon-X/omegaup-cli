@@ -130,7 +130,7 @@ def setup_env(target_session, problem_alias):
         for line in problem_markdown:
             markdown_file.write(line + "\n")
     
-    print(add_status + "Entorno generado exitosamente ", end = "")
+    print(ok_status + "Entorno generado exitosamente ", end = "")
     print("en el directorio: \"" + str(problem_id) + "/\"")
 
 def main():
