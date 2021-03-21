@@ -99,6 +99,11 @@ def setup_lab(target_session, problem_alias):
 
     print(json.dumps(json_details, indent = 4, sort_keys = True))
 
+    print(add_status + "Printing test cases:")
+    sample_inputs, sample_outputs = extract_cases(json_details["statement"]["markdown"])
+    print(sample_inputs)
+    print(sample_outputs)
+
 def main():
 
     main_session = requests.Session()

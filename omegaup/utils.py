@@ -44,3 +44,45 @@ def get_dict(res_name):
 def get_help(help_name):
     return importlib.resources.read_text(HELP_MODULE, 
         help_name + ".txt")
+
+def extract_cases(markdown):
+    
+    input_cases = []
+    output_cases = []
+
+    tmp_input = []
+    tmp_output = []
+
+    reg_mode = 0
+
+    for line in markdown:
+        if line.startswith("||"): 
+            line = line.replace(" ", "")
+        elif reg_mode == 1: tmp_input.append(line)
+        elif reg_mode == 2: tmp_output.append(line)
+
+        if line == "||input":
+            reg_mode = 1
+            if tmp_output:
+                output_cases.append(tmp_output)
+                tmp_output = []
+
+        if line == "||output": 
+            reg_mode = 2
+            if tmp_input:
+                input_cases.append(tmp_input)
+                tmp_input = []
+        
+        if line == "||description":
+            reg_mode = 0
+            if tmp_output:
+                output_cases.append(tmp_output)
+                tmp_output = []
+            
+        if line == "||end":
+            reg_mode = 0
+            if tmp_output:
+                output_cases.append(tmp_output)
+                tmp_output = []
+
+    return input_cases, output_cases
