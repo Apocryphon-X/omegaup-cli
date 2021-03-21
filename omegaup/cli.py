@@ -109,7 +109,14 @@ def setup_lab(target_session, problem_alias):
 
     os.mkdir(problem_alias)
     os.mkdir(problem_alias + "/sample_cases")
-    # for i in sample_inputs:
+    
+    idx = 0
+    for input_case in sample_inputs:
+        with open("case_" + str(idx), "w") as new_case:
+            for line in input_case:
+                new_case.write(line)
+        idx += 1
+    
 
 
 def main():
