@@ -106,7 +106,7 @@ def setup_env(target_session, problem_alias):
     # Checking if environment already exists
     try:
         os.mkdir(problem_id)
-        os.mkdir(problem_id + "/casos_de_prueba")
+        os.mkdir(problem_id + "/casos-ucl")
     except FileExistsError:
         print(error_status + "Ya existe un entorno para este problema.")
         return
@@ -114,7 +114,7 @@ def setup_env(target_session, problem_alias):
     # Adding test cases to the environment
     idx = 0
     for input_case in sample_inputs:
-        new_case_path = problem_id + "/casos_de_prueba/caso_" + str(idx) + ".in"
+        new_case_path = problem_id + "/casos-ucl/caso_" + str(idx) + ".in"
         with open(new_case_path, "w") as new_case:
             for line in input_case:
                 new_case.write(line + "\n")
@@ -122,7 +122,7 @@ def setup_env(target_session, problem_alias):
 
     idx = 0
     for output_case in sample_outputs:
-        new_case_path = problem_id + "/casos_de_prueba/caso_" + str(idx) + ".out"
+        new_case_path = problem_id + "/casos-ucl/caso_" + str(idx) + ".out"
         with open(new_case_path, "w") as new_case:
             for line in output_case:
                 new_case.write(line + "\n")
@@ -155,13 +155,27 @@ def test_env():
     if file_extension == ".cpp": 
         subprocess.run(["g++", "-std=c++11", file_name, "-o", "result.out"])
 
-    print(info_status + "Buscando directorio \"casos_de_prueba\"...")
-    if not "casos_de_prueba" in dir_content:
+    print(info_status + "Buscando directorio \"casos-ucl/\"...")
+    if not "casos-ucl" in dir_content:
         print(error_status + "Directorio con casos no encontrado.")
         return
     
-    cases_dir_content = os.listdir("casos_de_prueba")
-    print(cases_dir_content)
+    cases_dir_content = os.listdir("casos-ucl")
+
+    input_cases = []
+    output_cases = []
+    for file_name in cases_dir_content:
+        if file_name.endswith(".in"):  input_cases.append(file_name)
+        if file_name.endswith(".out"): output_cases.append(file_name)
+    
+    for case in input_cases:
+        case_name, _ = os.path.splitext(case)
+        # expected_output_idx = output_cases.index(case_name + ".out")
+
+        with open("./casos-ucl/" + case_name + ".in", "r") as input_data:
+            with open("./casos-ucl/" + case_name + "-result.out", "w") as output_data:
+                subprocess.Popen("./result.out", stdin = input_data, stdout = output_data)
+        
 
 def main():
 
