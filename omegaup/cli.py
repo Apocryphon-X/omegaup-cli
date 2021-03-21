@@ -129,7 +129,7 @@ def setup_env(target_session, problem_alias):
         idx += 1
     
     print(add_status + "Entorno generado exitosamente ", end = "")
-    print("en el directorio: " + str(problem_id) + "/")
+    print("en el directorio: \"" + str(problem_id) + "/\"")
 
 def main():
 
