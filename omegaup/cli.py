@@ -106,7 +106,7 @@ def setup_lab(target_session, problem_alias):
     print(sample_inputs)
     print(sample_outputs)
 
-    os.mkdir("testing_directory")
+    os.mkdir(json_details["alias"])
 
 def main():
 
