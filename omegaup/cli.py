@@ -160,7 +160,7 @@ def main():
             print(error_status + "Falta un argumento.")
         else:
             env_arg = sys.argv[env_idx + 1]
-            if env_arg == "crear"
+            if env_arg == "crear":
                 target_alias = input(question_status + "Alias de el problema: ")
                 setup_env(main_session, target_alias)
 
