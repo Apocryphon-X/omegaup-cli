@@ -168,13 +168,24 @@ def test_env():
         if file_name.endswith(".in"):  input_cases.append(file_name)
         if file_name.endswith(".out"): output_cases.append(file_name)
     
+    case_idx = 0
     for case in input_cases:
         case_name, _ = os.path.splitext(case)
         # expected_output_idx = output_cases.index(case_name + ".out")
 
         with open("./casos-ucl/" + case_name + ".in", "r") as input_data:
-            with open("./casos-ucl/" + case_name + "-result.out", "w") as output_data:
-                subprocess.Popen("./result.out", stdin = input_data, stdout = output_data)
+            with open("./casos-ucl/" + case_name + ".out", "r") as output_data:
+                with open("./casos-ucl/" + case_name + "-result.out", "w") as result_output:
+                    exe_code = subprocess.Popen("./result.out", stdin = input_data, stdout = result_output)
+                    exe_code.wait()
+                with open("./casos-ucl/" + case_name + "-result.out", "r") as result_output:
+                    if output_data.read() != result_output.read():
+                        print(error_status + "Caso \"" + str(case_idx) + "\" no aprobado.")
+                    else:
+                        print(ok_status + "Caso \"" + str(case_idx) + "\" aprobado.")
+
+
+        
         
 
 def main():
