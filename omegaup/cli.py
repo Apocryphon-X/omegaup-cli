@@ -150,12 +150,18 @@ def test_env():
         return
 
     file_name = input(question_status + "Archivo a probar: ") 
-
     _, file_extension = os.path.splitext(file_name)
 
-    if file_extension == ".cpp": subprocess.run(["g++", "-std=c++11", file_name, "-o", "result.out"])
-    
+    if file_extension == ".cpp": 
+        subprocess.run(["g++", "-std=c++11", file_name, "-o", "result.out"])
 
+    print(info_status + "Buscando directorio \"casos_de_prueba\"...")
+    if not "casos_de_prueba" in dir_content:
+        print(error_status + "Directorio con casos no encontrado.")
+        return
+    
+    cases_dir_content = os.listdir("casos_de_prueba")
+    print(cases_dir_content)
 
 def main():
 
