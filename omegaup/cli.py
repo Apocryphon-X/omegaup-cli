@@ -149,17 +149,19 @@ def test_env():
         print(error_status + "No se detecto ningun entorno en el directorio actual.")
         return
 
-    file_name = input(question_status + "Archivo a probar: ") 
-    _, file_extension = os.path.splitext(file_name)
-
-    if file_extension == ".cpp": 
-        subprocess.run(["g++", "-std=c++11", file_name, "-o", "result.out"])
-
     print(info_status + "Buscando directorio \"casos-ucl/\"...")
     if not "casos-ucl" in dir_content:
         print(error_status + "Directorio con casos no encontrado.")
         return
-    
+
+    file_name = input(question_status + "Archivo a probar: ") 
+    _, file_extension = os.path.splitext(file_name)
+
+    if file_extension == ".cpp": 
+        p = subprocess.Popen(["g++", "-std=c++11", file_name, "-o", "result.out"])
+        if p.wait() != 0:
+            return
+
     cases_dir_content = os.listdir("casos-ucl")
 
     input_cases = []
@@ -167,7 +169,7 @@ def test_env():
     for file_name in cases_dir_content:
         if file_name.endswith(".in"):  input_cases.append(file_name)
         if file_name.endswith(".out"): output_cases.append(file_name)
-    
+
     case_idx = 0
     for case in input_cases:
         case_name, _ = os.path.splitext(case)
@@ -184,9 +186,6 @@ def test_env():
                     else:
                         print(ok_status + "Caso de prueba #" + str(case_idx) + " aprobado.")
 
-
-        
-        
 
 def main():
 
