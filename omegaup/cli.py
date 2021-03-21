@@ -103,10 +103,14 @@ def setup_lab(target_session, problem_alias):
 
     problem_markdown = json_details["statement"]["markdown"].splitlines()
     sample_inputs, sample_outputs = extract_cases(problem_markdown)
+    
     print(sample_inputs)
     print(sample_outputs)
 
-    os.mkdir(json_details["alias"])
+    os.mkdir(problem_alias)
+    os.mkdir(problem_alias + "/sample_cases")
+    # for i in sample_inputs:
+
 
 def main():
 
