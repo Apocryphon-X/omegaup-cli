@@ -12,7 +12,7 @@
 Interfaz para utilizar OmegaUp desde la linea de comandos. Administra concursos, realiza envios y mucho mas sin tener que abandonar el terminal! Ocupa el comando `ucl` para llamar a la CLI de OmegaUp desde cualquier parte. Ejecutar la CLI sin parametros, llamara al menu de ayuda e información.
 
 <p align="center"> 
-  <img src="https://user-images.githubusercontent.com/40130428/111728441-8077a880-8832-11eb-9b19-1870bf705d60.gif">
+  <img src="https://user-images.githubusercontent.com/40130428/111927511-99709b80-8a76-11eb-92ae-7ef088466a86.gif">
 </p>
 
 <p align="center"> <b> Probado en:</b> Ubuntu 20.04 - WSL 1 </p>
