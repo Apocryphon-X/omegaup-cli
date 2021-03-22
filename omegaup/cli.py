@@ -196,6 +196,8 @@ def test_env():
                     else:
                         print(ok_status + "Caso de prueba #" + str(case_idx) + " aprobado.")
 
+        case_idx += 1
+
 
 def main():
 
