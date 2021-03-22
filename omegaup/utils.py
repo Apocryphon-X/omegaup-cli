@@ -92,3 +92,4 @@ def extract_cases(markdown):
                 tmp_output = []
 
     return input_cases, output_cases
+    
