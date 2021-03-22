@@ -38,6 +38,7 @@ Listado de características **principales** por desarrollar en la OmegaUp CLI.
 - [x] Mostrar veredicto de envios.²
 - [ ] Organizar cursos y gestionar usuarios.
 - [ ] Administrar, crear o modificar problemas.
+- [x] Crear entornos de trabajo de forma local.
 
 ---
 
