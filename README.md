@@ -67,8 +67,8 @@ chmod +x install.sh                                      # Otorga permisos de ej
 
 ---
 
-1: Actualmente solo se soportan envios en C++11 (gcc), a problemas por separado. <br>
-2: Temporalmente, la CLI solo muestra el veredicto del envio recien subido sin mostrar datos adicionales.
+1: De momento, solo se soportan envios en C++11 (gcc), a problemas por separado. <br>
+2: Actualmente, la CLI solo muestra el veredicto del envio recien subido sin mostrar datos adicionales.
 
 
 # Inspiraciones
