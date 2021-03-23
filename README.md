@@ -1,22 +1,48 @@
-# OmegaUp CLI - [![py_version](https://img.shields.io/badge/Python-%E2%89%A5%203.7-blue.svg?style=flat-square&logo=python&logoColor=ffffff)](https://www.python.org/downloads/) 
+<p align="justify">
+  <img src="https://user-images.githubusercontent.com/40130428/112088737-f7c07b80-8b55-11eb-95a4-bafd26d21771.png">
+  <a href="https://www.python.org/downloads/">
+    <img src="https://img.shields.io/badge/Python-%E2%89%A5%203.7-blue.svg?style=flat-square&logo=python&logoColor=ffffff">
+  </a>
+</p>
+<p align="justify">
+  <img src="https://img.shields.io/badge/Envios-En%20proceso-yellow.svg?style=flat-square">
+  <img src="https://img.shields.io/badge/Perfil-Pendiente-red.svg?style=flat-square">
+  <img src="https://img.shields.io/badge/Cursos-Pendiente-red.svg?style=flat-square">
+  <img src="https://img.shields.io/badge/Concursos-Pendiente-red.svg?style=flat-square">
+  <img src="https://img.shields.io/badge/Problemas-Pendiente-red.svg?style=flat-square">
+</p>
 
 <!-- ![Commits per month](https://img.shields.io/github/commit-activity/y/Apocryphon-X/omegaup-cli?label=Commit%20Activity&logo=GitHub&style=flat-square)
+# OmegaUp CLI - [![py_version]()](https://www.python.org/downloads/) 
+<h1 align="center">OmegaUp CLI - <img src="https://img.shields.io/badge/Python-%E2%89%A5%203.7-blue.svg?style=flat-square&logo=python&logoColor=ffffff"></h1>
+<table align="right">
+  <tr>
+    <th><b>:zap: Demostración (Ubuntu 20.04 - WSL 1)</b></th>
+  </td>
+  <tr>
+    <td><img src="https://user-images.githubusercontent.com/40130428/112084456-70233e80-8b4e-11eb-8ebb-04cc088f998d.gif"></th>
+  </tr>
+</table>
+<img align="right" src="https://user-images.githubusercontent.com/40130428/112084456-70233e80-8b4e-11eb-8ebb-04cc088f998d.gif">
 -->
 
-![Estado](https://img.shields.io/badge/Envios-en%20proceso-yellow.svg?style=flat-square)
-![Estado](https://img.shields.io/badge/Perfil-pendiente-red.svg?style=flat-square)
-![Estado](https://img.shields.io/badge/Cursos-pendiente-red.svg?style=flat-square)
-![Estado](https://img.shields.io/badge/Concursos-pendiente-red.svg?style=flat-square)
-![Estado](https://img.shields.io/badge/Problemas-pendiente-red.svg?style=flat-square)
-
-Interfaz para utilizar OmegaUp desde la linea de comandos. Administra concursos, realiza envios y mucho mas sin tener que abandonar el terminal! Ocupa el comando `ucl` para llamar a la CLI de OmegaUp desde cualquier parte. Ejecutar la CLI sin parametros, llamara al menu de ayuda e información.
-
-<p align="center"> 
-  <img src="https://user-images.githubusercontent.com/40130428/112051623-c88b1980-8b17-11eb-8be4-657151069e25.gif">
+<p align="justify">
+OmegaUp CLI es una interfaz que te permite utilizar OmegaUp desde la linea de comandos. Administra concursos, realiza envios y mucho mas sin tener que abandonar el terminal! El comando <code>ucl</code> permite llamar a la OmegaUp CLI desde cualquier parte en tu terminal. Ejecutar la CLI sin parametros mostrara el menu de ayuda.
 </p>
 
 
-<p align="center"> <b> Probado en:</b> Ubuntu 20.04 - WSL 1 </p>
+<table align="center">
+  <tr>
+    <th><b>:zap: Demostración (Ubuntu 20.04 - WSL 1)</b></th>
+  </td>
+  <tr>
+    <td><img src="https://user-images.githubusercontent.com/40130428/112093420-f8a9db00-8b5e-11eb-8f34-29c85f00eabf.gif"></th>
+  </tr>
+</table>
+
+<p align="justify">
+Ahora la OmegaUp CLI posee la habilidad de crear entornos de trabajo! Obten los datos de un problema mediante su alias e interactua con sus casos de prueba sin dejar la linea de comandos. Para crear un nuevo entorno utiliza el comando <code>ucl entorno crear</code> e ingresa el alias del problema una vez que la CLI te pida el dato. Si deseas probar tu codigo con los casos de prueba, utiliza el comando <code>ucl entorno probar</code> y obtendras los resultados.
+</p>
 
 # Instalación [![release](https://img.shields.io/github/v/release/Apocryphon-X/omegaup-cli?include_prereleases&label=Release&logo=github&style=flat-square)](https://github.com/Apocryphon-X/omegaup-cli/releases)
 
@@ -30,20 +56,21 @@ chmod +x install.sh                                      # Otorga permisos de ej
 
 # Características
 
-Listado de características **principales** por desarrollar en la OmegaUp CLI. 
+Características **principales** que implementa la OmegaUp CLI:
 
 - [ ] Administrar concursos y obtener scoreboards.
-- [x] Realizar envios a OmegaUp.¹
-- [ ] Envio y listado de clarificaciones en problemarios.
-- [x] Mostrar veredicto de envios.²
-- [ ] Organizar cursos y gestionar usuarios.
+- [x] Realizar envios a cursos, problemas y problemarios.¹
+- [ ] Uso y recopilación de Clarificaciones.
+- [x] Mostrar veredicto de envios recien subidos por el usuario.²
+- [ ] Organizar cursos y gestionar participantes.
 - [ ] Administrar, crear o modificar problemas.
-- [x] Crear entornos de trabajo de forma local.
+- [x] Crear "entornos de trabajo" de forma local.
 
 ---
 
-- ¹ : De momento solo se pueden hacer envios en C++11 (gcc), a problemas por separado.
-- ² : Actualmente la CLI solo muestra el veredicto del envio recien subido, sin mostrar datos adicionales.
+1: Actualmente solo se soportan envios en C++11 (gcc), a problemas por separado. <br>
+2: Temporalmente, la CLI solo muestra el veredicto del envio recien subido sin mostrar datos adicionales.
+
 
 # Inspiraciones
 
