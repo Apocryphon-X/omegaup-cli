@@ -36,7 +36,7 @@ OmegaUp CLI es una interfaz que te permite utilizar OmegaUp desde la linea de co
     <th><b>:zap: Demostración (Ubuntu 20.04 - WSL 1)</b></th>
   </td>
   <tr>
-    <td><img src="https://user-images.githubusercontent.com/40130428/112093420-f8a9db00-8b5e-11eb-8f34-29c85f00eabf.gif"></th>
+    <td><img src="https://user-images.githubusercontent.com/40130428/112093910-db294100-8b5f-11eb-9643-7a51b0846964.gif"></th>
   </tr>
 </table>
 
