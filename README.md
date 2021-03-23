@@ -70,6 +70,7 @@ chmod +x install.sh                                      # Otorga permisos de ej
 |  `ucl envio subir`  |        Realizar un nuevo envio         |
 |    `ucl entorno`    | Menu de ayuda para entornos de trabajo |
 | `ucl entorno crear` |    Crea un nuevo entorno de trabajo    |
+| `ucl entorno probar`|   Prueba tu codigo antes de subirlo    |
 
 
 # Inspiraciones
