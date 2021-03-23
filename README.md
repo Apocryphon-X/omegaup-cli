@@ -41,7 +41,7 @@ OmegaUp CLI es una interfaz que te permite utilizar OmegaUp desde la linea de co
 </table>
 
 <p align="center">
-  <img src="https://visitor-badge.glitch.me/badge?page_id=OmegaUp-CLI" alt="visitor badge">
+  <img src="https://visitor-badge.glitch.me/badge?page_id=OmegaUp-CLI-d1" alt="visitor badge">
 </p>
 
 <p align="justify">
