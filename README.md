@@ -40,6 +40,10 @@ OmegaUp CLI es una interfaz que te permite utilizar OmegaUp desde la linea de co
   </tr>
 </table>
 
+<p align="justify">
+  <b>Nuevo:</b> Crea entornos de trabajo, prueba tus codigos con los casos de prueba que provee un problema y mas! Para realizar estas acciones, utiliza el nuevo comando <code>ucl entorno</code> .Si deseas mas información consulta el GIF de demostración. (Menu de ayuda en proceso)
+</p>
+
 # Instalación [![release](https://img.shields.io/github/v/release/Apocryphon-X/omegaup-cli?include_prereleases&label=Release&logo=github&style=flat-square)](https://github.com/Apocryphon-X/omegaup-cli/releases)
 
 Omegaup CLI esta en fase Alpha, por lo que el codigo actual esta **INCOMPLETO.**
@@ -50,13 +54,7 @@ chmod +x install.sh                                      # Otorga permisos de ej
 ./install.sh                                             # Ejecuta el script de instalación.
 ```
 
-# Características
-
-<p align="justify">
-Ahora la OmegaUp CLI posee la habilidad de crear entornos de trabajo! Obten los datos de un problema mediante su alias e interactua con sus casos de prueba sin dejar la linea de comandos. Para crear un nuevo entorno utiliza el comando <code>ucl entorno crear</code> e ingresa el alias del problema una vez que la CLI te pida el dato. Si deseas probar tu codigo con los casos de prueba, utiliza el comando <code>ucl entorno probar</code> y obtendras los resultados.
-</p>
-
-#### Caracteristicas por desarrollar:
+# Características por desarrollar:
 
 - [ ] Administrar concursos y obtener scoreboards.
 - [x] Realizar envios a cursos, problemas y problemarios.¹
