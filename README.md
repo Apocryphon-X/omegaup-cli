@@ -6,10 +6,10 @@
 </p>
 <p align="justify">
   <img src="https://img.shields.io/badge/Envios-En%20proceso-yellow.svg?style=flat-square">
+  <img src="https://img.shields.io/badge/Problemas-En%20proceso-yellow.svg?style=flat-square">
   <img src="https://img.shields.io/badge/Perfil-Pendiente-red.svg?style=flat-square">
   <img src="https://img.shields.io/badge/Cursos-Pendiente-red.svg?style=flat-square">
   <img src="https://img.shields.io/badge/Concursos-Pendiente-red.svg?style=flat-square">
-  <img src="https://img.shields.io/badge/Problemas-Pendiente-red.svg?style=flat-square">
 </p>
 
 <!-- ![Commits per month](https://img.shields.io/github/commit-activity/y/Apocryphon-X/omegaup-cli?label=Commit%20Activity&logo=GitHub&style=flat-square)
