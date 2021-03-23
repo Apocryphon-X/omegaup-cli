@@ -61,20 +61,15 @@ chmod +x install.sh                                      # Otorga permisos de ej
 ./install.sh                                             # Ejecuta el script de instalación.
 ```
 
-# Características
+# Comandos actuales
 
-- [ ] Administrar concursos y obtener scoreboards.
-- [x] Realizar envios a cursos, problemas y problemarios.¹
-- [ ] Uso y recopilación de Clarificaciones.
-- [x] Mostrar veredicto de envios recien subidos por el usuario.²
-- [ ] Organizar cursos y gestionar participantes.
-- [ ] Administrar, crear o modificar problemas.
-- [x] Crear "entornos de trabajo" de forma local.
-
----
-
-1: De momento, solo se soportan envios en C++11 (gcc) a problemas por separado. <br>
-2: Actualmente, la CLI solo muestra el veredicto del envio recien subido sin mostrar datos adicionales.
+|       Comando       |                Descripción             |
+|:--------------------|:---------------------------------------|
+|        `ucl`        |         Menu de ayuda general          |
+|   `ucl envio`       |       Menu de ayuda para envios        |
+|  `ucl envio subir`  |        Realizar un nuevo envio         |
+|    `ucl entorno`    | Menu de ayuda para entornos de trabajo |
+| `ucl entorno crear` |    Crea un nuevo entorno de trabajo    |
 
 
 # Inspiraciones
