@@ -61,7 +61,7 @@ chmod +x install.sh                                      # Otorga permisos de ej
 ./install.sh                                             # Ejecuta el script de instalación.
 ```
 
-# Características por desarrollar:
+# Características
 
 - [ ] Administrar concursos y obtener scoreboards.
 - [x] Realizar envios a cursos, problemas y problemarios.¹
