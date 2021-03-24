@@ -35,7 +35,7 @@ chmod +x install.sh                                      # Otorga permisos de ej
 
 # Comandos actuales
 
-Para ver una demostración de la CLI en acción, da click [aquí.](https://user-images.githubusercontent.com/40130428/112234477-3a3f9200-8c02-11eb-9086-fb65345f11f6.gif)
+Si deseas ver una demostración de la CLI en acción, da click [aquí.](https://user-images.githubusercontent.com/40130428/112234477-3a3f9200-8c02-11eb-9086-fb65345f11f6.gif)
 
 |       Comando       |                Descripción             |
 |:--------------------|:---------------------------------------|
