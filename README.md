@@ -55,7 +55,20 @@ Si deseas ver una demostración de la CLI en acción, da click [aquí.](https://
 - [Github CLI¹][4] - *"GitHub’s official command line tool."*
 - [CF-Tool¹][5] - *"Codeforces Tool is a command-line interface tool for Codeforces."*
 
-¹ : "OmegaUp CLI" is **not** officially affiliated with this organization or project.
+¹ : "OmegaUp CLI" is **not** formally affiliated with this organization or project.
+
+
+
+# License
+
+<img align="right" src="https://user-images.githubusercontent.com/40130428/112392193-a253ae00-8cbe-11eb-8a27-729c23729923.png">
+
+<p align="justify">
+  <a href="https://github.com/Apocryphon-X/omegaup-cli">Apocryphon-X/omegaup-cli</a> is licensed under the MIT License. A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
+  
+More details can be found in the <a href="https://github.com/Apocryphon-X/omegaup-cli/blob/main/LICENSE.md"><code>LICENSE.md</code></a> file.
+</p>
+</details>
 
 [1]: https://github.com/omegaup/omegaup/blob/master/frontend/server/src/Controllers/README.md
 [2]: https://github.com/ahmed-dinar/codeforces-cli
