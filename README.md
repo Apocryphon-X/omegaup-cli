@@ -34,9 +34,17 @@ chmod +x install.sh                                      # Otorga permisos de ej
 ```
 
 
+
 # Comandos actuales
 
-<img align="right" src="https://user-images.githubusercontent.com/40130428/112232970-26def780-8bff-11eb-9fd8-579dea4c26c8.gif">
+<table align="right">
+  <tr>
+    <th><b>:zap: Demostración (Ubuntu 20.04 - WSL 1)</b></th>
+  </tr>
+  <tr>
+    <td><img align="center" src="https://user-images.githubusercontent.com/40130428/112232970-26def780-8bff-11eb-9fd8-579dea4c26c8.gif"></td>
+  </tr>
+</table>
 
 |       Comando       |                Descripción             |
 |:--------------------|:---------------------------------------|
