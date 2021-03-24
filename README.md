@@ -65,7 +65,6 @@ Si deseas ver una demostración de la CLI en acción, da click [aquí.](https://
 
 <p align="justify">
   <a href="https://github.com/Apocryphon-X/omegaup-cli">Apocryphon-X/omegaup-cli</a> is licensed under the MIT License. A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
-  
 More details can be found in the <a href="https://github.com/Apocryphon-X/omegaup-cli/blob/main/LICENSE.md"><code>LICENSE.md</code></a> file.
 </p>
 </details>
