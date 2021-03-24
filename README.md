@@ -33,11 +33,9 @@ chmod +x install.sh                                      # Otorga permisos de ej
 ./install.sh                                             # Ejecuta el script de instalación.
 ```
 
-
-
 # Comandos actuales
 
-Para ver una demostración de la CLI en acción, da click [aquí.](https://user-images.githubusercontent.com/40130428/112232970-26def780-8bff-11eb-9fd8-579dea4c26c8.gif)
+Para ver una demostración de la CLI en acción, da click [aquí.](https://user-images.githubusercontent.com/40130428/112234477-3a3f9200-8c02-11eb-9086-fb65345f11f6.gif)
 
 |       Comando       |                Descripción             |
 |:--------------------|:---------------------------------------|
