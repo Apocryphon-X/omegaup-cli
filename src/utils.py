@@ -22,10 +22,6 @@ AUTH_DATA = HOME_PATH.joinpath(".ucl-data")
 # https://blessed.readthedocs.io/en/latest/colors.html
 cli_terminal = blessed.Terminal()
 
-# Read the documentation in:
-# https://omegaup.github.io/libomegaup/omegaup/api.html
-cli_ctx = omegaup.api.Client()
-
 # Status Prefixes:
 add_status      =  cli_terminal.greenyellow("[+]")
 remove_status   =  cli_terminal.orangered("[-]")
