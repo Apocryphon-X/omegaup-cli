@@ -14,7 +14,7 @@ version = "0.0.6a"
 
 setup(
     name="omegaup_cli",
-    packages=["omegaup"],
+    packages=["src"],
     entry_points={
         "console_scripts": ["ucl = src.cli:main"]
     },
