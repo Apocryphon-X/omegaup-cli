@@ -1,11 +1,8 @@
 
-# Little implementation of
-# the OmegaUp API
-from .problem import *
-from .run import *
-from .user import *
+# General imports and more utilities
 from .utils import *
 
+cli_ctx = None # Waiting for first use Data 
 
 # Added new "help" directory in order to avoid hardcoding
 def show_guide(target_menu):
@@ -16,17 +13,17 @@ def make_login(target_session):
     coder_user = input(question_status + "Ingresa tu usuario o email: ")
     coder_pass = stdiomask.getpass(question_status + "Ingresa tu contraseña: ", mask = "*")
 
-    login_response = User(target_session).login(coder_user, coder_pass)
+    login_response = omegaup.api.user.login(coder_user, coder_pass)
     json_response = login_response.json()
 
     if "status" in json_response:
         if json_response["status"] == "ok":
             print(ok_status + "Inicio de sesión exitoso!\n")
-            return True
+            return True, coder_user, coder_pass
 
         print(error_status + json_response["error"] + "\n")
-        return False
-    return False
+        return False, None, None
+    return False, None, None
 
 def make_submit(target_session):
     if not make_login(target_session):
@@ -200,40 +197,6 @@ def test_env():
 
 def main():
 
-    main_session = requests.Session()
-
-    if len(sys.argv) <= 1:
-        show_guide("main")
-
-    # Submit statement
-    elif "envio" in sys.argv:
-        submit_idx = sys.argv.index("envio")
-        if submit_idx + 1 >= len(sys.argv):
-            show_guide("run")
-        else:
-            run_arg = sys.argv[submit_idx + 1]
-
-            # Subcommands statement
-            if run_arg == "subir":
-                submit_success, submit_guid = make_submit(main_session)
-                if submit_success:
-                    with cli_terminal.hidden_cursor():
-                        follow_submit(main_session, submit_guid)
-
-    # Environment statement
-    elif "entorno" in sys.argv:
-        env_idx = sys.argv.index("entorno")
-        if env_idx + 1 >= len(sys.argv):
-            print(error_status + "Falta un argumento.")
-        else:
-            env_arg = sys.argv[env_idx + 1]
-
-            # Subcommands statement
-            if env_arg == "crear":
-                target_alias = input(question_status + "Alias de el problema: ")
-                setup_env(main_session, target_alias)
-            if env_arg == "probar":
-                test_env()
 
 if __name__ == "__main__":
     try: main()
