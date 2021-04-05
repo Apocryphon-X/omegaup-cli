@@ -1,8 +1,11 @@
 
-# General imports and more utilities
+# Little implementation of
+# the OmegaUp API
+from .problem import *
+from .run import *
+from .user import *
 from .utils import *
 
-cli_ctx = None # Waiting for first use Data 
 
 # Added new "help" directory in order to avoid hardcoding
 def show_guide(target_menu):
@@ -13,17 +16,17 @@ def make_login(target_session):
     coder_user = input(question_status + "Ingresa tu usuario o email: ")
     coder_pass = stdiomask.getpass(question_status + "Ingresa tu contraseña: ", mask = "*")
 
-    login_response = omegaup.api.user.login(coder_user, coder_pass)
+    login_response = User(target_session).login(coder_user, coder_pass)
     json_response = login_response.json()
 
     if "status" in json_response:
         if json_response["status"] == "ok":
             print(ok_status + "Inicio de sesión exitoso!\n")
-            return True, coder_user, coder_pass
+            return True
 
         print(error_status + json_response["error"] + "\n")
-        return False, None, None
-    return False, None, None
+        return False
+    return False
 
 def make_submit(target_session):
     if not make_login(target_session):
@@ -197,6 +200,11 @@ def test_env():
 
 def main():
 
+<<<<<<< HEAD
+=======
+    main_session = requests.Session()
+
+>>>>>>> parent of b4db1a0 (First Steps)
     if len(sys.argv) <= 1:
         show_guide("main")
 

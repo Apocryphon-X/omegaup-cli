@@ -8,11 +8,11 @@ import time
 import blessed
 import requests
 import stdiomask
-import omegaup
 
 from . import menus as HELP_MODULE
 from . import models as JSON_MODULE
 
+ENTRYPOINT = "https://omegaup.com"
 cli_terminal = blessed.Terminal()
 
 # Read the list of colors in: 
@@ -38,17 +38,21 @@ mle_verdict = cli_terminal.darkorange("[i]: MLE - Tu solución excedio el limite
 ole_verdict = cli_terminal.dodgerblue("[i]: OLE - Limite de salida excedido. (¿Imprimiste de mas?)")
 tle_verdict = cli_terminal.firebrick1("[i]: TLE - Tu programa excedio el limite de tiempo.")
 
+def get_dict(res_name):
+    with importlib.resources.open_text(JSON_MODULE, res_name + ".json") as target_file:
+        return json.load(target_file)
+
 def get_help(help_name):
     return importlib.resources.read_text(HELP_MODULE, 
         help_name + ".txt")
+
 
 # Some problems doesnt have "settings" -> "cases" list,
 # despite having examples in "statement" -> "markdown"
 
 # I.e: "aplusb" problem
-
 def extract_cases(markdown):
-
+    
     input_cases = []
     output_cases = []
 
@@ -58,12 +62,10 @@ def extract_cases(markdown):
     reg_mode = 0
 
     for line in markdown:
-        if line.startswith("||"):
+        if line.startswith("||"): 
             line = line.replace(" ", "")
-        elif reg_mode == 1:
-            tmp_input.append(line)
-        elif reg_mode == 2:
-            tmp_output.append(line)
+        elif reg_mode == 1: tmp_input.append(line)
+        elif reg_mode == 2: tmp_output.append(line)
 
         if line == "||input":
             reg_mode = 1
@@ -71,18 +73,18 @@ def extract_cases(markdown):
                 output_cases.append(tmp_output)
                 tmp_output = []
 
-        if line == "||output":
+        if line == "||output": 
             reg_mode = 2
             if tmp_input:
                 input_cases.append(tmp_input)
                 tmp_input = []
-
+        
         if line == "||description":
             reg_mode = 0
             if tmp_output:
                 output_cases.append(tmp_output)
                 tmp_output = []
-
+            
         if line == "||end":
             reg_mode = 0
             if tmp_output:
@@ -90,3 +92,4 @@ def extract_cases(markdown):
                 tmp_output = []
 
     return input_cases, output_cases
+    
