@@ -1,30 +1,38 @@
 import importlib.resources
 import json
-import os
+import pathlib
 import subprocess
 import sys
 import time
 
 import blessed
+import omegaup
 import requests
 import stdiomask
 
 from . import menus as HELP_MODULE
 from . import models as JSON_MODULE
 
-ENTRYPOINT = "https://omegaup.com"
-cli_terminal = blessed.Terminal()
+ENTRYPOINT = "https://omegaup.com/"
+
+HOME_PATH = pathlib.Path.home()
+AUTH_DATA = HOME_PATH.joinpath(".ucl-data")
 
 # Read the list of colors in: 
 # https://blessed.readthedocs.io/en/latest/colors.html
+cli_terminal = blessed.Terminal()
+
+# Read the documentation in:
+# https://omegaup.github.io/libomegaup/omegaup/api.html
+cli_ctx = omegaup.api.Client()
 
 # Status Prefixes:
-add_status      =  cli_terminal.greenyellow("[+] ")
-remove_status   =  cli_terminal.orangered("[-] ")
-question_status =  cli_terminal.deepskyblue("[?] ")
-info_status     =  cli_terminal.slateblue2("[i] ")
-error_status    =  cli_terminal.crimson("[✗] ")
-ok_status       =  cli_terminal.lawngreen("[✓] ")
+add_status      =  cli_terminal.greenyellow("[+]")
+remove_status   =  cli_terminal.orangered("[-]")
+question_status =  cli_terminal.deepskyblue("[?]")
+info_status     =  cli_terminal.slateblue2("[i]")
+error_status    =  cli_terminal.crimson("[✗]")
+ok_status       =  cli_terminal.lawngreen("[✓]")
 
 # Veredicts:
 ac_verdict = cli_terminal.lawngreen("[✓]: AC - Tu solución fue aceptada!")
@@ -37,10 +45,6 @@ rte_verdict = cli_terminal.lightslateblue("[✗]: RTE - Tu programa se cerro de 
 mle_verdict = cli_terminal.darkorange("[i]: MLE - Tu solución excedio el limite de memoria.")
 ole_verdict = cli_terminal.dodgerblue("[i]: OLE - Limite de salida excedido. (¿Imprimiste de mas?)")
 tle_verdict = cli_terminal.firebrick1("[i]: TLE - Tu programa excedio el limite de tiempo.")
-
-def get_dict(res_name):
-    with importlib.resources.open_text(JSON_MODULE, res_name + ".json") as target_file:
-        return json.load(target_file)
 
 def get_help(help_name):
     return importlib.resources.read_text(HELP_MODULE, 

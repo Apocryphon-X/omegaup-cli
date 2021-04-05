@@ -16,7 +16,7 @@ setup(
     name="omegaup_cli",
     packages=["omegaup"],
     entry_points={
-        "console_scripts": ["ucl = omegaup.cli:main"]
+        "console_scripts": ["ucl = src.cli:main"]
     },
     version=version,
     description="CLI for OmegaUp users",
@@ -28,13 +28,14 @@ setup(
     install_requires=[
         "requests",
         "stdiomask",
-        "blessed>=1.18.0"
+        "blessed>=1.18.0",
+        "omegaup>=1.3.0"
     ],
-  # package_data={
-  #     "omegaup": ["models/*"]
-  # },
-    include_package_data = True,
-    python_requires=">=3.7",
+    #    package_data={
+    #        "omegaup": ["models/*"]
+    #    },
+    include_package_data=True,
+    python_requires=">=3.8",
     classifiers=[
         "Development Status :: Early Alpha",
         "Environment :: Console",

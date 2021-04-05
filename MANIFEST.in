@@ -1,2 +1,2 @@
-include omegaup/models/*
-include omegaup/menus/*
+include src/models/*
+include src/menus/*
