@@ -198,7 +198,6 @@ def test_env():
 
         case_idx += 1
 
-
 def main():
 
     main_session = requests.Session()
@@ -235,9 +234,6 @@ def main():
                 setup_env(main_session, target_alias)
             if env_arg == "probar":
                 test_env()
-                    
-
-
 
 if __name__ == "__main__":
     try: main()
