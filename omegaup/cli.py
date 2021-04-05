@@ -197,6 +197,38 @@ def test_env():
 
 def main():
 
+    if len(sys.argv) <= 1:
+        show_guide("main")
+
+    # Submit statement
+    elif "envio" in sys.argv:
+        submit_idx = sys.argv.index("envio")
+        if submit_idx + 1 >= len(sys.argv):
+            show_guide("run")
+        else:
+            run_arg = sys.argv[submit_idx + 1]
+
+            # Subcommands statement
+            if run_arg == "subir":
+                submit_success, submit_guid = make_submit(main_session)
+                if submit_success:
+                    with cli_terminal.hidden_cursor():
+                        follow_submit(main_session, submit_guid)
+
+    # Environment statement
+    elif "entorno" in sys.argv:
+        env_idx = sys.argv.index("entorno")
+        if env_idx + 1 >= len(sys.argv):
+            print(error_status + "Falta un argumento.")
+        else:
+            env_arg = sys.argv[env_idx + 1]
+
+            # Subcommands statement
+            if env_arg == "crear":
+                target_alias = input(question_status + "Alias de el problema: ")
+                setup_env(main_session, target_alias)
+            if env_arg == "probar":
+                test_env()
 
 if __name__ == "__main__":
     try: main()
