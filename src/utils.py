@@ -6,7 +6,7 @@ import sys
 import time
 
 import blessed
-import omegaup
+import omegaup.api
 import requests
 import stdiomask
 
