@@ -200,11 +200,8 @@ def test_env():
 
 def main():
 
-<<<<<<< HEAD
-=======
     main_session = requests.Session()
 
->>>>>>> parent of b4db1a0 (First Steps)
     if len(sys.argv) <= 1:
         show_guide("main")
 
