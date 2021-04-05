@@ -9,8 +9,8 @@ def show_guide(target_menu):
     if target_menu == "run" : print(get_help("run-help"))
 
 def get_credentials():
-    coder_user = input(question_status + "Ingresa tu usuario o email: ")
-    coder_pass = stdiomask.getpass(question_status + "Ingresa tu contraseña: ", mask = "*")
+    coder_user = input(f"{question_status} Ingresa tu usuario o email: ")
+    coder_pass = stdiomask.getpass(f"{question_status} Ingresa tu contraseña: ", mask = "*")
 
     return coder_user, coder_pass
 
@@ -25,10 +25,12 @@ def test_login():
 
     if "status" in json_response:
         if json_response["status"] == "ok":
-            print(ok_status + "Inicio de sesión exitoso!\n")
+            print(f"{ok_status} Inicio de sesión exitoso!\n")
             return True, cr_username, cr_password
 
-        print(error_status + json_response["error"] + "\n")
+        error_msg = json_response["error"]
+        print(f"{error_status} {error_msg}\n")
+
         return False, None, None
     return False, None, None
 
