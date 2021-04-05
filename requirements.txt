@@ -2,3 +2,4 @@
 requests
 stdiomask
 blessed>=1.18.0
+omegaup>=1.3.0
