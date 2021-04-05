@@ -39,7 +39,8 @@ def main():
    # Checking if there is information
     if not pathlib.Path.is_file(AUTH_DATA):
 
-        api_token = "None"
+        api_token = None
+        token_name = None
 
         print(f"{info_status} No se encontro información de uso previo.")
         print(f"{info_status} Estableciendo configuracion inicial de la CLI...\n")
@@ -67,10 +68,10 @@ def main():
             api_response = first_use_ctx.user.createAPIToken(name = token_name)
             api_token = api_response["token"]
 
-            login_data = {"token_name" : token_name, "token" : api_token}
-            with open(str(AUTH_DATA), "w") as data_file:
-                data_file.write(json.dumps(login_data))
-
+        login_data = {"token_name" : token_name, "token" : api_token}
+        with open(str(AUTH_DATA), "w") as data_file:
+            data_file.write(json.dumps(login_data))
+            print(f"{info_status} Token almacenado correctamente!")
 
 if __name__ == "__main__":
     try: main()
