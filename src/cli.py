@@ -40,8 +40,8 @@ def main():
         print(f"{info_status} Estableciendo configuracion inicial de la CLI...\n")
 
         print(f"{question_status} Seleccione la opción de su preferencia:")
-        print(" [1] Proporcionar un APIToken ya existente.")
-        print(" [2] Generar un nuevo APIToken.")
+        print("[1] Proporcionar un APIToken ya existente.")
+        print("[2] Generar un nuevo APIToken.")
 
         answer = "0"
         while answer != "1" and answer != "2":
