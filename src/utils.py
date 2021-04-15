@@ -12,7 +12,6 @@ import stdiomask
 import click
 
 from . import menus as HELP_MODULE
-from . import models as JSON_MODULE
 
 ENTRYPOINT = "https://omegaup.com/"
 
