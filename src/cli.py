@@ -73,7 +73,7 @@ if __name__ == "__main__":
     try: main()
     except KeyboardInterrupt:
         print("\n" + remove_status + "Hasta luego!")
-else:
-    print("Debug Output @ main scope")
-    print(f"CLI_CTX: {cli_context}")
+
+print("Debug Output @ main scope")
+print(f"CLI_CTX: {cli_context}")
 
