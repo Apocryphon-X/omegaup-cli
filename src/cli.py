@@ -2,6 +2,8 @@
 # General imports and some util definitions
 from .utils import *
 
+cli_context = None
+
 @click.group()
 def main():
 
@@ -48,6 +50,8 @@ def main():
 
             TOKEN_NAME = auth_dict["token_name"]
             API_TOKEN = auth_dict["token"]
+    
+    cli_context = API_TOKEN
 
 @main.group()
 def run():
@@ -59,7 +63,7 @@ def run():
 @click.option("-ca", "--contest_alias", default = None)
 @click.option("-f/-nf", "--follow/--no-follow", default = True)
 def upload(problem_alias, file_path, contest_alias, follow):
-    print("Simple Test...")
+    print(cli_context)
 
 if __name__ == "__main__":
     try: main()
