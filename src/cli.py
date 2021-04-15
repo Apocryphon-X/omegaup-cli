@@ -3,7 +3,7 @@
 from .utils import *
 
 TOKEN_NAME = None
-API_TOKEN = None
+API_TOKEN = 0
 
 cli_ctx = None
 
