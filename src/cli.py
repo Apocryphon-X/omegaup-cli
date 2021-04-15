@@ -66,14 +66,14 @@ def run():
 @click.option("-ca", "--contest_alias", default = None)
 @click.option("-f/-nf", "--follow/--no-follow", default = True)
 def upload(problem_alias, file_path, contest_alias, follow):
-    print("Debug Output @ main()")
+    print("Debug Output @ run.upload()")
     print(f"CLI_CTX: {cli_context}")
 
 if __name__ == "__main__":
     try: main()
     except KeyboardInterrupt:
         print("\n" + remove_status + "Hasta luego!")
-
+else:
     print("Debug Output @ main scope")
     print(f"CLI_CTX: {cli_context}")
 
