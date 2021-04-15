@@ -52,6 +52,7 @@ def main():
             API_TOKEN = auth_dict["token"]
     
     cli_context = API_TOKEN
+    print("Debug Output @ main()")
 
 @main.group()
 def run():
