@@ -56,10 +56,10 @@ def run():
     pass
 
 @run.command()
-@run.argument("problem_alias")
-@run.argument("file_path")
-@run.option("-ca", "--contest_alias", default = None)
-@run.option("-f/-nf", "--follow/--no-follow", default = True)
+@click.argument("problem_alias")
+@click.argument("file_path")
+@click.option("-ca", "--contest_alias", default = None)
+@click.option("-f/-nf", "--follow/--no-follow", default = True)
 def upload(problem_alias, file_path, contest_alias, follow):
     print("Simple Test...")
 
