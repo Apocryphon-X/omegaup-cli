@@ -2,15 +2,13 @@
 # General imports and some util definitions
 from .utils import *
 
-TOKEN_NAME = None
-API_TOKEN = 0
-
-cli_ctx = None
-
 @click.group()
 def main():
 
-   # Checking if Auth information already exists
+    TOKEN_NAME = None
+    API_TOKEN = None
+
+    # Checking if Auth information already exists
     if not pathlib.Path.is_file(AUTH_DATA):
 
         print(f"{info_status} No se encontro información de uso previo.")
