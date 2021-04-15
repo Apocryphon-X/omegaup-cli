@@ -50,9 +50,11 @@ def main():
 
             TOKEN_NAME = auth_dict["token_name"]
             API_TOKEN = auth_dict["token"]
-    
+
     cli_context = API_TOKEN
     print("Debug Output @ main()")
+    print(f"API_TOKEN: {API_TOKEN}")
+    print(f"CLI_CTX: {cli_context}")
 
 @main.group()
 def run():
