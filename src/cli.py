@@ -1,46 +1,17 @@
 
-
 # General imports and some util definitions
 from .utils import *
 
-# Added new "help" directory in order to avoid hardcoding
-def show_guide(target_menu):
-    if target_menu == "main" : print(get_help("main-help"))
-    if target_menu == "run" : print(get_help("run-help"))
+TOKEN_NAME = None
+API_TOKEN = None
 
-def get_credentials():
-    coder_user = input(f"{question_status} Ingresa tu usuario o email: ")
-    coder_pass = stdiomask.getpass(f"{question_status} Ingresa tu contraseña: ", mask = "*")
+cli_ctx = None
 
-    return coder_user, coder_pass
-
-def test_login():
-
-    cr_username, cr_password = get_credentials()
-
-    req_data = {"password": cr_password, "usernameOrEmail" : cr_username}
-    req_response = requests.post(url = ENTRYPOINT + "api/user/login", data = req_data)
-
-    json_response = req_response.json()
-
-    if "status" in json_response:
-        if json_response["status"] == "ok":
-            print(f"{ok_status} Inicio de sesión exitoso!\n")
-            return True, cr_username, cr_password
-
-        error_msg = json_response["error"]
-        print(f"{error_status} {error_msg}\n")
-
-        return False, None, None
-    return False, None, None
-
+@click.group()
 def main():
 
-   # Checking if there is information
+   # Checking if Auth information already exists
     if not pathlib.Path.is_file(AUTH_DATA):
-
-        api_token = None
-        token_name = None
 
         print(f"{info_status} No se encontro información de uso previo.")
         print(f"{info_status} Estableciendo configuracion inicial de la CLI...\n")
@@ -56,22 +27,41 @@ def main():
                 print(f"{error_status} Ingrese una opción valida!")
 
         if answer == "1":
-            api_token = input(f"{question_status} Token: ")
+            API_TOKEN = input(f"{question_status} Token: ")
         if answer == "2":
             success, r_username, r_password = False, None, None
             while not success:
                 success, r_username, r_password = test_login()
-            
+
             first_use_ctx = omegaup.api.Client(username=r_username, password=r_password)
-            token_name = input(f"{question_status} Ingrese el nombre de el token que desea crear: ")
+            TOKEN_NAME = input(f"{question_status} Ingrese el nombre de el token que desea crear: ")
 
-            api_response = first_use_ctx.user.createAPIToken(name = token_name)
-            api_token = api_response["token"]
+            api_response = first_use_ctx.user.createAPIToken(name = TOKEN_NAME)
+            API_TOKEN = api_response["token"]
 
-        login_data = {"token_name" : token_name, "token" : api_token}
+        login_data = {"TOKEN_NAME" : TOKEN_NAME, "token" : API_TOKEN}
         with open(str(AUTH_DATA), "w") as data_file:
             data_file.write(json.dumps(login_data))
             print(f"{info_status} Token almacenado correctamente!")
+
+    if type(API_TOKEN) == type(None):
+        with open(AUTH_DATA, "r") as target_file:
+            auth_dict = json.load(target_file)
+
+            TOKEN_NAME = auth_dict["token_name"]
+            API_TOKEN = auth_dict["token"]
+
+@main.group()
+def run():
+    pass
+
+@run.command()
+@run.argument("problem_alias")
+@run.argument("file_path")
+@run.option("-ca", "--contest_alias", default = None)
+@run.option("-f/-nf", "--follow/--no-follow", default = True)
+def upload(problem_alias, file_path, contest_alias, follow):
+    print("Simple Test...")
 
 if __name__ == "__main__":
     try: main()

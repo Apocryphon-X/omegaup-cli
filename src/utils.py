@@ -9,6 +9,7 @@ import blessed
 import omegaup.api
 import requests
 import stdiomask
+import click
 
 from . import menus as HELP_MODULE
 from . import models as JSON_MODULE
@@ -46,6 +47,36 @@ def get_help(help_name):
     return importlib.resources.read_text(HELP_MODULE, 
         help_name + ".txt")
 
+# Added new "help" directory in order to avoid hardcoding
+def show_guide(target_menu):
+    if target_menu == "main" : print(get_help("main-help"))
+    if target_menu == "run" : print(get_help("run-help"))
+
+def get_credentials():
+    coder_user = input(f"{question_status} Ingresa tu usuario o email: ")
+    coder_pass = stdiomask.getpass(f"{question_status} Ingresa tu contraseña: ", mask = "*")
+
+    return coder_user, coder_pass
+
+def test_login():
+
+    cr_username, cr_password = get_credentials()
+
+    req_data = {"password": cr_password, "usernameOrEmail" : cr_username}
+    req_response = requests.post(url = ENTRYPOINT + "api/user/login", data = req_data)
+
+    json_response = req_response.json()
+
+    if "status" in json_response:
+        if json_response["status"] == "ok":
+            print(f"{ok_status} Inicio de sesión exitoso!\n")
+            return True, cr_username, cr_password
+
+        error_msg = json_response["error"]
+        print(f"{error_status} {error_msg}\n")
+
+        return False, None, None
+    return False, None, None
 
 # Some problems doesnt have "settings" -> "cases" list,
 # despite having examples in "statement" -> "markdown"
