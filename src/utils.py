@@ -42,6 +42,20 @@ mle_verdict = cli_terminal.darkorange("[i]: MLE - Tu solución excedio el limite
 ole_verdict = cli_terminal.dodgerblue("[i]: OLE - Limite de salida excedido. (¿Imprimiste de mas?)")
 tle_verdict = cli_terminal.firebrick1("[i]: TLE - Tu programa excedio el limite de tiempo.")
 
+
+def get_auth_data():
+    with open(AUTH_DATA, "r") as target_file:
+        auth_dict = json.load(target_file)
+
+        token_name = auth_dict["token_name"]
+        api_token = auth_dict["token"]
+
+        return token_name, api_token
+        
+def get_client():
+    _, api_token = get_auth_data()
+    return omegaup.api.Client(api_token = api_token)
+
 def get_help(help_name):
     return importlib.resources.read_text(HELP_MODULE, 
         help_name + ".txt")

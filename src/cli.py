@@ -2,16 +2,14 @@
 # General imports and some util definitions
 from .utils import *
 
-cli_context = None
-
 @click.group()
 def main():
 
-    TOKEN_NAME = None
-    API_TOKEN = None
-
     # Checking if Auth information already exists
     if not pathlib.Path.is_file(AUTH_DATA):
+
+        TOKEN_NAME = None
+        API_TOKEN = None
 
         print(f"{info_status} No se encontro información de uso previo.")
         print(f"{info_status} Estableciendo configuracion inicial de la CLI...\n")
@@ -44,17 +42,6 @@ def main():
             data_file.write(json.dumps(login_data))
             print(f"{info_status} Token almacenado correctamente!")
 
-    if type(API_TOKEN) == type(None):
-        with open(AUTH_DATA, "r") as target_file:
-            auth_dict = json.load(target_file)
-
-            TOKEN_NAME = auth_dict["token_name"]
-            API_TOKEN = auth_dict["token"]
-
-    cli_context = API_TOKEN
-    print("Debug Output @ main()")
-    print(f"API_TOKEN: {API_TOKEN}")
-    print(f"CLI_CTX: {cli_context}")
 
 @main.group()
 def run():
@@ -66,8 +53,11 @@ def run():
 @click.option("-ca", "--contest_alias", default = None)
 @click.option("-f/-nf", "--follow/--no-follow", default = True)
 def upload(problem_alias, file_path, contest_alias, follow):
-    print("Debug Output @ run.upload()")
-    print(f"CLI_CTX: {cli_context}")    
+    debug_var_a = get_auth_data()
+    debug_var_b = get_client()
+
+    print(f"Debug @ run.comand() {debug_var_a}")  
+    print(f"Debug @ run.comand() {debug_var_b}")         
 
 if __name__ == "__main__":
     main()
