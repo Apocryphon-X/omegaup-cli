@@ -49,15 +49,28 @@ def run():
 @run.command()
 @click.argument("problem_alias")
 @click.argument("file_path")
+@click.option("-l", "--language", default = "cpp11-gcc")
 @click.option("-ca", "--contest_alias", default = None)
 @click.option("-f/-nf", "--follow/--no-follow", default = True)
-def upload(problem_alias, file_path, contest_alias, follow):
-    debug_var_a = get_auth_data()
-    debug_var_b = get_client()
+def upload(problem_alias, file_path, language, contest_alias, follow):
 
-    print(f"Debug @ run.comand() {debug_var_a}")  
-    print(f"Debug @ run.comand() {debug_var_b}")         
+    try:
+        source_code = None
+        with open(file_path, "r") as target_file:
+            source_code = target_file.read()
+
+        ctx = get_client()
+        api_dict = ctx.run.create(
+            contest_alias = contest_alias,
+            problem_alias = problem_alias,
+            source = source_code,
+            language = language
+        )
+
+        print(api_dict)
+
+    except FileNotFoundError:
+        print(f"{error_status} Archivo no encontrado.")
 
 if __name__ == "__main__":
     main()
-
