@@ -37,11 +37,10 @@ def main():
             api_response = first_use_ctx.user.createAPIToken(name = TOKEN_NAME)
             API_TOKEN = api_response["token"]
 
-        login_data = {"TOKEN_NAME" : TOKEN_NAME, "token" : API_TOKEN}
+        login_data = {"token_name" : TOKEN_NAME, "token" : API_TOKEN}
         with open(str(AUTH_DATA), "w") as data_file:
             data_file.write(json.dumps(login_data))
             print(f"{info_status} Token almacenado correctamente!")
-
 
 @main.group()
 def run():
