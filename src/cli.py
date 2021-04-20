@@ -71,7 +71,7 @@ def upload(problem_alias, file_path, language, contest_alias, no_follow):
 
         if "status" in api_dict:
             if api_dict["status"] == "ok":
-                print(ok_status + "Envio realizado con exito.")
+                print(f"{ok_status} Envio realizado con exito.")
             else:
                 print(error_status + api_dict["error"])
 
@@ -80,9 +80,9 @@ def upload(problem_alias, file_path, language, contest_alias, no_follow):
 
         run_guid = api_dict["guid"]
         api_response = ctx.run.status(run_alias=run_guid)
-        print(info_status + "Evaluación en curso. (Esperando veredicto)")
+        print(f"{info_status} Evaluación en curso. (Esperando veredicto)")
         
-        print(info_status + "Actualizando", end = "", flush = True)
+        print(f"{info_status} Actualizando", end = "", flush = True)
         while api_response["status"] == "waiting":
             api_response = ctx.run.status(run_alias=run_guid)
             
