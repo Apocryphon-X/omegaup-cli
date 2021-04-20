@@ -51,7 +51,7 @@ def run():
 @click.argument("file_path")
 @click.option("-l", "--language", default = "cpp11-gcc")
 @click.option("-ca", "--contest_alias", default = None)
-@click.option("-nf", "--no-follow", default = False)
+@click.option("-nf", "--no-follow", is_flag=True, default = False)
 def upload(problem_alias, file_path, language, contest_alias, no_follow):
 
     try:
@@ -67,7 +67,7 @@ def upload(problem_alias, file_path, language, contest_alias, no_follow):
             language = language
         )
 
-        print(api_dict)
+        #   print(api_dict)
 
         if "status" in api_dict:
             if api_dict["status"] == "ok":
