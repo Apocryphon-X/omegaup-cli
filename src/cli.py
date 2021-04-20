@@ -95,6 +95,7 @@ def upload(problem_alias, file_path, language, contest_alias, no_follow):
 
         print("\r", end = "")
 
+        print(api_response) # Debug 
         if api_response["status"] == "ready":
             api_verdict = api_response["verdict"]
             if api_verdict == "AC" : print(ac_verdict) 
