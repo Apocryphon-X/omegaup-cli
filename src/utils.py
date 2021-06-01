@@ -11,7 +11,6 @@ import requests
 import stdiomask
 import click
 
-from . import menus as HELP_MODULE
 
 ENTRYPOINT = "https://omegaup.com/"
 
@@ -51,9 +50,6 @@ question_status =  cli_terminal.deepskyblue("[?]")
 info_status     =  cli_terminal.slateblue2("[i]")
 error_status    =  cli_terminal.crimson("[✗]")
 ok_status       =  cli_terminal.lawngreen("[✓]")
-
-
-
 
 def get_auth_data():
     with open(AUTH_DATA, "r") as target_file:
@@ -104,7 +100,7 @@ def test_login():
     return False, None, None
 
 # Some problems doesnt have "settings" -> "cases" list,
-# despite having examples in "statement" -> "markdown"
+# despite having examples in "statement" -> "markdown".
 
 # I.e: "aplusb" problem
 def extract_cases(markdown):
