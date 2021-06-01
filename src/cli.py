@@ -30,7 +30,7 @@ def main():
             while not success:
                 success, r_username, r_password = test_login()
 
-            first_use_ctx = omegaup.api.Client(username=r_username, password=r_password)
+            first_use_ctx = omegaup.api.Client(username = r_username, password = r_password)
             token_name = input(f"{question_status} Ingrese el nombre de el token que desea crear: ")
 
             api_response = first_use_ctx.user.createAPIToken(name = token_name)
@@ -38,7 +38,7 @@ def main():
 
         login_data = {"token_name" : token_name, "token" : api_token}
         with open(str(AUTH_DATA), "w") as data_file:
-            data_file.write(json.dumps(login_data))
+            data_file.write(json.dumps(login_data, indent = 4, sort_keys = True))
             print(f"{info_status} Token almacenado correctamente!")
 
 @main.group()
@@ -71,8 +71,6 @@ def upload(
             language = language
         )
 
-        #   print(api_dict)
-
         if "status" in api_dict:
             if api_dict["status"] == "ok":
                 print(f"{ok_status} Envío realizado con éxito.")
@@ -99,11 +97,9 @@ def upload(
 
         print("\r", end = "")
 
-        print(api_response) # Debug 
         if api_response["status"] == "ready":
             api_verdict = api_response["verdict"]
             print(omegaup_verdicts[api_verdict])
-
 
             print(f"{info_status}: Lenguaje:\t{api_response['language']}")
             print(f"{info_status}: GUID:\t{api_response['guid']}\n")
