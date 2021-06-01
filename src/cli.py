@@ -95,18 +95,18 @@ def upload(
             print(cli_terminal.move_left(3) + cli_terminal.clear_eol, 
                 end = "", flush = True)
 
-        print("\r", end = "")
+        print(f"\r{' ' * 25}")
 
         if api_response["status"] == "ready":
             api_verdict = api_response["verdict"]
             print(omegaup_verdicts[api_verdict])
 
-            print(f"{info_status}: Lenguaje:\t{api_response['language']}")
-            print(f"{info_status}: GUID:\t{api_response['guid']}\n")
+            print(f"{info_status} Lenguaje:\t{api_response['language']}")
+            print(f"{info_status} GUID:\t{api_response['guid']}\n")
 
-            print(f"{info_status}: Puntaje:\t{api_response['score']}")
-            print(f"{info_status}: Memoria:\t{api_response['memory'] / 1048576} MiB")
-            print(f"{info_status}: Tiempo: \t{api_response['runtime'] / 1000} s")
+            print(f"{info_status} Puntaje:\t{api_response['score'] * 100 : .2f} %")
+            print(f"{info_status} Memoria:\t{api_response['memory'] / 1048576} MiB")
+            print(f"{info_status} Tiempo: \t{api_response['runtime'] / 1000} s")
 
     except FileNotFoundError:
         print(f"{error_status} Archivo no encontrado, verifica si la ruta es correcta.")
