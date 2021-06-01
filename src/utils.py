@@ -22,14 +22,6 @@ AUTH_DATA = HOME_PATH.joinpath(".ucl-data")
 # https://blessed.readthedocs.io/en/latest/colors.html
 cli_terminal = blessed.Terminal()
 
-# Status Prefixes:
-add_status      =  cli_terminal.greenyellow("[+]")
-remove_status   =  cli_terminal.orangered("[-]")
-question_status =  cli_terminal.deepskyblue("[?]")
-info_status     =  cli_terminal.slateblue2("[i]")
-error_status    =  cli_terminal.crimson("[✗]")
-ok_status       =  cli_terminal.lawngreen("[✓]")
-
 # Veredicts:
 ac_verdict = cli_terminal.lawngreen("[✓]: AC - Tu solución fue aceptada!")
 pa_verdict = cli_terminal.yellow("[i]: PA - Tu solución fue parcialmente aceptada.")
@@ -41,6 +33,26 @@ rte_verdict = cli_terminal.lightslateblue("[✗]: RTE - Tu programa se cerro de 
 mle_verdict = cli_terminal.darkorange("[i]: MLE - Tu solución excedio el limite de memoria.")
 ole_verdict = cli_terminal.dodgerblue("[i]: OLE - Limite de salida excedido. (¿Imprimiste de mas?)")
 tle_verdict = cli_terminal.firebrick1("[i]: TLE - Tu programa excedio el limite de tiempo.")
+
+# Easy access
+omegaup_verdicts = {
+    "AC" : ac_verdict, "PA" : pa_verdict,
+    "WA" : wa_verdict, "JE" : je_verdict,
+    "CE" : ce_verdict,
+
+    "RTE" : rte_verdict, "MLE" : mle_verdict,
+    "OLE" : ole_verdict, "TLE" : tle_verdict
+}
+
+# Status Prefixes:
+add_status      =  cli_terminal.greenyellow("[+]")
+remove_status   =  cli_terminal.orangered("[-]")
+question_status =  cli_terminal.deepskyblue("[?]")
+info_status     =  cli_terminal.slateblue2("[i]")
+error_status    =  cli_terminal.crimson("[✗]")
+ok_status       =  cli_terminal.lawngreen("[✓]")
+
+
 
 
 def get_auth_data():
