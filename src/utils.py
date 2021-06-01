@@ -64,14 +64,14 @@ def get_client():
     _, api_token = get_auth_data()
     return omegaup.api.Client(api_token = api_token)
 
-def get_help(help_name):
-    return importlib.resources.read_text(HELP_MODULE, 
-        help_name + ".txt")
-
+# def get_help(help_name):
+#    return importlib.resources.read_text(HELP_MODULE, 
+#        help_name + ".txt")
+#
 # Added new "help" directory in order to avoid hardcoding
-def show_guide(target_menu):
-    if target_menu == "main" : print(get_help("main-help"))
-    if target_menu == "run" : print(get_help("run-help"))
+# def show_guide(target_menu):
+#    if target_menu == "main" : print(get_help("main-help"))
+#    if target_menu == "run" : print(get_help("run-help"))
 
 def get_credentials():
     coder_user = input(f"{question_status} Ingresa tu usuario o email: ")

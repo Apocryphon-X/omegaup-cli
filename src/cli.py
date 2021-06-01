@@ -104,14 +104,16 @@ def upload(
             api_verdict = api_response["verdict"]
             print(omegaup_verdicts[api_verdict])
 
-        run_data = f"""
-        - Puntaje: {1}
-        - Memoria: {1}
-        - Tiempo: {1}
-        
-        - Lenguaje: {1}
-        - GUID: {1}
-        """
+            run_data = f"""
+            - Puntaje: {api_response["score"]}
+            - Memoria: {api_response["memory"] / 1048576} MiB
+            - Tiempo: {api_response["time"] / 1000} s
+            
+            - Lenguaje: {api_response["language"]}
+            - GUID: {api_response["guid"]}
+            """
+
+            print(run_data)
 
     except FileNotFoundError:
         print(f"{error_status} Archivo no encontrado, verifica si la ruta es correcta.")
@@ -136,7 +138,7 @@ def settings(
     title, 
     source, 
     input_limit, 
-    output_limit, 
+    output_limit,       
     memory_limit,
     email_clarifications
 ):
