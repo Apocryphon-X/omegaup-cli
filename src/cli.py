@@ -116,7 +116,7 @@ def upload(
     except FileNotFoundError:
         print(f"{error_status} Archivo no encontrado, verifica si la ruta es correcta.")
 
-@main.group
+@main.group()
 def problem():
     pass
 
