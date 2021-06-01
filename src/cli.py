@@ -104,7 +104,7 @@ def upload(
             print(f"{info_status} Lenguaje:\t{api_response['language']}")
             print(f"{info_status} GUID:\t{api_response['guid']}\n")
 
-            print(f"{info_status} Puntaje:\t{api_response['score'] * 100 : .2f} %")
+            print(f"{info_status} Puntaje:\t{api_response['score'] * 100:.2f} %")
             print(f"{info_status} Memoria:\t{api_response['memory'] / 1048576} MiB")
             print(f"{info_status} Tiempo: \t{api_response['runtime'] / 1000} s")
 
