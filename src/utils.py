@@ -4,13 +4,13 @@ import pathlib
 import subprocess
 import sys
 import time
+from datetime import datetime
 
 import blessed
+import click
 import omegaup.api
 import requests
 import stdiomask
-import click
-
 
 ENTRYPOINT = "https://omegaup.com/"
 
@@ -27,7 +27,9 @@ pa_verdict = cli_terminal.yellow("[i] PA - Tu solución fue parcialmente aceptad
 wa_verdict = cli_terminal.crimson("[✗] WA - Respuesta incorrecta.")
 je_verdict = cli_terminal.white_on_firebrick3("[!] JE - Ocurrio un error inesperado con el evaluador!")
 ce_verdict = cli_terminal.orangered("[i] CE - Error de compilación.")
+ve_verdict = cli_terminal.white_on_firebrick3("[!] VE - Error del validador.")
 
+rfe_verdict = cli_terminal.firebrick1("[!] RFE - Uso de función restringida.")
 rte_verdict = cli_terminal.lightslateblue("[✗] RTE - Tu programa se cerro de forma inesperada.")
 mle_verdict = cli_terminal.darkorange("[i] MLE - Tu solución excedio el limite de memoria.")
 ole_verdict = cli_terminal.dodgerblue("[i] OLE - Limite de salida excedido. (¿Imprimiste de mas?)")
@@ -37,10 +39,11 @@ tle_verdict = cli_terminal.firebrick1("[i] TLE - Tu programa excedio el limite d
 omegaup_verdicts = {
     "AC" : ac_verdict, "PA" : pa_verdict,
     "WA" : wa_verdict, "JE" : je_verdict,
-    "CE" : ce_verdict,
+    "CE" : ce_verdict, "VE" : ve_verdict,
 
     "RTE" : rte_verdict, "MLE" : mle_verdict,
-    "OLE" : ole_verdict, "TLE" : tle_verdict
+    "OLE" : ole_verdict, "TLE" : tle_verdict,
+    "RFE" : rfe_verdict
 }
 
 # Status Prefixes:
@@ -105,11 +108,8 @@ def test_login():
 # I.e: "aplusb" problem
 def extract_cases(markdown):
     
-    input_cases = []
-    output_cases = []
-
-    tmp_input = []
-    tmp_output = []
+    input_cases, output_cases = [], []
+    tmp_input, tmp_output = [], []
 
     reg_mode = 0
 

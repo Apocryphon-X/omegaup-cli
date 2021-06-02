@@ -51,12 +51,14 @@ def run():
 @click.option("-l", "--language", default = "cpp11-gcc")
 @click.option("-ca", "--contest_alias", default = None)
 @click.option("-nf", "--no-follow", is_flag = True, default = False)
+@click.option("-r", "--raw", is_flag = True, default = False)
 def upload(
     problem_alias,
     file_path,
     language, 
     contest_alias, 
-    no_follow
+    no_follow,
+    raw
 ):
     try:
         source_code = None
@@ -71,7 +73,7 @@ def upload(
             language = language
         )
 
-        if "status" in api_dict:
+        if "status" in api_dict and not raw:
             if api_dict["status"] == "ok":
                 print(f"{ok_status} Envío realizado con éxito.")
             else:
@@ -82,73 +84,123 @@ def upload(
 
         run_guid = api_dict["guid"]
         api_response = ctx.run.status(run_alias = run_guid)
-        print(f"{info_status} Evaluación en curso. (Esperando veredicto)")
-        
-        print(f"{info_status} Actualizando", end = "", flush = True)
+
+        if not raw:
+            print(f"{info_status} Evaluación en curso. (Esperando veredicto)")
+            print(f"{info_status} Actualizando", end = "", flush = True)
+
         while api_response["status"] == "waiting":
             api_response = ctx.run.status(run_alias = run_guid)
-            
             for _ in range(3):
-                print(".", end = "", flush = True)
+                if not raw:
+                    print(".", end = "", flush = True)
                 time.sleep(1)
 
-            print(cli_terminal.move_left(3) + cli_terminal.clear_eol, 
-                end = "", flush = True)
+            if not raw:
+                print(cli_terminal.move_left(3) + cli_terminal.clear_eol, 
+                    end = "", flush = True)
 
         print(f"\r{' ' * 25}")
 
         if api_response["status"] == "ready":
-            api_verdict = api_response["verdict"]
-            print(omegaup_verdicts[api_verdict])
+            if not raw:
+                api_verdict = api_response["verdict"]
+                print(f"{omegaup_verdicts[api_verdict]}\n")
 
-            print(f"{info_status} Lenguaje:\t{api_response['language']}")
-            print(f"{info_status} GUID:\t{api_response['guid']}\n")
+                print(f"{info_status} Lenguaje:\t{api_response['language']}")
+                print(f"{info_status} GUID:\t{api_response['guid']}\n")
 
-            print(f"{info_status} Puntaje:\t{api_response['score'] * 100:.2f} %")
-            print(f"{info_status} Memoria:\t{api_response['memory'] / 1048576} MiB")
-            print(f"{info_status} Tiempo: \t{api_response['runtime'] / 1000} s")
-
+                print(f"{info_status} Puntaje:\t{api_response['score'] * 100:.2f} %")
+                print(f"{info_status} Memoria:\t{api_response['memory'] / 1048576} MiB")
+                print(f"{info_status} Tiempo: \t{api_response['runtime'] / 1000} s")
+            else:
+                print(json.dumps(api_response, indent = 4, sort_keys = True))
     except FileNotFoundError:
-        print(f"{error_status} Archivo no encontrado, verifica si la ruta es correcta.")
+        if not raw:
+            print(f"{error_status} Archivo no encontrado, verifica si la ruta es correcta.")
 
 @main.group()
-def problem():
+def contest():
     pass
 
-@problem.command()
-@click.argument("problem_alias")
-@click.option("-v", "--visibility", default = "private")
-@click.option("-t", "--title")
-@click.option("-s", "--source")
-@click.option("-il", "--input-limit")
-@click.option("-ol", "--output-limit")
-@click.option("-ml", "--memory-limit")
-@click.option("-tl", "--time-limit")
-@click.option("-ec", "--email-clarifications", is_flag = True, default = False)
-def settings(
-    problem_alias, 
-    visibility, 
-    title, 
-    source, 
-    input_limit, 
-    output_limit,       
-    memory_limit,
-    email_clarifications
-):
-    try: 
-        ctx = get_client()
-        api_dict = ctx.problem.create(
-            problem_alias = problem_alias,
-            visibility = visibility,
-            title = title,
-            source = source,
-            input_limit = input_limit,
-            ouput_limit = output_limit,
-            memory_limit = memory_limit,
-            email_clarifications = email_clarifications    
-        )
-    except FileNotFoundError:
-        print(f"{error_status} Archivo no encontrado, verifica si la ruta es correcta.")
+@contest.group()
+@click.argument("contest_alias")
+@click.option("-r", "--raw", is_flag = True, default = False)
+def details(contest_alias, raw):
+    ctx = get_client()
 
-if __name__ == "__main__":
-    main()
+    api_dict = ctx.contest.details(contest_alias)
+    
+    if raw:
+        print(json.dumps(api_dict, indent = 4, sort_keys = True))
+        return
+    
+    access = None
+
+    if api_dict['admission_mode'] == "public":
+        access = "Publico"
+    if api_dict['admission_mode'] == "private":
+        access = "Privado"
+
+    print(f"{info_status} Nombre: {api_dict['title']}")
+    print(f"{info_status} Acceso: {access}\n")
+
+    print(f"{info_status} Descripción: {api_dict['description']}")
+    print(f"{info_status} Organizador: {api_dict['director']}\n")
+    
+    print(f"{info_status} Fecha de inicio: {datetime.fromtimestamp(api_dict['start_time'])}")
+    print(f"{info_status} Fecha de fin:    {datetime.fromtimestamp(api_dict['finish_time'])}")
+
+    print(f"{info_status} {len(api_dict['problems'])} Problemas: \n")
+
+    for problem in api_dict["problems"]:
+        print(f"{info_status} {problem['letter']}. {problem['title']}")
+        print(f"{info_status} Alias: {problem['alias']}")
+        print(f"{info_status} ID: {problem['problem_id']}")
+        print(f"{info_status} Puntos: {problem['points']}\n")
+
+# @run.command()
+# def status():
+#     pass
+
+# @main.group()
+# def problem():
+#     pass
+
+# @problem.command()
+# @click.argument("problem_alias")
+# @click.option("-v", "--visibility", default = "private")
+# @click.option("-t", "--title")
+# @click.option("-s", "--source")
+# @click.option("-il", "--input-limit")
+# @click.option("-ol", "--output-limit")
+# @click.option("-ml", "--memory-limit")
+# @click.option("-tl", "--time-limit")
+# @click.option("-ec", "--email-clarifications", is_flag = True, default = False)
+# def settings(
+#     problem_alias, 
+#     visibility, 
+#     title, 
+#     source, 
+#     input_limit, 
+#     output_limit,       
+#     memory_limit,
+#     email_clarifications
+# ):
+#     try: 
+#         ctx = get_client()
+#         api_dict = ctx.problem.create(
+#             problem_alias = problem_alias,
+#             visibility = visibility,
+#             title = title,
+#             source = source,
+#             input_limit = input_limit,
+#             ouput_limit = output_limit,
+#             memory_limit = memory_limit,
+#             email_clarifications = email_clarifications    
+#         )
+#     except FileNotFoundError:
+#         print(f"{error_status} Archivo no encontrado, verifica si la ruta es correcta.")
+
+# if __name__ == "__main__":
+#     main()
