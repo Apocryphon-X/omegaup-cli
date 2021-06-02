@@ -26,14 +26,14 @@ ac_verdict = cli_terminal.lawngreen("[✓] AC - Tu solución fue aceptada!")
 pa_verdict = cli_terminal.yellow("[i] PA - Tu solución fue parcialmente aceptada.")
 wa_verdict = cli_terminal.crimson("[✗] WA - Respuesta incorrecta.")
 je_verdict = cli_terminal.white_on_firebrick3("[!] JE - Ocurrio un error inesperado con el evaluador!")
-ce_verdict = cli_terminal.orangered("[i] CE - Error de compilación.")
+ce_verdict = cli_terminal.orange("[i] CE - Error de compilación.")
 ve_verdict = cli_terminal.white_on_firebrick3("[!] VE - Error del validador.")
 
 rfe_verdict = cli_terminal.firebrick1("[!] RFE - Uso de función restringida.")
 rte_verdict = cli_terminal.lightslateblue("[✗] RTE - Tu programa se cerro de forma inesperada.")
 mle_verdict = cli_terminal.darkorange("[i] MLE - Tu solución excedio el limite de memoria.")
 ole_verdict = cli_terminal.dodgerblue("[i] OLE - Limite de salida excedido. (¿Imprimiste de mas?)")
-tle_verdict = cli_terminal.firebrick1("[i] TLE - Tu programa excedio el limite de tiempo.")
+tle_verdict = cli_terminal.goldenrod1("[i] TLE - Tu programa excedio el limite de tiempo.")
 
 # Easy access
 omegaup_verdicts = {
