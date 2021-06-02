@@ -13,6 +13,7 @@ setup(
     python_requires = ">=3.8",
 
     long_description=long_description,
+    long_description_content_type="text/markdown",
     description = "CLI for OmegaUp users.",
     license = "MIT",
     
