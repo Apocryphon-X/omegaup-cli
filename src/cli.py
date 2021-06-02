@@ -201,18 +201,20 @@ def runs(problem_alias, raw):
 
     for i_run in api_dict["runs"]:
         
-        submit_date = cli_terminal.greenyellow(str(datetime.fromtimestamp(i_run['time'])))
+        submit_date = str(datetime.fromtimestamp(i_run['time']))
         api_verdict = i_run["verdict"]
 
         print(f"{omegaup_verdicts[api_verdict]}\n")
 
-        print(f"{info_status} Fecha de envio:\t{submit_date}")
+        print(f"{info_status} Enviado:\t{submit_date}")
         print(f"{info_status} Lenguaje:\t{i_run['language']}")
         print(f"{info_status} GUID:\t{i_run['guid']}\n")
 
         print(f"{info_status} Puntaje:\t{i_run['score'] * 100:.2f} %")
         print(f"{info_status} Memoria:\t{i_run['memory'] / 1048576} MiB")
         print(f"{info_status} Tiempo: \t{i_run['runtime'] / 1000} s\n")
+
+        print("-" * 100, end = "\n\n")
 
     
 
