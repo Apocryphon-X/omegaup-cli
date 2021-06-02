@@ -46,6 +46,20 @@ def run():
     pass
 
 @run.command()
+@run.argument("guid")
+@click.option("-r", "--raw", is_flag = True, default = False)
+def source(guid, raw):
+    
+    ctx = get_client()
+    api_dict = ctx.run.source(run_alias=guid)
+
+    if raw:
+        print(json.dumps(api_dict, indent = 4, sort_keys = True))
+        return 
+    
+    print(api_dict["source"])
+
+@run.command()
 @click.argument("problem_alias")
 @click.argument("file_path")
 @click.option("-l", "--language", default = "cpp11-gcc")
