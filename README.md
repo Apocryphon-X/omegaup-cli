@@ -18,15 +18,15 @@ OmegaUp CLI es una interfaz que te permite interactuar con OmegaUp desde la line
 # Cambios
 
 <p align="justify">
-<ul>
-  <li> El parsing de argumentos ahora es gestionado mediante el modulo <a href="https://github.com/pallets/click/"><code>Click</code></a>. </li>
-  <li> Las interacciones con la API se realizan por medio de APITokens. </li>
-  <li> Se removio <b>temporalmente</b> la función de "entornos". </li>
-  <li> Se migro parte de el codigo a <a href="https://github.com/omegaup/libomegaup"><code>libomegaup</code></a>. </li>
-</ul>
+  <ul>
+    <li> El parsing de argumentos ahora es gestionado mediante el modulo <a href="https://github.com/pallets/click/"><code>Click</code></a>. </li>
+    <li> Las interacciones con la API se realizan por medio de APITokens. </li>
+    <li> Se removio <b>temporalmente</b> la función de "entornos". </li>
+    <li> Se migro parte de el codigo a <a href="https://github.com/omegaup/libomegaup"><code>libomegaup</code></a>. </li>
+  </ul>
 </p>
 
-# Instalación [![release](https://img.shields.io/github/v/release/Apocryphon-X/omegaup-cli?include_prereleases&label=Release&logo=github&style=flat-square)](https://github.com/Apocryphon-X/omegaup-cli/releases)
+# Instalación [![release][9]][10]
 
 
 <p align="justify">
@@ -68,7 +68,6 @@ cd omegaup-cli                                           # Accede al directorio.
   <a href="https://github.com/Apocryphon-X/omegaup-cli">Apocryphon-X/omegaup-cli</a> is licensed under the MIT License. A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
 More details can be found in the <a href="https://github.com/Apocryphon-X/omegaup-cli/blob/main/LICENSE.md"><code>LICENSE.md</code></a> file.
 </p>
-</details>
 
 [1]: https://github.com/omegaup/omegaup/blob/master/frontend/server/src/Controllers/README.md
 [2]: https://github.com/ahmed-dinar/codeforces-cli
@@ -78,6 +77,8 @@ More details can be found in the <a href="https://github.com/Apocryphon-X/omegau
 [6]: https://user-images.githubusercontent.com/40130428/112232970-26def780-8bff-11eb-9fd8-579dea4c26c8.gif
 [7]: https://img.shields.io/badge/Python-%E2%89%A5%203.7-blue.svg?style=flat-square&logo=python&logoColor=ffffff
 [8]: https://www.python.org/downloads/
+[9]: https://img.shields.io/github/v/release/Apocryphon-X/omegaup-cli?include_prereleases&label=Release&logo=github&style=flat-square
+[10]: https://github.com/Apocryphon-X/omegaup-cli/releases
 
 <!-- Unused
 ![Commits per month](https://img.shields.io/github/commit-activity/y/Apocryphon-X/omegaup-cli?label=Commit%20Activity&logo=GitHub&style=flat-square)
