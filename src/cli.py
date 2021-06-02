@@ -199,6 +199,8 @@ def runs(problem_alias, raw):
 
     print(f"\n{info_status} {len(api_dict['runs'])} envios:\n")
 
+    print(f"{cli_terminal.gray48('-' * 50)}\n")
+
     for i_run in api_dict["runs"]:
         
         submit_date = str(datetime.fromtimestamp(i_run['time']))
@@ -214,7 +216,7 @@ def runs(problem_alias, raw):
         print(f"{info_status} Memoria:\t{i_run['memory'] / 1048576} MiB")
         print(f"{info_status} Tiempo: \t{i_run['runtime'] / 1000} s\n")
 
-        print("-" * 55, end = "\n\n")
+        print(f"{cli_terminal.gray48('-' * 50)}\n")
 
     
 
