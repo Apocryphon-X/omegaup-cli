@@ -1,4 +1,5 @@
 # Source: https://github.com/jquast/blessed/blob/master/bin/x11_colorpicker.py
+
 # Copyright (c) 2014 Jeff Quast
 # Copyright (c) 2011 Erik Rose
 

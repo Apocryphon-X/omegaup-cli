@@ -218,8 +218,6 @@ def runs(problem_alias, raw):
 
         print(f"{cli_terminal.gray48('-' * 50)}\n")
 
-    
-
 # @problem.command()
 # @click.argument("problem_alias")
 # @click.option("-v", "--visibility", default = "private")
