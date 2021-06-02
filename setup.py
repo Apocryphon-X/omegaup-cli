@@ -2,13 +2,17 @@
 
 from setuptools import setup
 
-actual_version = "0.1.0a1"
+with open("README.md", "r", encoding="utf-8") as target_file:
+    long_description = target_file.read()
+
+actual_version = "0.1.0a2"
 
 setup(
     name = "omegaup_cli",
     version = actual_version,
     python_requires = ">=3.8",
 
+    long_description=long_description,
     description = "CLI for OmegaUp users.",
     license = "MIT",
     
