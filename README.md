@@ -15,7 +15,7 @@ OmegaUp CLI [![py_version][7]][8]
 OmegaUp CLI es una interfaz que te permite interactuar con OmegaUp desde la linea de comandos. Actualmente el proyecto se encuentra en fase Alpha por lo que hace falta implementar soporte para muchas secciones de la API. Todo issue y pull request es bienvenido. 
 </p>
 
-# Changelog
+# Cambios
 
 <p align="justify">
 <ul>
