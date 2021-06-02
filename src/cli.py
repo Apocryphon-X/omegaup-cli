@@ -149,7 +149,7 @@ def details(contest_alias, raw):
     print(f"{info_status} Organizador: {api_dict['director']}\n")
     
     print(f"{info_status} Fecha de inicio: {datetime.fromtimestamp(api_dict['start_time'])}")
-    print(f"{info_status} Fecha de fin:    {datetime.fromtimestamp(api_dict['finish_time'])}")
+    print(f"{info_status} Fecha de fin:    {datetime.fromtimestamp(api_dict['finish_time'])}\n")
 
     print(f"{info_status} {len(api_dict['problems'])} Problemas: \n")
 
