@@ -197,6 +197,19 @@ def runs(problem_alias, raw):
         print(json.dumps(api_dict, indent = 4, sort_keys = True))
         return
 
+    print(f"{info_status} {len(api_dict['runs'])} envios:")
+
+    for i_run in api_dict["runs"]:
+        api_verdict = i_run["verdict"]
+        print(f"{omegaup_verdicts[api_verdict]}\n")
+
+        print(f"{info_status} Lenguaje:\t{i_run['language']}")
+        print(f"{info_status} GUID:\t{i_run['guid']}\n")
+
+        print(f"{info_status} Puntaje:\t{i_run['score'] * 100:.2f} %")
+        print(f"{info_status} Memoria:\t{i_run['memory'] / 1048576} MiB")
+        print(f"{info_status} Tiempo: \t{i_run['runtime'] / 1000} s\n")
+
     
 
 # @problem.command()
