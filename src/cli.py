@@ -167,9 +167,23 @@ def details(contest_alias, raw):
 # def status():
 #     pass
 
-# @main.group()
-# def problem():
-#     pass
+@main.group()
+def problem():
+    pass
+
+@problem.command()
+@click.argument("problem_alias")
+@click.option("-r", "--raw", is_flag = True, default = False)
+def runs(problem_alias, raw):
+    ctx = get_client()
+
+    api_dict = ctx.problem.runs(problem_alias=problem_alias)
+
+    if raw:
+        print(json.dumps(api_dict, indent = 4, sort_keys = True))
+        return
+
+    
 
 # @problem.command()
 # @click.argument("problem_alias")
