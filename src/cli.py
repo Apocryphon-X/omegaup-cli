@@ -156,9 +156,9 @@ def details(contest_alias, raw):
 
     for problem in api_dict["problems"]:
         print(f"{info_status} {problem['letter']}. {problem['title']}")
+        print(f"{info_status} Puntos: {problem['points']}")
         print(f"{info_status} Alias: {problem['alias']}")
-        print(f"{info_status} ID: {problem['problem_id']}")
-        print(f"{info_status} Puntos: {problem['points']}\n")
+        print(f"{info_status} ID: {problem['problem_id']}\n")
 
 # @run.command()
 # def status():
