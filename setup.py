@@ -2,14 +2,6 @@
 
 from setuptools import setup
 
-long_descr = """
-A Simple CLI for OmegaUp.
-Features:
-- Make Submits.
-- Manage Contests.
-- Manage Problems.
-And more!
-"""
 actual_version = "0.1.0a0"
 
 setup(
@@ -17,8 +9,7 @@ setup(
     version = actual_version,
     python_requires = ">=3.8",
 
-    description = "CLI for OmegaUp users",
-    long_description = long_descr,
+    description = "CLI for OmegaUp users.",
     license = "MIT",
     
     author = "Dante Mendoza Leyva (Apocryphon-X)",
@@ -38,7 +29,7 @@ setup(
     ],
     
     classifiers = [
-        "Development Status :: Early Alpha",
+        "Development Status :: 3 - Alpha",
         "Environment :: Console",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
