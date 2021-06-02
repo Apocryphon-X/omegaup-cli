@@ -197,12 +197,14 @@ def runs(problem_alias, raw):
         print(json.dumps(api_dict, indent = 4, sort_keys = True))
         return
 
-    print(f"\n{info_status} {len(api_dict['runs'])} envios:")
+    submit_date = cli_terminal.greenyellow(str(datetime.fromtimestamp(api_dict['time'])))
+    print(f"\n{info_status} {len(api_dict['runs'])} envios:\n")
 
     for i_run in api_dict["runs"]:
         api_verdict = i_run["verdict"]
         print(f"{omegaup_verdicts[api_verdict]}\n")
 
+        print(f"{info_status} Fecha de envio:\t{submit_date}")
         print(f"{info_status} Lenguaje:\t{i_run['language']}")
         print(f"{info_status} GUID:\t{i_run['guid']}\n")
 
