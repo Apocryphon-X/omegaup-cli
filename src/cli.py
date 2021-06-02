@@ -142,6 +142,7 @@ def details(contest_alias, raw):
     if api_dict['admission_mode'] == "private":
         access = "Privado"
 
+    print(" ")
     print(f"{info_status} Nombre: {api_dict['title']}")
     print(f"{info_status} Acceso: {access}\n")
 
