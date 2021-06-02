@@ -5,44 +5,44 @@ from setuptools import setup
 long_descr = """
 A Simple CLI for OmegaUp.
 Features:
-- Make Submits
-- Manage Contests
-- Manage Problems
-- And more!
+- Make Submits.
+- Manage Contests.
+- Manage Problems.
+And more!
 """
-version = "0.0.6a"
+actual_version = "0.1.0a0"
 
 setup(
-    name="omegaup_cli",
-    packages=["omegaup"],
-    entry_points={
-        "console_scripts": ["ucl = omegaup.cli:main"]
+    name = "omegaup_cli",
+    version = actual_version,
+    python_requires = ">=3.8",
+
+    description = "CLI for OmegaUp users",
+    long_description = long_descr,
+    license = "MIT",
+    
+    author = "Dante Mendoza Leyva (Apocryphon-X)",
+    author_email = "apocryphon.x.contact@gmail.com",
+    url = "https://github.com/Apocryphon-X/omegaup-cli",
+    
+    packages = ["src"],
+    entry_points = {
+        "console_scripts": ["ucl = src.cli:main"]
     },
-    version=version,
-    description="CLI for OmegaUp users",
-    long_description=long_descr,
-    author="Dante Mendoza Leyva (Apocryphon-X)",
-    author_email="apocryphon.x.contact@gmail.com",
-    license="MIT",
-    url="https://github.com/Apocryphon-X/omegaup-cli",
-    install_requires=[
+    install_requires = [
         "requests",
         "stdiomask",
-        "blessed>=1.18.0"
+        "click",
+        "blessed>=1.18.0",
+        "omegaup>=1.3.0"
     ],
-  # package_data={
-  #     "omegaup": ["models/*"]
-  # },
-    include_package_data = True,
-    python_requires=">=3.7",
-    classifiers=[
+    
+    classifiers = [
         "Development Status :: Early Alpha",
         "Environment :: Console",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.5",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
     ],
 )

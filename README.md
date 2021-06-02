@@ -1,25 +1,32 @@
-OmegaUp CLI [![py_version](https://img.shields.io/badge/Python-%E2%89%A5%203.7-blue.svg?style=flat-square&logo=python&logoColor=ffffff)](https://www.python.org/downloads/) ![visitors](https://visitor-badge.glitch.me/badge?page_id=OmegaUp-CLI)
+OmegaUp CLI [![py_version][7]][8]
+<img align="right" src="https://user-images.githubusercontent.com/40130428/112218277-276c9380-8be9-11eb-8d63-1bbf6d9edfa3.png">
 =============
 
 
-<img align="right" src="https://user-images.githubusercontent.com/40130428/112218277-276c9380-8be9-11eb-8d63-1bbf6d9edfa3.png">
 
 <p align="left">
   <img src="https://img.shields.io/badge/Envios-En%20curso-yellow.svg?style=flat-square">
   <img src="https://img.shields.io/badge/Problemas-En%20curso-yellow.svg?style=flat-square">
   <img src="https://img.shields.io/badge/Cursos-Pendiente-red.svg?style=flat-square">
-  <img src="https://img.shields.io/badge/Concursos-Pendiente-red.svg?style=flat-square">
+  <img src="https://img.shields.io/badge/Concursos-En%20curso-yellow.svg?style=flat-square">
 </p>
 
 <p align="justify">
-OmegaUp CLI es una interfaz que te permite utilizar OmegaUp desde la linea de comandos. Administra concursos, realiza envios y mucho mas sin tener que abandonar el terminal! El comando <code>ucl</code> permite llamar a la OmegaUp CLI desde cualquier parte en tu terminal. Ejecutar la CLI sin parametros mostrara el menu de ayuda.
+OmegaUp CLI es una interfaz que te permite interactuar con OmegaUp desde la linea de comandos. Actualmente el proyecto se encuentra en fase Alpha por lo que hace falta implementar soporte para muchas secciones de la API. Todo issue y pull request es bienvenido. 
 </p>
+
+# Cambios
 
 <p align="justify">
-  <b>Nuevo:</b> Crea entornos de trabajo, prueba tus codigos con los casos de prueba que provee un problema y mas! Para realizar estas acciones, utiliza el nuevo comando <code>ucl entorno</code>. Si deseas mas información consulta el GIF de demostración. (Menu de ayuda en proceso)
+  <ul>
+    <li> El parsing de argumentos ahora es gestionado mediante el modulo <a href="https://github.com/pallets/click/"><code>Click</code></a>. </li>
+    <li> Las interacciones con la API se realizan por medio de APITokens. </li>
+    <li> Se removio <b>temporalmente</b> la función de "entornos". </li>
+    <li> Se migro parte de el codigo a <a href="https://github.com/omegaup/libomegaup"><code>libomegaup</code></a>. </li>
+  </ul>
 </p>
 
-# Instalación [![release](https://img.shields.io/github/v/release/Apocryphon-X/omegaup-cli?include_prereleases&label=Release&logo=github&style=flat-square)](https://github.com/Apocryphon-X/omegaup-cli/releases)
+# Instalación [![release][9]][10]
 
 
 <p align="justify">
@@ -29,33 +36,27 @@ El proyecto se encuentra en fase Alpha, por lo que el codigo actual esta <b>INCO
 ```bash
 git clone https://github.com/Apocryphon-X/omegaup-cli    # Clona el repositorio.
 cd omegaup-cli                                           # Accede al directorio.
-chmod +x install.sh                                      # Otorga permisos de ejecución.
-./install.sh                                             # Ejecuta el script de instalación.
+./linux-install.sh                                       # Ejecuta el script de instalación.
 ```
 
-# Comandos actuales
+# Grupos de comandos actuales
 
-Si deseas ver una demostración de la CLI en acción, da click [aquí.](https://user-images.githubusercontent.com/40130428/112234477-3a3f9200-8c02-11eb-9086-fb65345f11f6.gif)
-
-|       Comando       |                Descripción             |
+|       Grupo         |                Descripción             |
 |:--------------------|:---------------------------------------|
-|        `ucl`        |           Ayuda en general             |
-|   `ucl envio`       |       Menu de ayuda para envios        |
-|  `ucl envio subir`  |        Realizar un nuevo envio         |
-|    `ucl entorno`    |     Ayuda para entornos de trabajo     |
-| `ucl entorno crear` |    Crea un nuevo entorno de trabajo    |
-| `ucl entorno probar`|   Prueba tu codigo antes de subirlo    |
-
+|        `ucl`        |      Muestra los grupos de comandos    |
+|      `ucl run`      |       Menu de ayuda para envios        |
+|    `ucl contest`    |        Menu de ayuda para econcursos   |
+|    `ucl problem`    |      Menu de ayuda para problemas      |
 
 # Inspiraciones
 
-- [OmegaUp API¹][1] - *"OmegaUp: Open source platform to learn and improve Computer Science skills."*
-- [Codeforces CLI¹][2] - *"A simple command line tool for Codeforces coders."*
-- [ProtonVPN Linux CLI¹][3] - *"Linux command-line client for ProtonVPN. Written in Python."*
-- [Github CLI¹][4] - *"GitHub’s official command line tool."*
-- [CF-Tool¹][5] - *"Codeforces Tool is a command-line interface tool for Codeforces."*
+- [OmegaUp API¹][1]: *"OmegaUp: Open source platform to learn and improve Computer Science skills"*.
+- [ProtonVPN Linux CLI¹][3]: *"Linux command-line client for ProtonVPN. Written in Python"*.
+- [CF-Tool¹][5]: *"Codeforces Tool is a command-line interface tool for Codeforces"*.
+- [Codeforces CLI¹][2]: *"A simple command line tool for Codeforces coders"*.
+- [Github CLI¹][4]: *"GitHub’s official command line tool"*.
 
-¹ : "OmegaUp CLI" is **not** formally affiliated with this organization or project.
+`¹` : `omegaup-cli` is **not** formally affiliated with this organization or project.
 
 
 
@@ -67,7 +68,6 @@ Si deseas ver una demostración de la CLI en acción, da click [aquí.](https://
   <a href="https://github.com/Apocryphon-X/omegaup-cli">Apocryphon-X/omegaup-cli</a> is licensed under the MIT License. A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
 More details can be found in the <a href="https://github.com/Apocryphon-X/omegaup-cli/blob/main/LICENSE.md"><code>LICENSE.md</code></a> file.
 </p>
-</details>
 
 [1]: https://github.com/omegaup/omegaup/blob/master/frontend/server/src/Controllers/README.md
 [2]: https://github.com/ahmed-dinar/codeforces-cli
@@ -75,7 +75,10 @@ More details can be found in the <a href="https://github.com/Apocryphon-X/omegau
 [4]: https://github.com/cli/cli
 [5]: https://github.com/xalanq/cf-tool
 [6]: https://user-images.githubusercontent.com/40130428/112232970-26def780-8bff-11eb-9fd8-579dea4c26c8.gif
-
+[7]: https://img.shields.io/badge/Python-%E2%89%A5%203.7-blue.svg?style=flat-square&logo=python&logoColor=ffffff
+[8]: https://www.python.org/downloads/
+[9]: https://img.shields.io/github/v/release/Apocryphon-X/omegaup-cli?include_prereleases&label=Release&logo=github&style=flat-square
+[10]: https://github.com/Apocryphon-X/omegaup-cli/releases
 
 <!-- Unused
 ![Commits per month](https://img.shields.io/github/commit-activity/y/Apocryphon-X/omegaup-cli?label=Commit%20Activity&logo=GitHub&style=flat-square)

@@ -2,7 +2,7 @@ import requests
 
 # import logging
 
-# 1import http.client as http_client
+# import http.client as http_client
 # http_client.HTTPConnection.debuglevel = 1
 
 # logging.basicConfig()
