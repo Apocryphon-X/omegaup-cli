@@ -197,7 +197,7 @@ def runs(problem_alias, raw):
         print(json.dumps(api_dict, indent = 4, sort_keys = True))
         return
 
-    submit_date = cli_terminal.greenyellow(str(datetime.fromtimestamp(api_dict['time'])))
+    submit_date = cli_terminal.greenyellow(str(datetime.fromtimestamp(api_dict['runs']['time'])))
     print(f"\n{info_status} {len(api_dict['runs'])} envios:\n")
 
     for i_run in api_dict["runs"]:
