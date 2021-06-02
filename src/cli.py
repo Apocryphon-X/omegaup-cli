@@ -129,7 +129,7 @@ def contest():
 def details(contest_alias, raw):
     ctx = get_client()
 
-    api_dict = ctx.contest.details(contest_alias)
+    api_dict = ctx.contest.details(contest_alias = contest_alias)
     
     if raw:
         print(json.dumps(api_dict, indent = 4, sort_keys = True))
