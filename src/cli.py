@@ -214,7 +214,7 @@ def runs(problem_alias, raw):
         print(f"{info_status} Memoria:\t{i_run['memory'] / 1048576} MiB")
         print(f"{info_status} Tiempo: \t{i_run['runtime'] / 1000} s\n")
 
-        print("-" * 100, end = "\n\n")
+        print("-" * 25, end = "\n\n")
 
     
 
