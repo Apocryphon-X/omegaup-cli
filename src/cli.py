@@ -46,7 +46,7 @@ def run():
     pass
 
 @run.command()
-@run.argument("guid")
+@click.argument("guid")
 @click.option("-r", "--raw", is_flag = True, default = False)
 def source(guid, raw):
     
