@@ -253,5 +253,5 @@ def runs(problem_alias, raw):
 #     except FileNotFoundError:
 #         print(f"{error_status} Archivo no encontrado, verifica si la ruta es correcta.")
 
-# if __name__ == "__main__":
-#     main()
+if __name__ == "__main__":
+    main()
