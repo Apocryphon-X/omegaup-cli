@@ -26,7 +26,7 @@ ac_verdict = cli_terminal.lawngreen("[✓] AC - Tu solución fue aceptada!")
 pa_verdict = cli_terminal.gold("[i] PA - Tu solución fue parcialmente aceptada.")
 wa_verdict = cli_terminal.crimson("[✗] WA - Respuesta incorrecta.")
 je_verdict = cli_terminal.white_on_firebrick3("[!] JE - Ocurrio un error inesperado con el evaluador!")
-ce_verdict = cli_terminal.white_on_darkorange2("[i] CE - Error de compilación.")
+ce_verdict = cli_terminal.white_on_darkorange3("[i] CE - Error de compilación.")
 ve_verdict = cli_terminal.white_on_firebrick3("[!] VE - Error del validador.")
 
 rfe_verdict = cli_terminal.firebrick1("[!] RFE - Uso de función restringida.")
