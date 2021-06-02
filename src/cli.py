@@ -138,9 +138,12 @@ def details(contest_alias, raw):
     access = None
 
     if api_dict['admission_mode'] == "public":
-        access = "Publico"
+        access = cli_terminal.lawngreen("Publico")
     if api_dict['admission_mode'] == "private":
-        access = "Privado"
+        access = cli_terminal.red("Privado")
+
+    start_time = cli_terminal.greenyellow(str(datetime.fromtimestamp(api_dict['start_time'])))
+    finish_time = cli_terminal.greenyellow(str(datetime.fromtimestamp(api_dict['finish_time'])))
 
     print(" ")
     print(f"{info_status} Nombre: {api_dict['title']}")
@@ -149,8 +152,8 @@ def details(contest_alias, raw):
     print(f"{info_status} Descripción: {api_dict['description']}")
     print(f"{info_status} Organizador: {api_dict['director']}\n")
     
-    print(f"{info_status} Fecha de inicio: {datetime.fromtimestamp(api_dict['start_time'])}")
-    print(f"{info_status} Fecha de fin:    {datetime.fromtimestamp(api_dict['finish_time'])}\n")
+    print(f"{info_status} Fecha de inicio: {start_time}")
+    print(f"{info_status} Fecha de fin:    {finish_time}\n")
 
     print(f"{info_status} {len(api_dict['problems'])} Problemas: \n")
 
