@@ -123,7 +123,7 @@ def upload(
 def contest():
     pass
 
-@contest.group()
+@contest.command()
 @click.argument("contest_alias")
 @click.option("-r", "--raw", is_flag = True, default = False)
 def details(contest_alias, raw):
