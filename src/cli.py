@@ -192,12 +192,12 @@ def runs(problem_alias, raw):
     
     ctx = get_client()
     api_dict = ctx.problem.runs(problem_alias=problem_alias)
-    print(raw, problem_alias)
+
     if raw:
         print(json.dumps(api_dict, indent = 4, sort_keys = True))
         return
 
-    print(f"{info_status} {len(api_dict['runs'])} envios:")
+    print(f"\n{info_status} {len(api_dict['runs'])} envios:")
 
     for i_run in api_dict["runs"]:
         api_verdict = i_run["verdict"]
