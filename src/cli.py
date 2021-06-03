@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 # General imports and some util definitions
 from .utils import *

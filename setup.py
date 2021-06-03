@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """setup.py: setuptools control."""
 
 from setuptools import setup

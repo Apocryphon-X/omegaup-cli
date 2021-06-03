@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import importlib.resources
 import json
 import pathlib
