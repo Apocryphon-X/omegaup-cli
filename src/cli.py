@@ -4,7 +4,7 @@
 from .utils import *
 
 @click.group(help = "Interactua con OmegaUp desde la linea de comandos.")
-@click.version_option(__version__)
+@click.version_option()
 @click.pass_context
 def main(version):
 
