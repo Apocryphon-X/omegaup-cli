@@ -191,14 +191,14 @@ def details(contest_alias, raw):
 # def status():
 #     pass
 
+variable_data = "hello there"
+
 @main.group()
-def problem():
-    
-    variable_data = "hello there"
+def problem():    
     f"""
     {variable_data}
     """
-    pass
+  
 
 @problem.command()
 @click.argument("problem_alias")
