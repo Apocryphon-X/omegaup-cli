@@ -82,7 +82,7 @@ More details can be found in the <a href="https://github.com/Apocryphon-X/omegau
 [4]: https://github.com/cli/cli
 [5]: https://github.com/xalanq/cf-tool
 [6]: https://user-images.githubusercontent.com/40130428/112232970-26def780-8bff-11eb-9fd8-579dea4c26c8.gif
-[7]: https://img.shields.io/badge/Python-%E2%89%A5%203.7-blue.svg?style=flat-square&logo=python&logoColor=ffffff
+[7]: https://img.shields.io/badge/Python-%E2%89%A5%203.8-blue.svg?style=flat-square&logo=python&logoColor=ffffff
 [8]: https://www.python.org/downloads/
 [9]: https://img.shields.io/github/v/release/Apocryphon-X/omegaup-cli?include_prereleases&label=Release&logo=github&style=flat-square
 [10]: https://github.com/Apocryphon-X/omegaup-cli/releases
