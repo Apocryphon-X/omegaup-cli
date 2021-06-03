@@ -6,7 +6,7 @@ from setuptools import setup
 with open("README.md", "r", encoding="utf-8") as target_file:
     long_description = target_file.read()
 
-actual_version = "0.1.0a3"
+actual_version = "0.1.0a5"
 
 setup(
     name = "omegaup_cli",
