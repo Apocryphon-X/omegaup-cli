@@ -42,7 +42,7 @@ def main():
             data_file.write(json.dumps(login_data, indent = 4, sort_keys = True))
             print(f"{info_status} Token almacenado correctamente!")
 
-@main.group(short_help = "Gestiona envios",
+@main.group(short_help = "Gestiona envios.",
     help="Trabaja con envios de OmegaUp.")
 def run():
     pass
@@ -135,7 +135,8 @@ def upload(
         if not raw:
             print(f"{error_status} Archivo no encontrado, verifica si la ruta es correcta.")
 
-@main.group()
+@main.group(short_help = "Gestiona concursos.",
+    help="Trabaja con concursos de OmegaUp.")
 def contest():
     pass
 
@@ -183,7 +184,8 @@ def details(contest_alias, raw):
 # def status():
 #     pass
 
-@main.group()
+@main.group(short_help = "Gestiona problemas.",
+    help="Trabaja con problemas de OmegaUp.")
 def problem():    
     pass
   
