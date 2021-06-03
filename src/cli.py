@@ -191,13 +191,9 @@ def details(contest_alias, raw):
 # def status():
 #     pass
 
-variable_data = "hello there"
-
-@main.group()
+@main.group(help="Lorem Ipsum")
 def problem():    
-    f"""
-    {variable_data}
-    """
+    pass
   
 
 @problem.command()
