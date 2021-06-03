@@ -4,11 +4,9 @@
 from .utils import *
 
 @click.group(help = "Interactua con OmegaUp desde la linea de comandos.")
-@click.version_option()
+@click.version_option(help = "Test #1")
 @click.pass_context
 def main(version):
-
-
 
     # Check for Auth information in AUTH_DATA path
     if not pathlib.Path.is_file(AUTH_DATA):
