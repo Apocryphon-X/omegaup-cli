@@ -52,7 +52,7 @@ cd omegaup-cli                                           # Accede al directorio.
 |:--------------------|:---------------------------------------|
 |        `ucl`        |      Muestra los grupos de comandos    |
 |      `ucl run`      |       Menu de ayuda para envios        |
-|    `ucl contest`    |        Menu de ayuda para econcursos   |
+|    `ucl contest`    |        Menu de ayuda para concursos    |
 |    `ucl problem`    |      Menu de ayuda para problemas      |
 
 # Inspiraciones
