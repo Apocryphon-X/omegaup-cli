@@ -4,15 +4,15 @@
 from .utils import *
 
 @click.group(help = "Interactua con OmegaUp desde la linea de comandos.")
-@click.version_option(help = "Test #1")
+@click.help_option(help = "Muestra este mensaje.")
+@click.version_option(help = "Muestra la versión actual de la CLI.")
 @click.pass_context
 def main(version):
 
     # Check for Auth information in AUTH_DATA path
     if not pathlib.Path.is_file(AUTH_DATA):
 
-        token_name = None
-        api_token = None
+        token_name, api_token = None, None
 
         print(f"{info_status} No se encontro información de uso previo.")
         print(f"{info_status} Estableciendo configuracion inicial de la CLI...\n")
