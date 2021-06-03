@@ -5,6 +5,9 @@ from .utils import *
 
 @click.group()
 def main():
+    """
+    Testing help data for main group
+    """
     # Check for Auth information in AUTH_DATA path
     if not pathlib.Path.is_file(AUTH_DATA):
 
