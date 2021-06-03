@@ -3,11 +3,8 @@
 # General imports and some util definitions
 from .utils import *
 
-@click.group()
+@click.group(help = "Interactua con OmegaUp desde la linea de comandos.")
 def main():
-    """
-    Testing help data for main group
-    """
     # Check for Auth information in AUTH_DATA path
     if not pathlib.Path.is_file(AUTH_DATA):
 
@@ -45,11 +42,9 @@ def main():
             data_file.write(json.dumps(login_data, indent = 4, sort_keys = True))
             print(f"{info_status} Token almacenado correctamente!")
 
-@main.group()
+@main.group(short_help = "Gestiona envios",
+    help="Trabaja con envios de OmegaUp.")
 def run():
-    """
-    Help data for Run Group
-    """
     pass
 
 @run.command()
@@ -142,9 +137,6 @@ def upload(
 
 @main.group()
 def contest():
-    """
-    Help data for Contest Group
-    """
     pass
 
 @contest.command()
@@ -191,7 +183,7 @@ def details(contest_alias, raw):
 # def status():
 #     pass
 
-@main.group(help="Lorem Ipsum")
+@main.group()
 def problem():    
     pass
   
