@@ -193,8 +193,10 @@ def details(contest_alias, raw):
 
 @main.group()
 def problem():
-    """
-    Help data for Problem Group
+    
+    variable_data = "hello there"
+    f"""
+    {variable_data}
     """
     pass
 
