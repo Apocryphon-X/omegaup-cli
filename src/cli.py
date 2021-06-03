@@ -47,6 +47,9 @@ def main():
 
 @main.group()
 def run():
+    """
+    Help data for Run Group
+    """
     pass
 
 @run.command()
@@ -139,6 +142,9 @@ def upload(
 
 @main.group()
 def contest():
+    """
+    Help data for Contest Group
+    """
     pass
 
 @contest.command()
@@ -187,6 +193,9 @@ def details(contest_alias, raw):
 
 @main.group()
 def problem():
+    """
+    Help data for Problem Group
+    """
     pass
 
 @problem.command()
