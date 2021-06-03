@@ -36,7 +36,7 @@ OmegaUp CLI es una interfaz que te permite interactuar con OmegaUp desde la line
 ### Instalación desde [`pipx`][11]
 
 ```bash
-pipx install omegaup-cli                                 # Instalación global (y *segura*) de la omegaup-cli.
+pipx install omegaup-cli                                 # Instalación global y segura.
 ```
 
 ### Instalación desde la fuente
