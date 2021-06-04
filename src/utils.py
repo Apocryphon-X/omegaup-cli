@@ -27,7 +27,20 @@ def __format_usage(self, ctx, formatter):
     pieces = self.collect_usage_pieces(ctx)
     formatter.write_usage(ctx.command_path, " ".join(pieces), "Uso: ")
 
-click.format_usage = __format_usage
+def __format_options(self, ctx, formatter):
+    """Writes all the options into the formatter if they exist."""
+    opts = []
+    for param in self.get_params(ctx):
+        rv = param.get_help_record(ctx)
+        if rv is not None:
+            opts.append(rv)
+
+    if opts:
+        with formatter.section("Opciones"):
+            formatter.write_dl(opts)
+
+click.Commands.format_usage = __format_usage
+click.Commands.format_options = __format_options
 
 # Read the list of colors in: 
 # https://blessed.readthedocs.io/en/latest/colors.html
