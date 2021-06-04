@@ -10,7 +10,7 @@ from .utils import *
 @click.version_option(help = "Muestra la versión actual de la CLI.")
 @click.pass_context
 def main(ignore):
-    print(ignore)
+
     # Check for Auth information in AUTH_DATA path
     if not pathlib.Path.is_file(AUTH_DATA):
 
