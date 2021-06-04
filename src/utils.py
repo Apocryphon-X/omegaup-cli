@@ -39,8 +39,8 @@ def __format_options(self, ctx, formatter):
         with formatter.section("Opciones"):
             formatter.write_dl(opts)
 
-click.Commands.format_usage = __format_usage
-click.Commands.format_options = __format_options
+click.Command.format_usage = __format_usage
+click.Command.format_options = __format_options
 
 # Read the list of colors in: 
 # https://blessed.readthedocs.io/en/latest/colors.html
