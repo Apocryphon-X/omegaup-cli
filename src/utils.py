@@ -7,7 +7,7 @@ import subprocess
 import sys
 import time
 from datetime import datetime
-
+from gettext import gettext as _
 import blessed
 import click
 import omegaup.api
