@@ -4,8 +4,7 @@
 from .utils import *
 
 @click.group(help = "Interactua con OmegaUp desde la linea de comandos.",
-    subcommand_metavar="COMANDO [ARGS]...",
-    options_metavar = "[OPTIONS]")
+    subcommand_metavar="COMANDO [ARGS]...")
 @click.help_option(help = "Muestra este mensaje.")
 @click.version_option(help = "Muestra la versión actual de la CLI.")
 @click.pass_context
@@ -49,13 +48,11 @@ def main():
 
 @main.group(short_help = "Gestiona envios.",
     help="Trabaja con envios de OmegaUp.",
-    subcommand_metavar="COMANDO [ARGS]...",
-    options_metavar = "[OPTIONS]")
+    subcommand_metavar="COMANDO [ARGS]...")
 def run():
     pass
 
-@run.command(
-    options_metavar = "[OPTIONS]")
+@run.command()
 @click.argument("guid")
 @click.option("-r", "--raw", is_flag = True, default = False)
 def source(guid, raw):
@@ -69,8 +66,7 @@ def source(guid, raw):
     
     print(api_dict["source"])
 
-@run.command(
-    options_metavar = "[OPTIONS]")
+@run.command()
 @click.argument("problem_alias")
 @click.argument("file_path")
 @click.option("-l", "--language", default = "cpp11-gcc")
@@ -150,8 +146,7 @@ def upload(
 def contest():
     pass
 
-@contest.command(
-    options_metavar = "[OPTIONS]")
+@contest.command()
 @click.argument("contest_alias")
 @click.option("-r", "--raw", is_flag = True, default = False)
 def details(contest_alias, raw):
@@ -197,14 +192,12 @@ def details(contest_alias, raw):
 
 @main.group(short_help = "Gestiona problemas.",
     help="Trabaja con problemas de OmegaUp.",
-    options_metavar = "[OPTIONS]",
     subcommand_metavar="COMANDO [ARGS]...")
 def problem():    
     pass
   
 
-@problem.command(
-    options_metavar = "[OPTIONS]")
+@problem.command()
 @click.argument("problem_alias")
 @click.option("-r", "--raw", is_flag = True, default = False)
 def runs(problem_alias, raw):
