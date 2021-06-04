@@ -39,7 +39,7 @@ def __format_options(self, ctx, formatter):
         with formatter.section("Opciones"):
             formatter.write_dl(opts)
 
-def __format_commands(self, ctx: Context, formatter: HelpFormatter) -> None:
+def __format_commands(self, ctx: click.Context, formatter: click.HelpFormatter) -> None:
     """Extra format methods for multi methods that adds all the commands
     after the options.
     """
