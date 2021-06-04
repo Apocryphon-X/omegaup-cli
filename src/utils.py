@@ -19,6 +19,16 @@ ENTRYPOINT = "https://omegaup.com/"
 HOME_PATH = pathlib.Path.home()
 AUTH_DATA = HOME_PATH.joinpath(".ucl-data")
 
+# Click methods overload
+def __format_usage(self, ctx, formatter):
+    """Writes the usage line into the formatter.
+    This is a low-level method called by :meth:`get_usage`.
+    """
+    pieces = self.collect_usage_pieces(ctx)
+    formatter.write_usage(ctx.command_path, " ".join(pieces), "Uso: ")
+
+click.format_usage = __format_usage
+
 # Read the list of colors in: 
 # https://blessed.readthedocs.io/en/latest/colors.html
 cli_terminal = blessed.Terminal()
