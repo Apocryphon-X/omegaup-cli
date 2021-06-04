@@ -6,7 +6,6 @@ import pathlib
 import subprocess
 import sys
 import time
-import gettext
 from datetime import datetime
 
 import blessed
@@ -65,7 +64,7 @@ def __format_commands(self, ctx: click.Context, formatter: click.HelpFormatter) 
             rows.append((subcommand, help))
 
         if rows:
-            with formatter.section(gettext._("List of commands")):
+            with formatter.section(_("List of commands")):
                 formatter.write_dl(rows)
 
 click.Command.format_usage = __format_usage
