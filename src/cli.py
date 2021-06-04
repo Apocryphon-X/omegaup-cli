@@ -3,7 +3,9 @@
 # General imports and some util definitions
 from .utils import *
 
-@click.group(help = "Interactua con OmegaUp desde la linea de comandos.")
+@click.group(help = "Interactua con OmegaUp desde la linea de comandos.",
+    subcommand_metavar="COMANDO [ARGS]...",
+    options_metavar = "[OPTIONS]")
 @click.help_option(help = "Muestra este mensaje.")
 @click.version_option(help = "Muestra la versión actual de la CLI.")
 @click.pass_context
@@ -46,11 +48,14 @@ def main():
             print(f"{info_status} Token almacenado correctamente!")
 
 @main.group(short_help = "Gestiona envios.",
-    help="Trabaja con envios de OmegaUp.")
+    help="Trabaja con envios de OmegaUp.",
+    subcommand_metavar="COMANDO [ARGS]...",
+    options_metavar = "[OPTIONS]")
 def run():
     pass
 
-@run.command()
+@run.command(
+    options_metavar = "[OPTIONS]")
 @click.argument("guid")
 @click.option("-r", "--raw", is_flag = True, default = False)
 def source(guid, raw):
@@ -64,7 +69,8 @@ def source(guid, raw):
     
     print(api_dict["source"])
 
-@run.command()
+@run.command(
+    options_metavar = "[OPTIONS]")
 @click.argument("problem_alias")
 @click.argument("file_path")
 @click.option("-l", "--language", default = "cpp11-gcc")
@@ -139,11 +145,13 @@ def upload(
             print(f"{error_status} Archivo no encontrado, verifica si la ruta es correcta.")
 
 @main.group(short_help = "Gestiona concursos.",
-    help="Trabaja con concursos de OmegaUp.")
+    help="Trabaja con concursos de OmegaUp.",
+    subcommand_metavar="COMANDO [ARGS]...")
 def contest():
     pass
 
-@contest.command()
+@contest.command(
+    options_metavar = "[OPTIONS]")
 @click.argument("contest_alias")
 @click.option("-r", "--raw", is_flag = True, default = False)
 def details(contest_alias, raw):
@@ -188,12 +196,15 @@ def details(contest_alias, raw):
 #     pass
 
 @main.group(short_help = "Gestiona problemas.",
-    help="Trabaja con problemas de OmegaUp.")
+    help="Trabaja con problemas de OmegaUp.",
+    options_metavar = "[OPTIONS]",
+    subcommand_metavar="COMANDO [ARGS]...")
 def problem():    
     pass
   
 
-@problem.command()
+@problem.command(
+    options_metavar = "[OPTIONS]")
 @click.argument("problem_alias")
 @click.option("-r", "--raw", is_flag = True, default = False)
 def runs(problem_alias, raw):
