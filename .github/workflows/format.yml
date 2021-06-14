@@ -27,7 +27,7 @@ jobs:
         uses: wearerequired/lint-action@v1.10.0
         with:
           black: true
-          auto-fix: true
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          auto_fix: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           
           
