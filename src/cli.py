@@ -53,7 +53,7 @@ def run():
 
 @run.command()
 @click.argument("guid")
-@click.option("-r", "--raw", is_flag=True, default=False)
+@click.option("-r", "--raw", is_flag = True, default = False)
 def source(guid, raw):
 
     ctx = get_client()
