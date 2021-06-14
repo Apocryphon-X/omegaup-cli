@@ -9,32 +9,26 @@ with open("README.md", "r", encoding="utf-8") as target_file:
 actual_version = "0.1.1a8"
 
 setup(
-    name = "omegaup_cli",
-    version = actual_version,
-    python_requires = ">=3.8",
-
+    name="omegaup_cli",
+    version=actual_version,
+    python_requires=">=3.8",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    description = "CLI for OmegaUp users.",
-    license = "MIT",
-    
-    author = "Dante Mendoza Leyva (Apocryphon-X)",
-    author_email = "apocryphon.x.contact@gmail.com",
-    url = "https://github.com/Apocryphon-X/omegaup-cli",
-    
-    packages = ["src"],
-    entry_points = {
-        "console_scripts": ["ucl = src.cli:main"]
-    },
-    install_requires = [
+    description="CLI for OmegaUp users.",
+    license="MIT",
+    author="Dante Mendoza Leyva (Apocryphon-X)",
+    author_email="apocryphon.x.contact@gmail.com",
+    url="https://github.com/Apocryphon-X/omegaup-cli",
+    packages=["src"],
+    entry_points={"console_scripts": ["ucl = src.cli:main"]},
+    install_requires=[
         "requests",
         "stdiomask",
         "click",
         "blessed>=1.18.0",
-        "omegaup>=1.3.0"
+        "omegaup>=1.3.0",
     ],
-    
-    classifiers = [
+    classifiers=[
         "Development Status :: 3 - Alpha",
         "Environment :: Console",
         "Programming Language :: Python",

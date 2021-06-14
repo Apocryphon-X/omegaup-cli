@@ -28,7 +28,7 @@ def sort_colors():
         # except shades of grey -- by name & number, only
         rgb, name = rgb_item
         digit = 0
-        match = re.match(r'(.*)(\d+)', name[0])
+        match = re.match(r"(.*)(\d+)", name[0])
         if match is not None:
             name = match.group(1)
             digit = int(match.group(2))
@@ -50,20 +50,25 @@ HSV_SORTED_COLORS = sort_colors()
 
 def render(term, idx):
     rgb_color, color_names = HSV_SORTED_COLORS[idx]
-    result = term.home + term.normal + ''.join(
-        getattr(term, HSV_SORTED_COLORS[i][1][0]) + '◼'
-        for i in range(len(HSV_SORTED_COLORS))
+    result = (
+        term.home
+        + term.normal
+        + "".join(
+            getattr(term, HSV_SORTED_COLORS[i][1][0]) + "◼"
+            for i in range(len(HSV_SORTED_COLORS))
+        )
     )
-    result += term.clear_eos + '\n'
-    result += getattr(term, 'on_' + color_names[0]) + term.clear_eos + '\n'
-    result += term.normal + \
-        term.center(f'{" | ".join(color_names)}: {rgb_color}') + '\n'
+    result += term.clear_eos + "\n"
+    result += getattr(term, "on_" + color_names[0]) + term.clear_eos + "\n"
+    result += (
+        term.normal + term.center(f'{" | ".join(color_names)}: {rgb_color}') + "\n"
+    )
     result += term.normal + term.center(
-        f'{term.number_of_colors} colors - '
-        f'{term.color_distance_algorithm}')
+        f"{term.number_of_colors} colors - " f"{term.color_distance_algorithm}"
+    )
 
     result += term.move_yx(idx // term.width, idx % term.width)
-    result += term.on_color_rgb(*rgb_color)(' \b')
+    result += term.on_color_rgb(*rgb_color)(" \b")
     return result
 
 
@@ -91,25 +96,27 @@ def main():
         while True:
             if dirty:
                 outp = render(term, idx)
-                print(outp, end='', flush=True)
+                print(outp, end="", flush=True)
             with term.hidden_cursor():
                 inp = term.inkey()
             dirty = True
-            if inp.code == term.KEY_LEFT or inp == 'h':
+            if inp.code == term.KEY_LEFT or inp == "h":
                 idx -= 1
-            elif inp.code == term.KEY_DOWN or inp == 'j':
+            elif inp.code == term.KEY_DOWN or inp == "j":
                 idx += term.width
-            elif inp.code == term.KEY_UP or inp == 'k':
+            elif inp.code == term.KEY_UP or inp == "k":
                 idx -= term.width
-            elif inp.code == term.KEY_RIGHT or inp == 'l':
+            elif inp.code == term.KEY_RIGHT or inp == "l":
                 idx += 1
             elif inp.code in (term.KEY_TAB, term.KEY_BTAB):
                 term.number_of_colors = next_color(
-                    term.number_of_colors, inp.code == term.KEY_TAB)
-            elif inp in ('[', ']'):
+                    term.number_of_colors, inp.code == term.KEY_TAB
+                )
+            elif inp in ("[", "]"):
                 term.color_distance_algorithm = next_algo(
-                    term.color_distance_algorithm, inp == '[')
-            elif inp == '\x0c':
+                    term.color_distance_algorithm, inp == "["
+                )
+            elif inp == "\x0c":
                 pass
             else:
                 dirty = False
@@ -120,5 +127,5 @@ def main():
                 idx -= len(HSV_SORTED_COLORS)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
