@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
   
 jobs:
-  format:
+  Format:
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -31,8 +31,6 @@ jobs:
           
           auto_fix: true
           
-          # git_name: "${{ github.actor }}"
-          # git_email: "${{ github.actor }}@users.noreply.github.com"
-          git_name: "41898282+github-actions[bot]@users.noreply.github.com"
-          git_email: "github-actions[bot]"
+          git_name: "${{ github.actor }}"
+          git_email: "${{ github.actor }}@users.noreply.github.com"
           github_token: ${{ secrets.GITHUB_TOKEN }}
