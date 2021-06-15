@@ -31,6 +31,8 @@ jobs:
           
           auto_fix: true
           
-          git_name: "${{ github.actor }}"
-          git_email: "${{ github.actor }}@users.noreply.github.com"
+          # git_name: "${{ github.actor }}"
+          # git_email: "${{ github.actor }}@users.noreply.github.com"
+          git_name: "41898282+github-actions[bot]@users.noreply.github.com"
+          git_email: "github-actions[bot]"
           github_token: ${{ secrets.GITHUB_TOKEN }}
