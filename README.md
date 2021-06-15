@@ -26,7 +26,7 @@ OmegaUp CLI es una interfaz que te permite interactuar con OmegaUp desde la line
   </ul>
 </p>
 
-# Instalación [![release][9]][10]
+# Instalación [![release][9]][10] [![PyPI][12]][13]
 
 
 <p align="justify">
@@ -87,6 +87,8 @@ More details can be found in the <a href="https://github.com/Apocryphon-X/omegau
 [9]: https://img.shields.io/github/v/release/Apocryphon-X/omegaup-cli?include_prereleases&label=Release&logo=github&style=flat-square
 [10]: https://github.com/Apocryphon-X/omegaup-cli/releases
 [11]: https://pypa.github.io/pipx/
+[12]: https://img.shields.io/pypi/v/omegaup-cli?label=PyPI&logo=pypi&logoColor=%23FFFFFF&style=flat-square
+[13]: https://pypi.org/project/omegaup-cli/
 
 <!-- Unused
 ![Commits per month](https://img.shields.io/github/commit-activity/y/Apocryphon-X/omegaup-cli?label=Commit%20Activity&logo=GitHub&style=flat-square)
