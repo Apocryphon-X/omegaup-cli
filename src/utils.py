@@ -35,8 +35,7 @@ ve_verdict = cli_terminal.white_on_firebrick3("[!] VE - Error del validador.")
 
 rfe_verdict = cli_terminal.firebrick1("[!] RFE - Uso de función restringida.")
 rte_verdict = cli_terminal.lightslateblue(
-    "[✗] RTE - Tu programa se cerro de forma inesperada."
-)
+    "[✗] RTE - Tu programa se cerro de forma inesperada.")
 mle_verdict = cli_terminal.darkorange2(
     "[i] MLE - Tu solución excedio el limite de memoria."
 )
