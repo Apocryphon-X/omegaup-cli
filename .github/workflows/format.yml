@@ -29,5 +29,6 @@ jobs:
           black: true
           auto_fix: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          
+          git_name: "${{ github.actor }}"
+          git_email: "${{ github.actor }}@users.noreply.github.com"
           
