@@ -22,13 +22,15 @@ jobs:
         run: | 
           python -m pip install pipx
           python -m pipx ensurepath
-          pipx install black
+
       - name: Lint Action
         uses: wearerequired/lint-action@v1.10.0
         with:
           black: true
+          black_command_prefix: "pipx run "
+          
           auto_fix: true
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          
           git_name: "${{ github.actor }}"
           git_email: "${{ github.actor }}@users.noreply.github.com"
-          
+          github_token: ${{ secrets.GITHUB_TOKEN }}
