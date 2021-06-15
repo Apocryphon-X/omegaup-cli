@@ -70,8 +70,8 @@ def source(guid, raw):
 @click.argument("problem_alias")
 @click.argument("file_path")
 @click.option("-l", "--language", default="cpp11-gcc")
-@click.option("-ca", "--contest_alias", default =  None)
-@click.option("-nf", "--no-follow", is_flag = True, default=False)
+@click.option("-ca", "--contest_alias", default=None)
+@click.option("-nf", "--no-follow", is_flag=True, default=False)
 @click.option("-r", "--raw", is_flag=True, default=False)
 def upload(problem_alias, file_path, language, contest_alias, no_follow, raw):
     try:
