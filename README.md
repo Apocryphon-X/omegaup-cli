@@ -33,17 +33,17 @@ OmegaUp CLI es una interfaz que te permite interactuar con OmegaUp desde la line
   El proyecto se encuentra en fase <i>Alpha</i>, por lo que el codigo actual esta <b>INCOMPLETO</b>. Para descargar la versión en desarrollo, se recomienda instalar la CLI desde el repositorio en GitHub o desde <code>pipx</code> en lugar de las GH Releases.
 </p>
 
-### Instalación desde [`pipx`][11]
+### Instalación desde [pipx][11]
 
-```bash
-pipx install omegaup-cli                                 # Instalación global y segura.
+```console
+$ pipx install omegaup-cli                                 # Instalación global y aislada.
 ```
 
 ### Instalación desde la fuente
-```bash
-git clone https://github.com/Apocryphon-X/omegaup-cli    # Clona el repositorio.
-cd omegaup-cli                                           # Accede al directorio.
-./linux-install.sh                                       # Ejecuta el script de instalación.
+```console
+$ git clone https://github.com/Apocryphon-X/omegaup-cli    # Clona el repositorio.
+$ cd omegaup-cli                                           # Accede al directorio.
+$ ./linux-install.sh                                       # Ejecuta el script de instalación.
 ```
 
 # Grupos de comandos actuales
