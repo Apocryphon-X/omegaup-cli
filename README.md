@@ -7,6 +7,10 @@ OmegaUp CLI [![py_version][7]][8]
 This project is a command-line interface that allows direct interactions with omegaUp API using Python 3. Any issue and pull request is welcome.
 </p>
 
+```bash
+Usage: ucli [OPTIONS] COMMAND [ARGS]...
+```
+
 # Changelog
 
 <p align="justify">
@@ -25,21 +29,21 @@ This project is a command-line interface that allows direct interactions with om
 
 ### Installation from source via [pipx][11]
 
-```console
-$ pipx install git+https://github.com/Apocryphon-X/omegaup-cli
+```bash
+pipx install git+https://github.com/Apocryphon-X/omegaup-cli
 ```
 
 ### Linux install from source without pipx
-```console
-$ git clone https://github.com/Apocryphon-X/omegaup-cli
-$ cd omegaup-cli
-$ ./linux-install.sh
+```bash
+git clone https://github.com/Apocryphon-X/omegaup-cli
+cd omegaup-cli
+./linux-install.sh
 ```
 
 ### Installation from pip
 
-```console
-$ pip install omegaup-cli
+```bash
+pip install omegaup-cli
 ```
 
 # Inspirations
