@@ -1954,13 +1954,13 @@ def runs(problem_alias, raw):
 
         print(f"{omegaup_verdicts[api_verdict]}\n")
 
-        print(f"{info_status} Submit date:\t{submit_date}")
-        print(f"{info_status} Language:\t{i_run['language']}")
-        print(f"{info_status} GUID:\t{i_run['guid']}\n")
+        print(f"{info_status} Submit date:  {submit_date}")
+        print(f"{info_status} Language:     {i_run['language']}")
+        print(f"{info_status} GUID:         {i_run['guid']}\n")
 
-        print(f"{info_status} Score:\t{i_run['score'] * 100:.2f} %")
-        print(f"{info_status} Memory:\t{i_run['memory'] / 1048576} MiB")
-        print(f"{info_status} Time: \t{i_run['runtime'] / 1000} s\n")
+        print(f"{info_status} Score:        {i_run['score'] * 100:.2f} %")
+        print(f"{info_status} Memory:       {i_run['memory'] / 1048576} MiB")
+        print(f"{info_status} Time:         {i_run['runtime'] / 1000} s\n")
 
         print(f"{cli_terminal.gray48('-' * 50)}\n")
 

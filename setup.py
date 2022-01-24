@@ -16,7 +16,7 @@ with open("requirements.txt", "r") as target_file:
 
 setup(
     name="omegaup_cli",
-    version="0.1.0a5",
+    version="0.1.0a6",
     python_requires=">=3.8",
     long_description=long_description,
     long_description_content_type="text/markdown",
