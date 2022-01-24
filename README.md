@@ -12,55 +12,43 @@ OmegaUp CLI [![py_version][7]][8]
 </p>
 
 <p align="justify">
-OmegaUp CLI es una interfaz que te permite interactuar con OmegaUp desde la linea de comandos. Actualmente el proyecto se encuentra en fase <i>Alpha</i> por lo que hace falta implementar soporte para muchas secciones de la API. Todo issue y pull request es bienvenido. 
+omegaUp CLI is a command-line interface that allows direct interactions with omegaUp. Any issue and pull request is welcome.
 </p>
 
-# Cambios
+# Changelog
 
 <p align="justify">
   <ul>
-    <li> El parsing de argumentos ahora es gestionado mediante el modulo <a href="https://github.com/pallets/click/"><code>Click</code></a>. </li>
-    <li> Las interacciones con la API se realizan por medio de APITokens. </li>
-    <li> Se removio <b>temporalmente</b> la función de "entornos". </li>
-    <li> Se migro parte de el codigo a <a href="https://github.com/omegaup/libomegaup"><code>libomegaup</code></a>. </li>
+    <li> Full support for almost any API endpoint. </li>
+    <li> New additions only supports raw interactions. </li>
   </ul>
 </p>
 
-# Instalación [![release][9]][10] [![PyPI][12]][13]
-
+# Installation [![release][9]][10] [![PyPI][12]][13]
 
 <p align="justify">
-  El proyecto se encuentra en fase <i>Alpha</i>, por lo que el codigo actual esta <b>INCOMPLETO</b>. Para descargar la versión en desarrollo, se recomienda instalar la CLI desde el repositorio en GitHub o desde <code>pipx</code> en lugar de las GH Releases.
+  From source
 </p>
 
-### Instalación desde [pipx][11]
+### Installation from source via [pipx][11]
 
 ```console
-$ pipx install omegaup-cli                                 # Instalación global y aislada.
+$ pipx install git+https://github.com/Apocryphon-X/omegaup-cli   # Instalación global y aislada.
 ```
 
-### Instalación desde la fuente
+### Linux install withot pipx
 ```console
 $ git clone https://github.com/Apocryphon-X/omegaup-cli    # Clona el repositorio.
 $ cd omegaup-cli                                           # Accede al directorio.
 $ ./linux-install.sh                                       # Ejecuta el script de instalación.
 ```
 
-# Grupos de comandos actuales
-
-|       Grupo         |                Descripción             |
-|:--------------------|:---------------------------------------|
-|        `ucl`        |      Muestra los grupos de comandos    |
-|      `ucl run`      |       Menu de ayuda para envios        |
-|    `ucl contest`    |        Menu de ayuda para concursos    |
-|    `ucl problem`    |      Menu de ayuda para problemas      |
-
-# Inspiraciones
+# Inspirations
 
 - [OmegaUp API¹][1]: *"OmegaUp: Open source platform to learn and improve Computer Science skills"*.
 - [ProtonVPN Linux CLI¹][3]: *"Linux command-line client for ProtonVPN. Written in Python"*.
 - [CF-Tool¹][5]: *"Codeforces Tool is a command-line interface tool for Codeforces"*.
-- [Codeforces CLI¹][2]: *"A simple command line tool for Codeforces coders"*.
+- [Codeforces CLI¹][2]: *"A simple command-line tool for Codeforces coders"*.
 - [Github CLI¹][4]: *"GitHub’s official command line tool"*.
 
 `¹` : `omegaup-cli` is **not** formally affiliated with this organization or project.
@@ -72,7 +60,7 @@ $ ./linux-install.sh                                       # Ejecuta el script d
 <img align="right" src="https://user-images.githubusercontent.com/40130428/112392193-a253ae00-8cbe-11eb-8a27-729c23729923.png">
 
 <p align="justify">
-  <a href="https://github.com/Apocryphon-X/omegaup-cli">Apocryphon-X/omegaup-cli</a> is licensed under the MIT License. A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
+  <a href="https://github.com/Apocryphon-X/omegaup-cli">Apocryphon-X/omegaup-cli</a> is licensed under the MIT License. A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications and larger works may be distributed under different terms and without source code.
 More details can be found in the <a href="https://github.com/Apocryphon-X/omegaup-cli/blob/main/LICENSE.md"><code>LICENSE.md</code></a> file.
 </p>
 

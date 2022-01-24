@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-# Pregunta por ~./bash_aliases
+# Creating "~/.bash_aliases" file if it does not exists
 if [ ! -f ~/.bash_aliases ]; then
     touch ~/.bash_aliases
 fi
 
-# Instalacion de OmegaUp CLI, y creacion de un alias.
-pip3 install --user . && echo "alias ucl=/home/$USER/.local/bin/ucl" >> ~/.bash_aliases
+# Installing the omegaUp CLI and creating its alias
+pip3 install --user . && echo "alias ucli=/home/$USER/.local/bin/ucli" >> ~/.bash_aliases
 
-# En caso de utilizar "fish", se importa el alias creado.
+# If "fish" shell is used, the alias is imported
 if command -v fish &> /dev/null
 then
     if [ ! -f ~/.config/fish/config.fish ]; then
@@ -17,4 +17,4 @@ then
     echo ". ~/.bash_aliases" >> ~/.config/fish/config.fish
 fi
 
-clear && echo "[!] Si no se reflejan los cambios, reinicia tu terminal!"
+clear && echo "[i] If there are no changes, restart your terminal."

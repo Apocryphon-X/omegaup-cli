@@ -4,6 +4,6 @@ stdiomask
 setuptools
 click
 blessed>=1.18.0
-omegaup>=1.3.0
+omegaup>=1.5.4
 
     

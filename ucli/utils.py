@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*-
 
-import importlib.resources
+# import importlib.resources
 import json
 import pathlib
+import random
+import string
 import subprocess
 import sys
 import time
-from datetime import datetime
+import datetime
+import typing
 
 import blessed
 import click
@@ -24,26 +27,24 @@ AUTH_DATA = HOME_PATH.joinpath(".ucl-data")
 cli_terminal = blessed.Terminal()
 
 # Veredicts:
-ac_verdict = cli_terminal.lawngreen("[✓] AC - Tu solución fue aceptada!")
-pa_verdict = cli_terminal.gold("[i] PA - Tu solución fue parcialmente aceptada.")
-wa_verdict = cli_terminal.crimson("[✗] WA - Respuesta incorrecta.")
+ac_verdict = cli_terminal.lawngreen("[✓] AC - Your solution was accepted!")
+pa_verdict = cli_terminal.gold("[i] PA - Your solution was partially accepted.")
+wa_verdict = cli_terminal.crimson("[✗] WA - Wrong answer.")
 je_verdict = cli_terminal.white_on_firebrick3(
-    "[!] JE - Ocurrio un error inesperado con el evaluador!"
+    "[!] JE - An unexpected error occurred with the evaluator, omegaUp is already reviewing the incident."
 )
-ce_verdict = cli_terminal.white_on_darkorange3("[!] CE - Error de compilación.")
-ve_verdict = cli_terminal.white_on_firebrick3("[!] VE - Error del validador.")
+ce_verdict = cli_terminal.white_on_darkorange3("[!] CE - Compilation error")
+ve_verdict = cli_terminal.white_on_firebrick3("[!] VE - Validator error.")
 
-rfe_verdict = cli_terminal.firebrick1("[!] RFE - Uso de función restringida.")
-rte_verdict = cli_terminal.lightslateblue(
-    "[✗] RTE - Tu programa se cerro de forma inesperada."
-)
+rfe_verdict = cli_terminal.firebrick1("[!] RFE - Restricted function error.")
+rte_verdict = cli_terminal.lightslateblue("[✗] RTE - Your program closed unexpectedly.")
 mle_verdict = cli_terminal.darkorange2(
-    "[i] MLE - Tu solución excedio el limite de memoria."
+    "[i] MLE - Your solution exceeded the memory limit."
 )
 ole_verdict = cli_terminal.dodgerblue(
-    "[i] OLE - Limite de salida excedido. (¿Imprimiste de mas?)"
+    "[i] OLE - Output limit exceeded. (Did you overprint?)."
 )
-tle_verdict = cli_terminal.gold("[i] TLE - Tu programa excedio el limite de tiempo.")
+tle_verdict = cli_terminal.gold("[i] TLE - Your program exceeded the time limit.")
 
 # Easy access
 omegaup_verdicts = {
@@ -95,10 +96,9 @@ def get_client():
 
 
 def get_credentials():
-    coder_user = input(f"{question_status} Ingresa tu usuario o email: ")
-    coder_pass = stdiomask.getpass(
-        f"{question_status} Ingresa tu contraseña: ", mask="*"
-    )
+    print(f"{info_status} Enter your access credentials: ")
+    coder_user = input(f"{question_status} Username or email: ")
+    coder_pass = stdiomask.getpass(f"{question_status} Password: ", mask="*")
 
     return coder_user, coder_pass
 
@@ -114,7 +114,7 @@ def test_login():
 
     if "status" in json_response:
         if json_response["status"] == "ok":
-            print(f"{ok_status} Inicio de sesión exitoso!\n")
+            print(f"{ok_status} Successful login!\n")
             return True, cr_username, cr_password
 
         error_msg = json_response["error"]
@@ -168,3 +168,7 @@ def extract_cases(markdown):
                 tmp_output = []
 
     return input_cases, output_cases
+
+
+def get_randseq(text):
+    return text + ("".join(random.sample(string.ascii_letters + string.digits, 20)))
