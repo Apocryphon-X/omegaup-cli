@@ -10,13 +10,13 @@ with open("README.md", "r", encoding="utf-8") as target_file:
 with open("requirements.txt", "r") as target_file:
     install_requires = target_file.read().strip().split("\n")
 
-actual_version = subprocess.check_output(
-    ["/usr/bin/git", "describe", "--tags"], universal_newlines=True
-)
+# actual_version = subprocess.check_output(
+#    ["/usr/bin/git", "describe", "--tags"], universal_newlines=True
+# )
 
 setup(
     name="omegaup_cli",
-    version=actual_version,
+    version="0.1.0a",
     python_requires=">=3.8",
     long_description=long_description,
     long_description_content_type="text/markdown",
