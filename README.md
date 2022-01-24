@@ -3,16 +3,8 @@ OmegaUp CLI [![py_version][7]][8]
 =============
 
 
-
-<p align="left">
-  <img src="https://img.shields.io/badge/Envios-En%20curso-yellow.svg?style=flat-square">
-  <img src="https://img.shields.io/badge/Problemas-En%20curso-yellow.svg?style=flat-square">
-  <img src="https://img.shields.io/badge/Cursos-Pendiente-red.svg?style=flat-square">
-  <img src="https://img.shields.io/badge/Concursos-En%20curso-yellow.svg?style=flat-square">
-</p>
-
 <p align="justify">
-omegaUp CLI is a command-line interface that allows direct interactions with omegaUp. Any issue and pull request is welcome.
+This project is a command-line interface that allows direct interactions with omegaUp API using Python 3. Any issue and pull request is welcome.
 </p>
 
 # Changelog
@@ -27,20 +19,27 @@ omegaUp CLI is a command-line interface that allows direct interactions with ome
 # Installation [![release][9]][10] [![PyPI][12]][13]
 
 <p align="justify">
-  From source
+  <b>Note:</b> PIP installation is commonly outdated, use source install via pipx instead. 
 </p>
+
 
 ### Installation from source via [pipx][11]
 
 ```console
-$ pipx install git+https://github.com/Apocryphon-X/omegaup-cli   # Instalación global y aislada.
+$ pipx install git+https://github.com/Apocryphon-X/omegaup-cli 
 ```
 
-### Linux install withot pipx
+### Linux install from source without pipx
 ```console
-$ git clone https://github.com/Apocryphon-X/omegaup-cli    # Clona el repositorio.
-$ cd omegaup-cli                                           # Accede al directorio.
-$ ./linux-install.sh                                       # Ejecuta el script de instalación.
+$ git clone https://github.com/Apocryphon-X/omegaup-cli   
+$ cd omegaup-cli                                        
+$ ./linux-install.sh                                       
+```
+
+### Installation from pip
+
+```console
+$ pip install omegaup-cli
 ```
 
 # Inspirations
