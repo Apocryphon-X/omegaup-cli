@@ -26,14 +26,14 @@ This project is a command-line interface that allows direct interactions with om
 ### Installation from source via [pipx][11]
 
 ```console
-$ pipx install git+https://github.com/Apocryphon-X/omegaup-cli 
+$ pipx install git+https://github.com/Apocryphon-X/omegaup-cli
 ```
 
 ### Linux install from source without pipx
 ```console
-$ git clone https://github.com/Apocryphon-X/omegaup-cli   
-$ cd omegaup-cli                                        
-$ ./linux-install.sh                                       
+$ git clone https://github.com/Apocryphon-X/omegaup-cli
+$ cd omegaup-cli
+$ ./linux-install.sh
 ```
 
 ### Installation from pip
