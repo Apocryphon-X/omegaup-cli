@@ -7,8 +7,8 @@ import subprocess
 with open("README.md", "r", encoding="utf-8") as target_file:
     long_description = target_file.read()
 
-with open('requirements.txt', 'r') as target_file:
-    install_requires = target_file.read().strip().split('\n')
+with open("requirements.txt", "r") as target_file:
+    install_requires = target_file.read().strip().split("\n")
 
 actual_version = subprocess.check_output(
     ["/usr/bin/git", "describe", "--tags"], universal_newlines=True
