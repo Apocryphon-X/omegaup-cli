@@ -2,6 +2,7 @@ OmegaUp CLI [![py_version][7]][8]
 <img align="right" src="https://user-images.githubusercontent.com/40130428/112218277-276c9380-8be9-11eb-8d63-1bbf6d9edfa3.png">
 =============
 
+> This project is **temporarily** archived.
 
 <p align="justify">
 This project is a command-line interface that allows direct interactions with omegaUp API using Python 3. Any issue and pull request is welcome.
